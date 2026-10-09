@@ -58,7 +58,8 @@
 .fs *, .fs *::before, .fs *::after { box-sizing: border-box; }
 
 /* Íconos */
-.fs-i { width: 24px; height: 24px; flex: none; display: inline-block; vertical-align: middle; }
+.fs-i { width: 24px; height: 24px; flex: none; display: inline-block; vertical-align: middle;
+  fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
 .fs-i.sm { width: 18px; height: 18px; }
 .fs-i.lg { width: 32px; height: 32px; }
 

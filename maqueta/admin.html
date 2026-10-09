@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FutStar · Bandeja del equipo</title>
+<meta name="description" content="Maqueta del back office de FutStar: consultas anónimas, derivaciones y agenda editorial.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/futstar.css">
+<link rel="stylesheet" href="../assets/css/maqueta.css">
+</head>
+<body class="fs fs--desk">
+
+<div class="panel">
+  <nav class="fs-side" aria-label="Menú del equipo FutStar">
+    <span class="brand"><svg class="fs-i"><use href="#i-star"/></svg>FutStar</span>
+    <a href="#consultas" data-nav="consultas"><svg class="fs-i sm"><use href="#i-consult"/></svg>Consultas</a>
+    <a href="#agenda" data-nav="agenda"><svg class="fs-i sm"><use href="#i-clock"/></svg>Agenda editorial</a>
+    <a href="#contenidos" data-nav="contenidos"><svg class="fs-i sm"><use href="#i-library"/></svg>Contenidos</a>
+    <a href="#especialistas" data-nav="especialistas"><svg class="fs-i sm"><use href="#i-shield"/></svg>Especialistas</a>
+    <a href="#clubes" data-nav="clubes"><svg class="fs-i sm"><use href="#i-users"/></svg>Clubes y suscripciones</a>
+    <div class="who"><b>Lic. Diego Acuña</b><span>Equipo profesional · Psicología</span></div>
+    <a class="demo-link" href="../index.html">← Volver a la maqueta</a>
+  </nav>
+
+  <div class="panel-main">
+    <header class="topbar">
+      <span class="club"><span class="crest" style="background:#0E2A20;color:#F2B630">FS</span>Equipo FutStar</span>
+      <span class="fs-pill fs-pill--wait" id="new-count">1 nueva</span>
+      <span class="sp"></span>
+      <span class="fs-caption">Solo el equipo profesional accede a esta bandeja.</span>
+    </header>
+
+    <!-- CONSULTAS -->
+    <section class="page" id="p-consultas" hidden>
+      <div class="page-head">
+        <div><h1 class="fs-h1">Consultas anónimas</h1><p>Sin nombre del jugador. Ves el club, la categoría y el tema para dar contexto.</p></div>
+        <div class="seg" role="group" aria-label="Filtrar por estado" id="filters">
+          <button type="button" class="is-on" data-f="">Todas</button><button type="button" data-f="nueva">Nuevas</button><button type="button" data-f="revision">En revisión</button><button type="button" data-f="derivada">Derivadas</button><button type="button" data-f="resuelta">Resueltas</button>
+        </div>
+      </div>
+      <div class="inbox">
+        <div class="inbox-list" id="list"></div>
+        <div class="fs-card" id="detail" style="display:flex;flex-direction:column;gap:18px"></div>
+      </div>
+    </section>
+
+    <!-- AGENDA -->
+    <section class="page" id="p-agenda" hidden>
+      <div class="page-head"><div><h1 class="fs-h1">Agenda editorial · T1 2027</h1><p>Contenido que se suma a la biblioteca el próximo trimestre, según las tendencias de consultas.</p></div><button class="fs-btn fs-btn--sm" data-toast="Nuevo contenido agregado a la agenda (demo)"><svg class="fs-i sm"><use href="#i-plus"/></svg>Agregar contenido</button></div>
+      <div class="fs-alert fs-alert--info"><svg class="fs-i"><use href="#i-trend"/></svg><span><strong>Sugerido por tendencias:</strong> presión familiar y miedo a quedar libre fueron los temas más consultados en octubre en todos los clubes.</span></div>
+      <div class="cal">
+        <div class="fs-card"><div class="card-title"><span class="fs-h3">Enero</span><span class="fs-caption">8 piezas</span></div>
+          <div class="cal-item"><span class="d">08/01</span><span>Pretemporada: qué comer en doble turno<br><span class="fs-badge fs-badge--module">Nutrición</span></span></div>
+          <div class="cal-item"><span class="d">15/01</span><span>Volver al club después de las vacaciones<br><span class="fs-badge fs-badge--module">Psicología</span></span></div>
+          <div class="cal-item"><span class="d">22/01</span><span>Charla con familias: acompañar sin presionar<br><span class="fs-badge fs-badge--module">Psicología</span></span></div>
+        </div>
+        <div class="fs-card"><div class="card-title"><span class="fs-h3">Febrero</span><span class="fs-caption">8 piezas</span></div>
+          <div class="cal-item"><span class="d">05/02</span><span>Si no te ficharon: próximos pasos<br><span class="fs-badge fs-badge--module">Ed. financiera</span></span></div>
+          <div class="cal-item"><span class="d">12/02</span><span>Viandas para la vuelta al colegio<br><span class="fs-badge fs-badge--module">Nutrición</span></span></div>
+          <div class="cal-item"><span class="d">19/02</span><span>Manejar los nervios del debut<br><span class="fs-badge fs-badge--module">Psicología</span></span></div>
+        </div>
+        <div class="fs-card"><div class="card-title"><span class="fs-h3">Marzo</span><span class="fs-caption">8 piezas</span></div>
+          <div class="cal-item"><span class="d">05/03</span><span>Becas y estudios para deportistas<br><span class="fs-badge fs-badge--module">Ed. financiera</span></span></div>
+          <div class="cal-item"><span class="d">12/03</span><span>Hidratación en días de calor<br><span class="fs-badge fs-badge--module">Nutrición</span></span></div>
+          <div class="cal-item"><span class="d">19/03</span><span>Comentarios en redes después de un partido<br><span class="fs-badge fs-badge--module">Psicología</span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENIDOS -->
+    <section class="page" id="p-contenidos" hidden>
+      <div class="page-head"><div><h1 class="fs-h1">Contenidos</h1><p>96 en la biblioteca · 24 nuevos en T4 2026. El contenido anterior sigue publicado.</p></div><button class="fs-btn fs-btn--sm" data-toast="Subida de video (demo)"><svg class="fs-i sm"><use href="#i-plus"/></svg>Subir contenido</button></div>
+      <div class="fs-card" style="padding:0"><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Título</th><th>Módulo</th><th>Especialista</th><th>Trimestre</th><th class="num">Vistas</th><th>Estado</th></tr></thead><tbody id="c-rows"></tbody></table></div></div>
+    </section>
+
+    <!-- ESPECIALISTAS -->
+    <section class="page" id="p-especialistas" hidden>
+      <div class="page-head"><div><h1 class="fs-h1">Especialistas</h1><p>Equipo interdisciplinario con matrícula verificada.</p></div><button class="fs-btn fs-btn--sm" data-toast="Alta de especialista (demo)"><svg class="fs-i sm"><use href="#i-plus"/></svg>Agregar especialista</button></div>
+      <div class="g-3" id="s-cards"></div>
+    </section>
+
+    <!-- CLUBES -->
+    <section class="page" id="p-clubes" hidden>
+      <div class="page-head"><div><h1 class="fs-h1">Clubes y suscripciones</h1><p>3 clubes · 410 jugadores · próximas renovaciones.</p></div><button class="fs-btn fs-btn--sm" data-toast="Alta de club (demo)"><svg class="fs-i sm"><use href="#i-plus"/></svg>Agregar club</button></div>
+      <div class="fs-card" style="padding:0"><div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Club</th><th>Región</th><th class="num">Jugadores</th><th class="num">Activos</th><th class="num">Precio trimestral</th><th>Renovación</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr><td>Club Social y Deportivo (ejemplo)</td><td>AMBA</td><td class="num">150</td><td class="num">85%</td><td class="num">$1.125.000</td><td>01/01/2027</td><td><span class="fs-pill fs-pill--ok">Activa</span></td></tr>
+          <tr><td>Atlético Villa Norte (ejemplo)</td><td>Córdoba</td><td class="num">180</td><td class="num">78%</td><td class="num">$1.350.000</td><td>01/01/2027</td><td><span class="fs-pill fs-pill--ok">Activa</span></td></tr>
+          <tr><td>Deportivo Las Tunas (ejemplo)</td><td>Liga regional · Santa Fe</td><td class="num">80</td><td class="num">91%</td><td class="num">$600.000</td><td>15/11/2026</td><td><span class="fs-pill fs-pill--wait">Por renovar</span></td></tr>
+        </tbody></table></div></div>
+    </section>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"><svg class="fs-i sm"><use href="#i-check"/></svg><span></span></div>
+
+<script src="../assets/js/icons.js"></script>
+<script src="../assets/js/datos.js"></script>
+<script>
+(function () {
+  var D = window.FS, $ = function (s) { return document.querySelector(s); };
+  var Q = D.consultas, sel = 'c1', filt = '';
+  var EST = { nueva: ['wait', 'Nueva'], revision: ['plain', 'En revisión'], derivada: ['dark', 'Derivada'], resuelta: ['ok', 'Resuelta'] };
+  function pill(e) { return '<span class="fs-pill fs-pill--' + EST[e][0] + '">' + EST[e][1] + '</span>'; }
+  function toast(m) { var t = $('#toast'); t.querySelector('span').textContent = m; t.classList.add('is-on'); clearTimeout(toast.t); toast.t = setTimeout(function () { t.classList.remove('is-on'); }, 2400); }
+  function list() {
+    var items = Q.filter(function (q) { return !filt || q.est === filt; });
+    $('#list').innerHTML = items.map(function (q) {
+      return '<button class="inbox-item' + (q.id === sel ? ' is-on' : '') + '" data-q="' + q.id + '"><span class="meta"><span>' + q.tema + ' · ' + q.cat + '</span>' + pill(q.est) + '</span><span class="q">' + q.q + '</span><span class="meta"><span>' + q.club + '</span><span>' + q.hace + '</span></span></button>';
+    }).join('') || '<div class="fs-empty"><p>No hay consultas en este estado.</p></div>';
+    var n = Q.filter(function (q) { return q.est === 'nueva'; }).length;
+    $('#new-count').textContent = n === 1 ? '1 nueva' : n + ' nuevas';
+    $('#new-count').hidden = !n;
+  }
+  function detail() {
+    var q = Q.filter(function (x) { return x.id === sel; })[0]; if (!q) return;
+    var h = '<div class="card-title" style="margin:0"><span class="fs-h3">Consulta anónima · ' + q.tema + '</span>' + pill(q.est) + '</div>' +
+      '<div class="row" style="display:flex;gap:16px;flex-wrap:wrap;font-size:14px;color:#5E6573"><span>' + q.club + '</span><span>Categoría ' + q.cat + '</span><span>' + q.hace + '</span><span style="display:inline-flex;gap:6px;align-items:center"><svg class="fs-i sm"><use href="#i-eye-off"/></svg>Sin identidad del jugador</span></div>' +
+      '<div class="qbox">“' + q.q + '”</div>';
+    if (q.est === 'derivada') {
+      h += '<div class="fs-alert fs-alert--help"><svg class="fs-i"><use href="#i-help"/></svg><span><strong>Protocolo de derivación activo.</strong> A cargo de ' + (q.prof || 'Lic. Diego Acuña') + '.</span></div>' +
+        '<div class="timeline"><div class="is-done"><span>Derivación activada<small>Se le avisó al jugador dentro de la app.</small></span></div><div class="is-done"><span>Primer contacto por chat<small>Dentro de las 2 horas.</small></span></div><div class="is-now"><span>Entrevista con el profesional<small>Programada.</small></span></div><div><span>Atención presencial cercana si hace falta<small>Red de derivación por región.</small></span></div></div>';
+    } else if (q.est === 'resuelta') {
+      h += '<div class="fs-field"><label>Respuesta enviada · ' + q.prof + '</label><div class="qbox" style="background:#EEF5F0">' + q.r + '</div></div>';
+    } else {
+      h += '<div class="fs-field"><label for="ans">Respuesta</label><textarea id="ans" class="fs-input" placeholder="Escribí una respuesta clara y breve. Podés sugerir contenido de la biblioteca."></textarea></div>' +
+        '<div class="row" style="display:flex;gap:10px;flex-wrap:wrap"><button class="fs-btn" data-act="responder"><svg class="fs-i sm"><use href="#i-send"/></svg>Responder</button>' +
+        (q.est === 'nueva' ? '<button class="fs-btn fs-btn--secondary" data-act="tomar">Tomar consulta</button>' : '') +
+        '<button class="fs-btn fs-btn--help" data-act="derivar"><svg class="fs-i sm"><use href="#i-help"/></svg>Activar protocolo de derivación</button></div>' +
+        '<p class="fs-caption">El protocolo se activa si el caso excede el canal escrito o si hay indicios de riesgo. El club no recibe ninguna notificación individual.</p>';
+    }
+    $('#detail').innerHTML = h;
+  }
+  document.addEventListener('click', function (ev) {
+    var t = ev.target.closest('[data-q],[data-f],[data-act],[data-toast]'); if (!t) return;
+    if (t.dataset.toast) { toast(t.dataset.toast); return; }
+    if (t.dataset.q) { sel = t.dataset.q; list(); detail(); return; }
+    if (t.hasAttribute('data-f')) { filt = t.dataset.f; document.querySelectorAll('#filters button').forEach(function (b) { b.classList.toggle('is-on', b === t); }); list(); return; }
+    var q = Q.filter(function (x) { return x.id === sel; })[0];
+    if (t.dataset.act === 'tomar') { q.est = 'revision'; q.prof = 'Lic. Diego Acuña'; toast('Consulta asignada a vos'); }
+    if (t.dataset.act === 'responder') { var a = document.getElementById('ans').value.trim(); if (!a) { document.getElementById('ans').classList.add('is-error'); return; } q.est = 'resuelta'; q.r = a; q.prof = q.prof || 'Lic. Diego Acuña'; toast('Respuesta enviada. El jugador la ve en Mis consultas.'); }
+    if (t.dataset.act === 'derivar') { q.est = 'derivada'; q.prof = q.prof || 'Lic. Diego Acuña'; toast('Protocolo de derivación activado'); }
+    list(); detail();
+  });
+  var M = { psico: 'Psicología', nutri: 'Nutrición', fin: 'Ed. financiera' };
+  document.getElementById('c-rows').innerHTML = D.contenidos.map(function (c, i) {
+    return '<tr><td>' + c.t + (c.nuevo ? ' <span class="fs-badge fs-badge--new" style="margin-left:6px"><svg class="fs-i"><use href="#i-star"/></svg>Nuevo</span>' : '') + '</td><td>' + M[c.mod] + '</td><td>' + D.especialistas[c.esp].nombre + '</td><td>' + (c.nuevo ? 'T4 2026' : ['T1 2026', 'T2 2026', 'T3 2026'][i % 3]) + '</td><td class="num">' + (60 + (i * 37) % 190) + '</td><td><span class="fs-pill fs-pill--ok">Publicado</span></td></tr>';
+  }).join('');
+  document.getElementById('s-cards').innerHTML = Object.keys(D.especialistas).map(function (k) {
+    var e = D.especialistas[k];
+    return '<div class="fs-card fs-specialist"><div class="head"><span class="fs-avatar fs-avatar--lg">' + e.ini + '</span><div><div class="name">' + e.nombre + '</div><div class="role">' + e.rol + '</div></div></div><span class="fs-mat"><svg class="fs-i"><use href="#i-shield"/></svg>' + e.matLarga + ' · verificada</span><p class="fs-small fs-muted">' + e.bio + '</p><span class="fs-caption">' + e.n + ' contenidos publicados</span></div>';
+  }).join('');
+  var PAGES = ['consultas', 'agenda', 'contenidos', 'especialistas', 'clubes'];
+  function render() {
+    var r = location.hash.slice(1); if (PAGES.indexOf(r) < 0) r = 'consultas';
+    PAGES.forEach(function (p) { document.getElementById('p-' + p).hidden = p !== r; });
+    document.querySelectorAll('[data-nav]').forEach(function (a) { a.classList.toggle('is-on', a.dataset.nav === r); });
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', render);
+  list(); detail(); render();
+})();
+</script>
+</body>
+</html>

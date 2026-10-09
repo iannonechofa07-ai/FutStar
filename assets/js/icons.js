@@ -50,7 +50,7 @@
     'm-finanzas': '<ellipse cx="12" cy="6" rx="7" ry="2.5"/><path d="M5 6v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5V6"/><path d="M5 10v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-4"/><path d="M5 14v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-4"/>'
   };
   var s = '<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">';
-  for (var k in I) s += '<symbol id="' + k + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">' + I[k] + '</symbol>';
+  for (var k in I) s += '<symbol id="' + k + '" viewBox="0 0 24 24">' + I[k] + '</symbol>';
   s += '</svg>';
   function inject() { document.body.insertAdjacentHTML('afterbegin', s); }
   if (document.body) inject(); else document.addEventListener('DOMContentLoaded', inject);

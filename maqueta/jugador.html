@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FutStar · App del jugador</title>
+<meta name="description" content="Maqueta navegable de la app de FutStar para jugadores de divisiones formativas.">
+<meta name="theme-color" content="#F6F7F2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/futstar.css">
+<link rel="stylesheet" href="../assets/css/maqueta.css">
+</head>
+<body class="fs">
+
+<div class="demo">
+  <!-- Guía para la presentación (solo en pantallas grandes) -->
+  <aside class="guide" aria-label="Recorrido de la demo">
+    <a class="back" href="../index.html"><svg class="fs-i sm"><use href="#i-back"/></svg>Volver a la maqueta</a>
+    <div>
+      <span class="fs-overline">Recorrido del jugador</span>
+      <h1 class="fs-h1" style="margin-top:6px">App de FutStar</h1>
+    </div>
+    <ol id="guide">
+      <li><a href="#bienvenida"><b>1</b>Bienvenida e ingreso</a></li>
+      <li><a href="#privacidad"><b>2</b>Nadie del club ve lo que escribís</a></li>
+      <li><a href="#inicio"><b>3</b>Inicio</a></li>
+      <li><a href="#psicologia"><b>4</b>Psicología deportiva</a></li>
+      <li><a href="#video"><b>5</b>Video y especialista</a></li>
+      <li><a href="#receta"><b>6</b>Receta</a></li>
+      <li><a href="#consultar"><b>7</b>Consulta anónima</a></li>
+      <li><a href="#asistente"><b>8</b>Asistente 24 h</a></li>
+      <li><a href="#ayuda"><b>9</b>Hablar con alguien</a></li>
+      <li><a href="#perfil"><b>10</b>Perfil</a></li>
+    </ol>
+    <p class="tip">Todo es clickeable dentro del celular. Esta lista sirve para saltar a cualquier pantalla durante la presentación. Datos y profesionales ficticios.</p>
+  </aside>
+
+  <div class="device" id="device">
+    <div class="status" aria-hidden="true"><span>9:41</span><span class="notch"></span><span class="sig"><i style="height:5px"></i><i style="height:8px"></i><i style="height:11px"></i><i style="height:13px"></i></span></div>
+
+    <main class="screens" id="screens">
+
+      <!-- 1 · BIENVENIDA -->
+      <section class="scr" id="s-bienvenida" data-chrome="none" hidden>
+        <div class="welcome-hero ph" data-img="entrenamiento-1">
+          <div class="brand"><svg class="fs-i"><use href="#i-star"/></svg>FutStar</div>
+        </div>
+        <div class="pad stack" style="padding-top:24px;padding-bottom:28px;flex:1">
+          <h2 class="fs-display">Tener a quién preguntarle, a cualquier hora y sin que nadie se entere.</h2>
+          <p class="fs-muted fs-small">Psicología deportiva, nutrición y educación financiera con profesionales matriculados.</p>
+          <form id="f-code" class="stack" novalidate>
+            <div class="fs-field">
+              <label for="code">Código de tu club</label>
+              <input id="code" class="fs-input fs-input--code" value="7MA-4K2Q" autocomplete="off" spellcheck="false" maxlength="8" aria-describedby="code-hint">
+              <span class="fs-hint" id="code-hint">Te lo da tu coordinador.</span>
+            </div>
+            <button class="fs-btn fs-btn--block" type="submit">Continuar</button>
+          </form>
+          <p class="fs-caption" style="display:flex;gap:6px;justify-content:center;align-items:center"><svg class="fs-i sm"><use href="#i-lock"/></svg>Sin nombre, sin mail, sin teléfono.</p>
+        </div>
+      </section>
+
+      <!-- 1b · APODO -->
+      <section class="scr" id="s-apodo" data-chrome="none" hidden>
+        <div class="appbar"><button class="back" data-back aria-label="Volver"><svg class="fs-i"><use href="#i-back"/></svg></button><span class="ttl"></span><span class="steps-dots"><i class="on"></i><i class="on"></i><i></i></span></div>
+        <form id="f-nick" class="pad stack" style="flex:1;padding-bottom:28px" novalidate>
+          <h2 class="fs-h1">Elegí un apodo</h2>
+          <p class="fs-muted">Es solo para vos. No hace falta tu nombre real.</p>
+          <div class="fs-field">
+            <label for="nick">Apodo</label>
+            <input id="nick" class="fs-input" value="Tomi" maxlength="16" autocomplete="off">
+          </div>
+          <div class="fs-alert fs-alert--info"><svg class="fs-i"><use href="#i-check"/></svg><span>Entraste a <strong>Club Social y Deportivo (ejemplo)</strong> · 7ma división.</span></div>
+          <div style="flex:1"></div>
+          <button class="fs-btn fs-btn--block" type="submit">Continuar</button>
+        </form>
+      </section>
+
+      <!-- 2 · PRIVACIDAD -->
+      <section class="scr dark" id="s-privacidad" data-chrome="none" data-dark hidden>
+        <div class="pad stack" style="padding-top:28px;padding-bottom:28px;flex:1;gap:20px">
+          <div class="lock-ill" aria-hidden="true"><svg class="fs-i"><use href="#i-lock"/></svg></div>
+          <div class="stack-sm" style="text-align:center;margin-top:12px">
+            <h2 class="fs-display">Nadie del club ve lo que escribís.</h2>
+            <p style="color:#B4C6BC">Antes de arrancar, te contamos cómo cuidamos lo tuyo.</p>
+          </div>
+          <div class="stack-sm">
+            <div class="priv-item"><span class="ic"><svg class="fs-i"><use href="#i-shield"/></svg></span><div><b>Lo que escribís</b><span>Lo leen solo profesionales matriculados de FutStar.</span></div></div>
+            <div class="priv-item"><span class="ic"><svg class="fs-i"><use href="#i-chart"/></svg></span><div><b>Lo que ve el club</b><span>Solo tendencias anónimas, como “6 jugadores consultaron sobre presión familiar”.</span></div></div>
+            <div class="priv-item no"><span class="ic"><svg class="fs-i"><use href="#i-eye-off"/></svg></span><div><b>Lo que el club nunca ve</b><span>Tus mensajes, tu nombre ni lo que mirás.</span></div></div>
+          </div>
+          <button class="link-light" id="btn-exception" type="button">¿Hay alguna excepción?</button>
+          <div style="flex:1"></div>
+          <a class="fs-btn fs-btn--accent fs-btn--block" href="#inicio">Entendido</a>
+        </div>
+        <div class="sheet-back" id="sheet-exception" hidden>
+          <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="exc-t">
+            <span class="grab"></span>
+            <h3 class="fs-h2" id="exc-t">Una sola excepción</h3>
+            <p>Si lo que contás muestra un riesgo para tu vida o la de otra persona, un profesional puede activar ayuda. Siempre te lo va a decir antes.</p>
+            <p class="fs-muted fs-small">Aun en ese caso, el club no ve tus mensajes.</p>
+            <button class="fs-btn fs-btn--block" type="button" data-close>Entendido</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 · INICIO -->
+      <section class="scr" id="s-inicio" data-tab="inicio" hidden>
+        <div class="appbar">
+          <span class="ttl" style="display:flex;align-items:center;gap:8px"><svg class="fs-i" style="color:#F2B630;fill:#F2B630"><use href="#i-star"/></svg>FutStar</span>
+          <a class="fs-btn fs-btn--help-soft fs-btn--sm" href="#ayuda"><svg class="fs-i sm"><use href="#i-help"/></svg>Ayuda</a>
+        </div>
+        <div class="stack" style="gap:24px;padding-bottom:24px">
+          <div class="hello"><h2 class="fs-h1">Hola, <span data-nick>Tomi</span></h2><small>Elegí lo que más se parece a lo que te pasa.</small></div>
+          <div class="stack-sm">
+            <h3 class="fs-h2 pad">¿Qué estás atravesando?</h3>
+            <div class="sit-grid" id="sit-grid"></div>
+          </div>
+          <div class="stack-sm">
+            <div class="sec-title"><h3 class="fs-h2" style="display:flex;gap:8px;align-items:center">Nuevo este trimestre</h3><a class="fs-btn fs-btn--ghost" href="#biblioteca">Ver todo</a></div>
+            <div class="hscroll" id="new-row"></div>
+          </div>
+          <div class="stack-sm">
+            <h3 class="fs-h2 pad">Módulos</h3>
+            <div class="mod-grid" id="mod-grid"></div>
+          </div>
+          <div class="help-card">
+            <div class="row"><svg class="fs-i"><use href="#i-lock"/></svg><b>¿Una duda que no está acá?</b></div>
+            <div class="two">
+              <a class="fs-btn fs-btn--secondary fs-btn--sm" href="#consultar">Consultá anónimo</a>
+              <a class="fs-btn fs-btn--secondary fs-btn--sm" href="#asistente">Asistente 24 h</a>
+            </div>
+            <p><svg class="fs-i"><use href="#i-info"/></svg>El asistente te orienta y te deriva. No reemplaza a un profesional.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- BIBLIOTECA -->
+      <section class="scr" id="s-biblioteca" data-tab="biblioteca" hidden>
+        <div class="appbar"><span class="ttl">Biblioteca</span><a class="fs-btn fs-btn--help-soft fs-btn--sm" href="#ayuda"><svg class="fs-i sm"><use href="#i-help"/></svg>Ayuda</a></div>
+        <div class="stack" style="gap:24px;padding-bottom:24px">
+          <p class="pad counter"><span><b>96 contenidos</b> · 24 nuevos este trimestre</span></p>
+          <div class="pad stack-sm" id="lib-mods"></div>
+          <div class="stack-sm">
+            <div class="sec-title"><h3 class="fs-h2">Nuevo este trimestre</h3></div>
+            <div class="hscroll" id="lib-new"></div>
+          </div>
+          <div class="stack-sm">
+            <div class="sec-title"><h3 class="fs-h2">Quiénes están detrás</h3></div>
+            <p class="pad fs-small fs-muted">Todos los contenidos los hacen profesionales con matrícula.</p>
+            <div class="hscroll" id="lib-specs"></div>
+          </div>
+          <p class="pad fs-caption">El contenido de trimestres anteriores sigue disponible. La biblioteca crece cada trimestre.</p>
+        </div>
+      </section>
+
+      <!-- 4 · MÓDULO -->
+      <section class="scr" id="s-modulo" data-tab="biblioteca" hidden>
+        <div class="appbar"><button class="back" data-back aria-label="Volver"><svg class="fs-i"><use href="#i-back"/></svg></button><span class="ttl" id="mod-ttl">Psicología deportiva</span><a class="fs-btn fs-btn--help-soft fs-btn--sm" href="#ayuda"><svg class="fs-i sm"><use href="#i-help"/></svg>Ayuda</a></div>
+        <div class="stack" style="gap:18px;padding-bottom:24px">
+          <div class="mod-head" id="mod-head"></div>
+          <div class="hscroll" id="mod-filters" role="group" aria-label="Filtrar por situación"></div>
+          <div class="list" id="mod-list"></div>
+          <div id="mod-also"></div>
+        </div>
+      </section>
+
+      <!-- 5 · VIDEO -->
+      <section class="scr" id="s-video" data-tab="biblioteca" hidden>
+        <div class="appbar"><button class="back" data-back aria-label="Volver"><svg class="fs-i"><use href="#i-back"/></svg></button><span class="ttl"></span><a class="fs-btn fs-btn--help-soft fs-btn--sm" href="#ayuda"><svg class="fs-i sm"><use href="#i-help"/></svg>Ayuda</a></div>
+        <div class="player" id="player">
+          <div class="ph" id="player-ph"></div>
+          <button class="big-play" id="play" aria-label="Reproducir"><svg class="fs-i"><use href="#i-play"/></svg></button>
+          <p class="caption" id="player-cap"></p>
+          <div class="ctrls"><button id="play-small" aria-label="Reproducir o pausar"><svg class="fs-i sm"><use href="#i-play"/></svg></button><span id="t-now">0:00</span><span class="bar"><i id="bar"></i></span><span id="t-tot">7:00</span></div>
+        </div>
+        <div class="pad stack" style="padding-top:18px;padding-bottom:24px;gap:18px">
+          <div class="stack-sm">
+            <span id="v-badge"></span>
+            <h2 class="fs-h1" id="v-title"></h2>
+            <div class="row between"><span class="fs-small fs-muted" id="v-meta"></span><button class="fs-btn fs-btn--secondary fs-btn--sm" id="v-save"><svg class="fs-i sm"><use href="#i-bookmark"/></svg><span>Guardar</span></button></div>
+          </div>
+          <div class="fs-card fs-specialist" id="v-spec"></div>
+          <a class="fs-alert fs-alert--privacy" href="#consultar" style="text-decoration:none"><svg class="fs-i"><use href="#i-lock"/></svg><span><strong>¿Te quedó una duda?</strong> Consultá anónimo. Te responde un profesional.</span></a>
+          <h3 class="fs-h2">Relacionados</h3>
+          <div class="list" style="padding:0" id="v-rel"></div>
+        </div>
+      </section>
+
+      <!-- 6 · RECETA -->
+      <section class="scr" id="s-receta" data-tab="biblioteca" hidden>
+        <div class="appbar"><button class="back" data-back aria-label="Volver"><svg class="fs-i"><use href="#i-back"/></svg></button><span class="ttl">Nutrición</span><a class="fs-btn fs-btn--help-soft fs-btn--sm" href="#ayuda"><svg class="fs-i sm"><use href="#i-help"/></svg>Ayuda</a></div>
+        <div class="recipe-hero ph t-gold" id="r-ph"><svg class="ph-ico"><use href="#m-nutri"/></svg></div>
+        <div class="pad stack" style="padding-top:18px;padding-bottom:24px;gap:20px">
+          <div class="stack-sm"><span id="r-badge"></span><h2 class="fs-h1" id="r-title"></h2><div class="meta-pills" id="r-meta"></div></div>
+          <div><h3 class="fs-h2" style="margin-bottom:4px">Ingredientes</h3><div class="ing" id="r-ing"></div></div>
+          <div><h3 class="fs-h2" style="margin-bottom:12px">Preparación</h3><ol class="steps-n" id="r-steps"></ol></div>
+          <div class="tipbox"><b>Cuándo te sirve</b><span id="r-when"></span></div>
+          <div class="fs-byline" id="r-by"></div>
+          <button class="fs-btn fs-btn--block" id="r-save"><svg class="fs-i sm"><use href="#i-bookmark"/></svg><span>Guardar receta</span></button>
+        </div>
+      </section>
+
+      <!-- 7 · CONSULTAR -->
+      <section class="scr" id="s-consultar" data-tab="consultar" hidden>
+        <div class="appbar"><span class="ttl">Consultar</span><a class="fs-btn fs-btn--help-soft fs-btn--sm" href="#ayuda"><svg class="fs-i sm"><use href="#i-help"/></svg>Ayuda</a></div>
+        <form class="pad stack" id="f-consult" style="flex:1;padding-bottom:24px" novalidate>
+          <div class="seal"><svg class="fs-i"><use href="#i-lock"/></svg>Nadie del club ve lo que escribís.</div>
+          <div class="fs-field">
+            <label for="q" style="font:600 20px/24px var(--fs-display)">Contanos qué te pasa</label>
+            <textarea id="q" class="fs-input" placeholder="Escribí con tus palabras. No hace falta que esté perfecto.">El DT no me pone hace tres partidos y no sé si preguntarle por qué.</textarea>
+          </div>
+          <div class="stack-sm">
+            <span class="fs-overline">Tema (opcional)</span>
+            <div class="chips" id="q-topics"></div>
+          </div>
+          <p class="fs-small fs-muted" style="display:flex;gap:8px"><svg class="fs-i sm" style="color:#1B7A4A"><use href="#i-shield"/></svg>Te responde un profesional matriculado del equipo FutStar.</p>
+          <div style="flex:1"></div>
+          <button class="fs-btn fs-btn--block" type="submit">Revisar y enviar</button>
+        </form>
+        <div class="sheet-back" id="sheet-send" hidden>
+          <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="send-t">
+            <span class="grab"></span>
+            <h3 class="fs-h2" id="send-t">Antes de enviar</h3>
+            <div class="check-list">
+              <div><svg class="fs-i"><use href="#i-check"/></svg>Va sin tu nombre ni tu apodo.</div>
+              <div><svg class="fs-i"><use href="#i-check"/></svg>La lee solo un profesional de FutStar.</div>
+              <div><svg class="fs-i"><use href="#i-check"/></svg>Nadie del club la ve.</div>
+            </div>
+            <button class="fs-btn fs-btn--block" type="button" id="send-ok"><svg class="fs-i sm"><use href="#i-send"/></svg>Enviar anónimo</button>
+            <button class="fs-btn fs-btn--secondary fs-btn--block" type="button" data-close>Seguir editando</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7c · ENVIADA -->
+      <section class="scr" id="s-enviada" data-tab="consultar" hidden>
+        <div class="pad stack" style="flex:1;padding-bottom:24px">
+          <div class="done-ill"><svg class="fs-i"><use href="#i-check"/></svg></div>
+          <h2 class="fs-h1" style="text-align:center">Tu consulta fue enviada de forma anónima</h2>
+          <h3 class="fs-h2" style="margin-top:8px">Qué pasa ahora</h3>
+          <div class="timeline">
+            <div class="is-done"><span>Recibimos tu consulta<small>Sin tu nombre ni tu apodo.</small></span></div>
+            <div class="is-now"><span>La revisa un profesional del equipo FutStar<small>Psicología, nutrición o finanzas, según el tema.</small></span></div>
+            <div><span>Te responde acá<small>La vas a ver en Perfil → Mis consultas.</small></span></div>
+            <div><span>Si hace falta, se activa el protocolo de derivación<small>Para que puedas hablar con alguien.</small></span></div>
+          </div>
+          <div style="flex:1"></div>
+          <a class="fs-btn fs-btn--block" href="#perfil-consultas">Ver mis consultas</a>
+          <a class="fs-btn fs-btn--ghost fs-btn--block" href="#inicio">Volver al inicio</a>
+        </div>
+      </section>
+
+      <!-- 8 · ASISTENTE -->
+      <section class="scr" id="s-asistente" data-tab="asistente" hidden>
+        <div class="sticky-head">
+          <div class="appbar">
+            <span class="ai-dot" style="width:36px;height:36px;border-radius:12px"><svg class="fs-i"><use href="#i-assistant"/></svg></span>
+            <span class="ttl" style="font-size:19px;line-height:22px">Asistente FutStar<br><small class="fs-caption" style="font-family:var(--fs-texto)">Disponible 24 h</small></span>
+            <a class="fs-btn fs-btn--help-soft fs-btn--sm" href="#ayuda"><svg class="fs-i sm"><use href="#i-help"/></svg>Ayuda</a>
+          </div>
+          <div class="fs-alert fs-alert--ai ai-note"><svg class="fs-i"><use href="#i-info"/></svg><span>No soy un profesional de la salud. Puedo orientarte y derivarte, pero no reemplazo a un especialista.</span></div>
+        </div>
+        <div class="chat" id="chat" aria-live="polite"></div>
+        <div class="composer">
+          <div class="chips" id="quick"></div>
+          <form id="f-chat"><label class="sr" for="chat-in">Escribile al asistente</label><input id="chat-in" class="fs-input" placeholder="Escribí acá…" autocomplete="off"><button class="send" aria-label="Enviar"><svg class="fs-i"><use href="#i-send"/></svg></button></form>
+        </div>
+      </section>
+
+      <!-- 9 · AYUDA -->
+      <section class="scr" id="s-ayuda" data-chrome="none" hidden>
+        <div class="appbar"><button class="back" data-back aria-label="Volver"><svg class="fs-i"><use href="#i-back"/></svg></button><span class="ttl">Hablar con alguien</span></div>
+        <div class="pad stack" style="padding-bottom:28px;gap:20px">
+          <div class="calm">
+            <svg class="fs-i"><use href="#i-help"/></svg>
+            <h2 class="fs-h1">Pedir ayuda está bien.</h2>
+            <p>Una persona del equipo profesional de FutStar te va a contactar. No tenés que explicar todo ahora.</p>
+          </div>
+          <div class="stack-sm">
+            <h3 class="fs-h2">Qué pasa cuando lo activás</h3>
+            <div class="timeline">
+              <div><span>Recibimos tu pedido<small>Sin tu nombre.</small></span></div>
+              <div><span>Lo toma un profesional matriculado<small>Psicólogo del equipo FutStar.</small></span></div>
+              <div><span>Te contacta por donde elijas<small>Generalmente en el día.</small></span></div>
+              <div><span>Si hace falta, te ayuda a conseguir atención presencial<small>Cerca de donde vivís.</small></span></div>
+            </div>
+          </div>
+          <fieldset class="stack-sm" style="border:0;padding:0;margin:0">
+            <legend class="fs-h2" style="margin-bottom:8px">¿Cómo querés que te contacten?</legend>
+            <label class="radio-card"><input type="radio" name="via" value="chat" checked><span>Por chat en la app<small>Te escribe acá, en FutStar.</small></span></label>
+            <label class="radio-card"><input type="radio" name="via" value="wa"><span>Por WhatsApp<small>Dejás un número solo para esto.</small></span></label>
+            <div class="fs-field" id="wa-field" hidden><label for="wa">Tu número</label><input id="wa" class="fs-input" inputmode="tel" placeholder="11 2345 6789"></div>
+            <p class="fs-hint"><svg class="fs-i"><use href="#i-lock"/></svg>Ese dato lo ve solo el profesional. El club, nunca.</p>
+          </fieldset>
+          <button class="fs-btn fs-btn--help fs-btn--block" id="help-go" style="min-height:56px;font-size:17px"><svg class="fs-i"><use href="#i-help"/></svg>Necesito hablar con alguien</button>
+          <div class="emergency"><svg class="fs-i"><use href="#i-alert"/></svg><span>Si estás en peligro ahora, llamá al <strong>911</strong>.</span></div>
+          <p class="fs-caption">Lo que hables es confidencial. Solo si hay riesgo para tu vida o la de otra persona, el profesional puede activar más ayuda, y te lo va a decir.</p>
+        </div>
+      </section>
+
+      <!-- 9b · PEDIDO RECIBIDO -->
+      <section class="scr" id="s-ayuda-ok" data-chrome="none" hidden>
+        <div class="pad stack" style="flex:1;padding-bottom:28px;padding-top:12px">
+          <div class="done-ill" style="background:#FDEBDD;color:#C2410C"><svg class="fs-i"><use href="#i-check"/></svg></div>
+          <h2 class="fs-h1" style="text-align:center">Pedido recibido</h2>
+          <p style="text-align:center" class="fs-muted" id="ok-via">Un profesional te va a escribir por chat en la app. Hiciste bien en pedirlo.</p>
+          <div class="fs-card fs-card--flat">
+            <div class="timeline">
+              <div class="is-done"><span>Pedido recibido<small>Hoy, 21:14</small></span></div>
+              <div class="is-now"><span>Lo toma un profesional<small>En curso</small></span></div>
+              <div><span>Te contacta</span></div>
+            </div>
+          </div>
+          <div class="fs-alert fs-alert--privacy"><svg class="fs-i"><use href="#i-lock"/></svg><span><strong>Es confidencial.</strong> Queda entre vos y el profesional. El club no se entera.</span></div>
+          <div style="flex:1"></div>
+          <a class="fs-btn fs-btn--secondary fs-btn--block" href="#inicio">Volver al inicio</a>
+        </div>
+      </section>
+
+      <!-- 10 · PERFIL -->
+      <section class="scr" id="s-perfil" data-tab="perfil" hidden>
+        <div class="appbar"><span class="ttl">Perfil</span><a class="fs-btn fs-btn--help-soft fs-btn--sm" href="#ayuda"><svg class="fs-i sm"><use href="#i-help"/></svg>Ayuda</a></div>
+        <div class="stack" style="gap:24px;padding-bottom:24px">
+          <div class="profile-head"><span class="fs-avatar fs-avatar--lg" data-ini>T</span><div><h2 class="fs-h1" data-nick>Tomi</h2><p class="fs-small fs-muted">7ma división · Club Social y Deportivo (ejemplo)</p></div></div>
+          <div class="stack-sm">
+            <div class="sec-title"><h3 class="fs-h2">Favoritos</h3><span class="fs-caption" id="fav-n"></span></div>
+            <div class="hscroll" id="favs"></div>
+          </div>
+          <div class="pad stack-sm">
+            <h3 class="fs-h2">Tu progreso</h3>
+            <div class="fs-card fs-card--flat stack-sm" id="progress"></div>
+          </div>
+          <div class="pad stack-sm" id="mis-consultas">
+            <h3 class="fs-h2">Mis consultas</h3>
+            <div class="stack-sm" id="consults"></div>
+            <p class="fs-hint"><svg class="fs-i"><use href="#i-lock"/></svg>Solo vos ves tus consultas.</p>
+          </div>
+          <div class="pad">
+            <div class="settings">
+              <button type="button" onclick="location.hash='privacidad'"><svg class="fs-i"><use href="#i-lock"/></svg><span>Cómo cuidamos tu privacidad</span><svg class="fs-i sm"><use href="#i-chevron"/></svg></button>
+              <button type="button" id="logout"><svg class="fs-i"><use href="#i-logout"/></svg><span>Cerrar sesión</span><svg class="fs-i sm"><use href="#i-chevron"/></svg></button>
+            </div>
+          </div>
+        </div>
+        <div class="sheet-back" id="sheet-logout" hidden>
+          <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="lo-t">
+            <span class="grab"></span>
+            <h3 class="fs-h2" id="lo-t">¿Cerrar sesión?</h3>
+            <p>Para volver a entrar vas a necesitar tu código del club.</p>
+            <a class="fs-btn fs-btn--block" href="#bienvenida" data-close>Cerrar sesión</a>
+            <button class="fs-btn fs-btn--secondary fs-btn--block" type="button" data-close>Cancelar</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="fs-tabbar" id="tabbar" aria-label="Secciones">
+      <a class="fs-tab" href="#inicio" data-tab="inicio"><svg class="fs-i"><use href="#i-home"/></svg>Inicio</a>
+      <a class="fs-tab" href="#biblioteca" data-tab="biblioteca"><svg class="fs-i"><use href="#i-library"/></svg>Biblioteca</a>
+      <a class="fs-tab" href="#asistente" data-tab="asistente"><svg class="fs-i"><use href="#i-assistant"/></svg>Asistente</a>
+      <a class="fs-tab" href="#consultar" data-tab="consultar"><svg class="fs-i"><use href="#i-consult"/></svg>Consultar</a>
+      <a class="fs-tab" href="#perfil" data-tab="perfil"><svg class="fs-i"><use href="#i-user"/></svg>Perfil</a>
+    </nav>
+    <div class="home-ind" aria-hidden="true"></div>
+    <div class="toast" id="toast" role="status"><svg class="fs-i sm"><use href="#i-check"/></svg><span></span></div>
+  </div>
+</div>
+
+<script src="../assets/js/icons.js"></script>
+<script src="../assets/js/datos.js"></script>
+<script src="../assets/js/jugador.js"></script>
+</body>
+</html>

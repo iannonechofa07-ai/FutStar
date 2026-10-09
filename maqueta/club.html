@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FutStar · Panel del club</title>
+<meta name="description" content="Maqueta navegable del panel de FutStar para coordinadores y directivos de clubes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/futstar.css">
+<link rel="stylesheet" href="../assets/css/maqueta.css">
+</head>
+<body class="fs fs--desk">
+
+<div class="panel">
+  <nav class="fs-side" aria-label="Menú del panel">
+    <span class="brand"><svg class="fs-i"><use href="#i-star"/></svg>FutStar</span>
+    <a href="#inicio" data-nav="inicio" data-coord><svg class="fs-i sm"><use href="#i-chart"/></svg>Inicio</a>
+    <a href="#tendencias" data-nav="tendencias" data-coord><svg class="fs-i sm"><use href="#i-trend"/></svg>Tendencias</a>
+    <a href="#reporte" data-nav="reporte"><svg class="fs-i sm"><use href="#i-file"/></svg>Reporte trimestral</a>
+    <a href="#jugadores" data-nav="jugadores" data-coord><svg class="fs-i sm"><use href="#i-key"/></svg>Jugadores y códigos</a>
+    <a href="#suscripcion" data-nav="suscripcion"><svg class="fs-i sm"><use href="#i-card"/></svg>Suscripción</a>
+    <div class="who"><span id="who-role"><b>Coordinador de inferiores</b></span><span>Club Social y Deportivo (ejemplo)</span></div>
+    <a class="demo-link" href="../index.html">← Volver a la maqueta</a>
+  </nav>
+
+  <div class="panel-main">
+    <header class="topbar">
+      <span class="club"><span class="crest">CS</span>Club Social y Deportivo (ejemplo)</span>
+      <span class="fs-pill fs-pill--ok">Suscripción activa</span>
+      <span class="fs-pill fs-pill--plain">T4 2026 · oct–dic</span>
+      <span class="sp"></span>
+      <span class="seg-label">Ver como</span>
+      <div class="seg" role="group" aria-label="Rol de la demo">
+        <button type="button" data-role="coord" class="is-on">Coordinador</button>
+        <button type="button" data-role="dir">Directivo</button>
+      </div>
+    </header>
+
+    <!-- 11 · INICIO -->
+    <section class="page" id="p-inicio" hidden>
+      <div class="page-head">
+        <div><h1 class="fs-h1">Así acompaña FutStar a tus inferiores</h1><p>Octubre de 2026 · 6 categorías · 150 jugadores incluidos en el plan</p></div>
+        <a class="fs-btn fs-btn--secondary fs-btn--sm" href="#reporte"><svg class="fs-i sm"><use href="#i-file"/></svg>Ver reporte trimestral</a>
+      </div>
+      <div class="kpis">
+        <div class="fs-card fs-kpi"><span class="label"><svg class="fs-i sm"><use href="#i-users"/></svg>Jugadores activos</span><span class="value">128<small> / 150</small></span><span class="meter"><i style="width:85.3%"></i></span><span class="fs-caption">85% de las inferiores usa FutStar</span></div>
+        <div class="fs-card fs-kpi"><span class="label"><svg class="fs-i sm"><use href="#i-play"/></svg>Vistas en el trimestre</span><span class="value">2.940</span><span class="delta">↑ 18% vs. T3</span></div>
+        <div class="fs-card fs-kpi"><span class="label"><svg class="fs-i sm"><use href="#m-psico"/></svg>Módulo más usado</span><span class="value txt">Psicología deportiva</span><span class="fs-caption">52% de las vistas</span></div>
+        <div class="fs-card fs-kpi"><span class="label"><svg class="fs-i sm"><use href="#i-star"/></svg>Contenido más visto</span><span class="value txt">Volver después de una lesión</span><span class="fs-caption">214 vistas</span></div>
+      </div>
+      <div class="g-2-1">
+        <div class="fs-card">
+          <div class="card-title"><span class="fs-h3">Vistas por mes</span><span class="fs-caption">Pasá el cursor por las columnas</span></div>
+          <div class="fs-cols" id="cols"></div>
+        </div>
+        <div class="fs-card">
+          <div class="card-title"><span class="fs-h3">Tendencias del mes</span><a class="linkbtn" href="#tendencias">Ver todas</a></div>
+          <div class="trend-list"><div><span>Presión familiar</span><b>6 jugadores</b></div><div><span>Miedo a quedar libre</span><b>5 jugadores</b></div><div><span>Qué comer</span><b>5 jugadores</b></div></div>
+          <p class="fs-caption" style="margin-top:12px;display:flex;gap:6px"><svg class="fs-i sm"><use href="#i-eye-off"/></svg>Datos anónimos y agregados.</p>
+        </div>
+      </div>
+      <div class="g-2-1">
+        <div class="fs-card">
+          <div class="card-title"><span class="fs-h3">Contenidos más vistos</span><span class="fs-caption">Trimestre en curso</span></div>
+          <div class="fs-bars" id="top-content"></div>
+          <div class="fs-h3" style="margin:22px 0 12px">Vistas por módulo</div>
+          <div class="fs-stack" role="img" aria-label="Psicología 52%, Nutrición 31%, Educación financiera 17%"><i style="flex:52;background:#1B7A4A"></i><i style="flex:31;background:#E0A21A"></i><i style="flex:17;background:#3E6FA8"></i></div>
+          <div class="fs-legend" style="margin-top:12px"><span style="--c:#1B7A4A">Psicología deportiva <b>52%</b></span><span style="--c:#E0A21A">Nutrición <b>31%</b></span><span style="--c:#3E6FA8">Educación financiera <b>17%</b></span></div>
+        </div>
+        <div class="stack" style="display:flex;flex-direction:column;gap:16px">
+          <div class="fs-card fs-card--dark" style="display:flex;flex-direction:column;gap:12px">
+            <span class="fs-overline" style="color:#F2B630">Reporte listo</span>
+            <span class="fs-h2">Reporte T3 2026</span>
+            <p style="color:#B4C6BC;font-size:14px">Para presentar a la Comisión Directiva. Uso, temas y evolución de la biblioteca.</p>
+            <button class="fs-btn fs-btn--accent fs-btn--sm" data-download style="align-self:flex-start"><svg class="fs-i sm"><use href="#i-download"/></svg>Descargar reporte</button>
+          </div>
+          <div class="fs-card" style="display:flex;flex-direction:column;gap:8px">
+            <span class="fs-h3">17 códigos pendientes</span>
+            <p class="fs-small fs-muted">Jugadores con código generado que todavía no entraron.</p>
+            <a class="linkbtn" href="#jugadores">Ver jugadores pendientes →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 · TENDENCIAS -->
+    <section class="page" id="p-tendencias" hidden>
+      <div class="page-head">
+        <div><h1 class="fs-h1">Tendencias</h1><p>Qué temas preocupan a tus inferiores, sin saber quién consultó.</p></div>
+        <div class="toolbar">
+          <label class="sr" for="t-mes">Mes</label>
+          <select id="t-mes" class="fs-select"><option value="oct">Octubre 2026</option><option value="sep">Septiembre 2026</option></select>
+          <label class="sr" for="t-cat">Categoría</label>
+          <select id="t-cat" class="fs-select"><option value="">Todas las categorías</option><option>4ta</option><option>5ta</option><option>6ta</option><option>7ma</option><option>8va</option><option>9na</option></select>
+        </div>
+      </div>
+      <div class="fs-alert fs-alert--privacy"><svg class="fs-i"><use href="#i-lock"/></svg><span><strong>Los datos son anónimos y agregados.</strong> El club no puede ver mensajes individuales ni identificar consultas.</span></div>
+      <div id="t-body">
+        <div class="fs-card" style="margin-bottom:16px">
+          <div class="insight"><span class="big" id="t-big">6</span><div><div class="fs-h2" id="t-head">jugadores consultaron sobre presión familiar este mes</div><p class="fs-muted fs-small" id="t-sub">Es el tema más consultado de octubre. En septiembre fueron menos de 5.</p></div></div>
+        </div>
+        <div class="g-2-1">
+          <div class="fs-card">
+            <div class="card-title"><span class="fs-h3" id="t-title">Temas consultados en octubre</span><span class="fs-caption">Jugadores distintos por tema</span></div>
+            <div class="fs-bars" id="t-bars"></div>
+            <p class="fs-caption" style="margin-top:16px">Con menos de 5 jugadores mostramos “menos de 5”, para que nadie pueda ser identificado.</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div class="fs-card">
+              <div class="card-title"><span class="fs-h3">Presión familiar</span><span class="fs-caption">Últimos 3 meses</span></div>
+              <div class="trend-list"><div><span>Agosto</span><b class="fs-muted" style="font-weight:400">menos de 5</b></div><div><span>Septiembre</span><b class="fs-muted" style="font-weight:400">menos de 5</b></div><div><span>Octubre</span><b>6 jugadores</b></div></div>
+            </div>
+            <div class="fs-card" style="display:flex;flex-direction:column;gap:10px">
+              <span class="fs-h3">Contenido para acompañar el tema</span>
+              <p class="fs-small fs-muted">Tus jugadores ya tienen disponibles estos videos sobre presión familiar:</p>
+              <div class="trend-list"><div><span>Cuando tu familia te presiona</span><span class="fs-badge fs-badge--new"><svg class="fs-i"><use href="#i-star"/></svg>Nuevo</span></div><div><span>Hablar con tu viejo sin pelear</span><span class="fs-caption">8 min</span></div></div>
+              <p class="fs-caption">Sugerencia: una charla grupal con familias puede complementar el contenido.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fs-card fs-empty" id="t-empty" hidden>
+        <span class="ring"><svg class="fs-i lg"><use href="#i-eye-off"/></svg></span>
+        <span class="fs-h3">No hay datos suficientes para mostrar esta categoría</span>
+        <p>Esta categoría tiene menos de 5 consultas este mes. No mostramos los temas para no identificar a nadie.</p>
+        <button class="fs-btn fs-btn--secondary fs-btn--sm" id="t-all">Ver todas las categorías</button>
+      </div>
+    </section>
+
+    <!-- 13 · REPORTE -->
+    <section class="page" id="p-reporte" hidden>
+      <div class="ro-banner" data-dir-only hidden><svg class="fs-i"><use href="#i-eye-off"/></svg><span><strong>Solo lectura.</strong> Como directivo podés ver el reporte trimestral y el estado de la suscripción.</span></div>
+      <div class="page-head">
+        <div><h1 class="fs-h1">Reporte trimestral</h1><p>Para presentar a la Comisión Directiva y decidir la renovación.</p></div>
+        <div class="toolbar"><label class="sr" for="r-q">Trimestre</label><select id="r-q" class="fs-select"><option>T3 2026 · jul–sep</option><option>T2 2026 · abr–jun</option><option>T1 2026 · ene–mar</option></select></div>
+      </div>
+      <div class="g-2-1">
+        <article class="doc-prev" aria-label="Vista previa del reporte">
+          <div class="dh"><span class="brand"><svg class="fs-i"><use href="#i-star"/></svg>FutStar</span><span class="fs-small fs-muted">Reporte T3 2026 · Club Social y Deportivo (ejemplo)</span></div>
+          <div>
+            <h2 class="fs-h1" style="margin-bottom:8px">Resumen ejecutivo</h2>
+            <p class="fs-body fs-muted">En el tercer trimestre, 128 de los 150 jugadores de inferiores usaron FutStar. Vieron 2.490 contenidos y enviaron 41 consultas anónimas, todas respondidas por profesionales matriculados. La biblioteca sumó 24 contenidos nuevos.</p>
+          </div>
+          <div class="kp">
+            <div><b>85%</b><span>jugadores activos</span></div>
+            <div><b>2.490</b><span>vistas</span></div>
+            <div><b>41</b><span>consultas respondidas</span></div>
+            <div><b>$7.500</b><span>por jugador por trimestre</span></div>
+          </div>
+          <div class="g-1-1" style="gap:28px">
+            <div>
+              <h4>Temas más consultados</h4>
+              <div class="fs-bars">
+                <div class="fs-bar" style="grid-template-columns:120px 1fr 28px"><span>Presión familiar</span><span class="track"><i class="fill" style="width:100%"></i></span><span class="v">11</span></div>
+                <div class="fs-bar" style="grid-template-columns:120px 1fr 28px"><span>Qué comer</span><span class="track"><i class="fill" style="width:82%"></i></span><span class="v">9</span></div>
+                <div class="fs-bar" style="grid-template-columns:120px 1fr 28px"><span>Quedar libre</span><span class="track"><i class="fill" style="width:64%"></i></span><span class="v">7</span></div>
+                <div class="fs-bar" style="grid-template-columns:120px 1fr 28px"><span>Rendimiento</span><span class="track"><i class="fill" style="width:55%"></i></span><span class="v">6</span></div>
+              </div>
+            </div>
+            <div>
+              <h4>Evolución de la biblioteca</h4>
+              <div class="fs-bars">
+                <div class="fs-bar" style="grid-template-columns:60px 1fr 28px"><span>T4 2025</span><span class="track"><i class="fill" style="width:25%;background:#8DBCA4"></i></span><span class="v">24</span></div>
+                <div class="fs-bar" style="grid-template-columns:60px 1fr 28px"><span>T1 2026</span><span class="track"><i class="fill" style="width:50%;background:#8DBCA4"></i></span><span class="v">48</span></div>
+                <div class="fs-bar" style="grid-template-columns:60px 1fr 28px"><span>T2 2026</span><span class="track"><i class="fill" style="width:75%;background:#8DBCA4"></i></span><span class="v">72</span></div>
+                <div class="fs-bar" style="grid-template-columns:60px 1fr 28px"><span>T3 2026</span><span class="track"><i class="fill" style="width:100%"></i></span><span class="v">96</span></div>
+              </div>
+              <p class="fs-caption" style="margin-top:8px">El contenido anterior sigue disponible: la biblioteca crece cada trimestre.</p>
+            </div>
+          </div>
+          <div>
+            <h4>Contenidos nuevos del trimestre (selección)</h4>
+            <div class="trend-list">
+              <div><span>Volver después de una lesión · Psicología</span><span class="fs-caption">Lic. P. Ferreyra · M.N. 45.218</span></div>
+              <div><span>Comer bien con poca plata · Nutrición</span><span class="fs-caption">Lic. M. Sosa · M.N. 7.312</span></div>
+              <div><span>Tu primer sueldo · Educación financiera</span><span class="fs-caption">Cdora. J. Ramos · CPCE T° 412 F° 88</span></div>
+            </div>
+          </div>
+          <div>
+            <h4>Lo que costaría sin FutStar</h4>
+            <p class="fs-small fs-muted">Sumar un psicólogo y un nutricionista a la nómina, aunque sea a medio tiempo, supera varias veces el costo trimestral del plan. Con FutStar el club accede a un equipo interdisciplinario completo por $7.500 por jugador al trimestre.</p>
+          </div>
+          <div class="foot"><svg class="fs-i sm"><use href="#i-eye-off"/></svg>Los datos son anónimos y agregados. El club no puede ver mensajes individuales ni identificar consultas.</div>
+        </article>
+        <div style="display:flex;flex-direction:column;gap:16px;position:sticky;top:96px">
+          <button class="fs-btn fs-btn--accent fs-btn--block" data-download><svg class="fs-i"><use href="#i-download"/></svg>Descargar reporte trimestral</button>
+          <span class="fs-caption" style="text-align:center">PDF · 4 páginas</span>
+          <div class="fs-card fs-card--flat" style="display:flex;flex-direction:column;gap:10px">
+            <span class="fs-h3">Incluye</span>
+            <div class="check-list" style="font-size:14px">
+              <div><svg class="fs-i sm" style="color:#1B7A4A"><use href="#i-check"/></svg>Uso y jugadores activos</div>
+              <div><svg class="fs-i sm" style="color:#1B7A4A"><use href="#i-check"/></svg>Temas más consultados</div>
+              <div><svg class="fs-i sm" style="color:#1B7A4A"><use href="#i-check"/></svg>Contenidos nuevos del trimestre</div>
+              <div><svg class="fs-i sm" style="color:#1B7A4A"><use href="#i-check"/></svg>Evolución de la biblioteca</div>
+              <div><svg class="fs-i sm" style="color:#1B7A4A"><use href="#i-check"/></svg>Costo por jugador</div>
+            </div>
+          </div>
+          <div class="fs-card fs-card--flat" style="display:flex;flex-direction:column;gap:6px">
+            <span class="fs-h3">Pensado para la Comisión Directiva</span>
+            <p class="fs-small fs-muted">Una página de resumen con lo necesario para decidir la renovación.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14 · JUGADORES -->
+    <section class="page" id="p-jugadores" hidden>
+      <div class="page-head">
+        <div><h1 class="fs-h1">Jugadores y códigos</h1><p>150 cupos · 128 activos · 17 pendientes · 5 inactivos</p></div>
+        <div class="toolbar">
+          <button class="fs-btn fs-btn--secondary fs-btn--sm" id="add-players"><svg class="fs-i sm"><use href="#i-plus"/></svg>Agregar jugadores</button>
+          <button class="fs-btn fs-btn--sm" id="gen-codes"><svg class="fs-i sm"><use href="#i-key"/></svg>Generar códigos</button>
+        </div>
+      </div>
+      <div class="fs-alert fs-alert--info"><svg class="fs-i"><use href="#i-eye-off"/></svg><span><strong>El club ve si cada jugador activó su cuenta, nunca qué mira ni qué consulta.</strong> Solo pedimos nombre y categoría.</span></div>
+      <div class="cat-cards" id="cats"></div>
+      <div class="fs-card" style="padding:0">
+        <div class="toolbar" style="padding:16px">
+          <label class="sr" for="p-search">Buscar jugador</label><input id="p-search" class="fs-input" placeholder="Buscar por nombre o código">
+          <label class="sr" for="p-state">Estado</label>
+          <select id="p-state" class="fs-select"><option value="">Todos los estados</option><option value="ok">Activos</option><option value="wait">Pendientes</option><option value="off">Inactivos</option></select>
+          <span class="sp" style="flex:1"></span><span class="fs-caption" id="p-count"></span>
+        </div>
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead><tr><th>Jugador</th><th>Categoría</th><th>Código</th><th>Estado</th><th></th></tr></thead>
+            <tbody id="p-rows"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15 · SUSCRIPCIÓN -->
+    <section class="page" id="p-suscripcion" hidden>
+      <div class="ro-banner" data-dir-only hidden><svg class="fs-i"><use href="#i-eye-off"/></svg><span><strong>Solo lectura.</strong> Para cambios en el plan, el coordinador o FutStar.</span></div>
+      <div class="page-head"><div><h1 class="fs-h1">Suscripción y facturación</h1><p>Plan único trimestral. El precio depende de la cantidad de jugadores.</p></div></div>
+      <div class="g-2-1">
+        <div class="fs-card" style="display:flex;flex-direction:column;gap:20px">
+          <div class="row between" style="display:flex;justify-content:space-between;align-items:center;gap:12px"><span class="fs-h2">Plan único trimestral</span><span class="fs-pill fs-pill--ok">Activa</span></div>
+          <div class="g-3">
+            <div class="fs-kpi"><span class="label">Jugadores incluidos</span><span class="value">150</span><span class="fs-caption">6 categorías</span></div>
+            <div class="fs-kpi"><span class="label">Precio por trimestre</span><span class="value">$1.125.000</span><span class="fs-caption">IVA incluido</span></div>
+            <div class="fs-kpi"><span class="label">Por jugador</span><span class="value">$7.500</span><span class="fs-caption">≈ $2.500 por mes</span></div>
+          </div>
+          <div class="fs-alert fs-alert--warning"><svg class="fs-i"><use href="#i-clock"/></svg><span>Próxima renovación: <strong>1 de enero de 2027</strong>. Faltan 84 días.</span></div>
+        </div>
+        <div class="fs-card" style="display:flex;flex-direction:column;gap:12px">
+          <span class="fs-h3">Qué incluye</span>
+          <div class="check-list" style="font-size:14px">
+            <div><svg class="fs-i sm" style="color:#1B7A4A"><use href="#i-check"/></svg>Biblioteca completa para las 6 categorías</div>
+            <div><svg class="fs-i sm" style="color:#1B7A4A"><use href="#i-check"/></svg>Asistente 24 h y canal de consultas anónimas</div>
+            <div><svg class="fs-i sm" style="color:#1B7A4A"><use href="#i-check"/></svg>Protocolo de derivación profesional</div>
+            <div><svg class="fs-i sm" style="color:#1B7A4A"><use href="#i-check"/></svg>Reporte trimestral para la Comisión Directiva</div>
+            <div><svg class="fs-i sm" style="color:#1B7A4A"><use href="#i-check"/></svg>Contenido nuevo cada trimestre</div>
+          </div>
+          <span class="fs-caption">Contacto: clubes@futstar.com.ar (ejemplo)</span>
+        </div>
+      </div>
+      <div class="fs-card" style="padding:0">
+        <div class="card-title" style="padding:18px 18px 0"><span class="fs-h3">Historial de facturación</span></div>
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead><tr><th>Período</th><th>Fecha</th><th class="num">Monto</th><th>Estado</th><th></th></tr></thead>
+            <tbody id="inv-rows"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- Modal: generar códigos -->
+<div class="modal-back" id="modal-codes" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mc-t">
+    <div class="row between" style="display:flex;justify-content:space-between;align-items:center"><h2 class="fs-h2" id="mc-t">Generar códigos de acceso</h2><button class="fs-iconbtn" data-close aria-label="Cerrar">✕</button></div>
+    <div id="mc-step1" style="display:flex;flex-direction:column;gap:16px">
+      <p class="fs-small fs-muted">Cada código sirve una sola vez. El jugador lo usa para entrar a la app sin dar datos personales.</p>
+      <div class="fs-field"><label for="mc-cat">Categoría</label><select id="mc-cat" class="fs-select"><option>4ta</option><option>5ta</option><option>6ta</option><option selected>7ma</option><option>8va</option><option>9na</option></select></div>
+      <div class="fs-field"><label for="mc-n">Cantidad de códigos</label><input id="mc-n" class="fs-input" type="number" min="1" max="25" value="3"><span class="fs-hint">En 7ma queda 1 cupo libre y hay 4 códigos pendientes para reenviar.</span></div>
+      <button class="fs-btn" id="mc-go">Generar códigos</button>
+    </div>
+    <div id="mc-step2" hidden style="display:flex;flex-direction:column;gap:16px">
+      <div class="fs-alert fs-alert--success"><svg class="fs-i"><use href="#i-check"/></svg><span>Listo. Compartí cada código con un jugador.</span></div>
+      <div class="codes" id="mc-codes"></div>
+      <div style="display:flex;gap:10px"><button class="fs-btn fs-btn--secondary" id="mc-copy"><svg class="fs-i sm"><use href="#i-copy"/></svg>Copiar todos</button><button class="fs-btn" data-close>Listo</button></div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"><svg class="fs-i sm"><use href="#i-check"/></svg><span></span></div>
+
+<script src="../assets/js/icons.js"></script>
+<script src="../assets/js/datos.js"></script>
+<script src="../assets/js/club.js"></script>
+</body>
+</html>

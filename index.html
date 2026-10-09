@@ -3,46 +3,100 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FutStar · Proyecto</title>
-<meta name="description" content="FutStar — maqueta navegable: índice de etapas del proyecto.">
+<title>FutStar · Maqueta navegable</title>
+<meta name="description" content="FutStar: maqueta navegable de la plataforma de acompañamiento integral para futbolistas de divisiones formativas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="docs/docs.css">
+<style>
+  .launch { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 16px; margin-top: 28px; }
+  .launch a { display: flex; flex-direction: column; gap: 10px; padding: 22px; border-radius: 20px; text-decoration: none; color: var(--ink-text); background: var(--ink); min-height: 220px; transition: transform .15s ease; }
+  .launch a:hover { transform: translateY(-3px); }
+  .launch a.gold { background: #F2B630; color: #0E2A20; }
+  .launch a.gold .muted { color: #3A2F12; }
+  .launch a .n { font: 700 14px/1 "Barlow Semi Condensed", sans-serif; letter-spacing: .08em; text-transform: uppercase; opacity: .8; }
+  .launch a h3 { font-size: 1.7rem; margin: 0; }
+  .launch a .muted { color: var(--ink-muted); font-size: .95rem; line-height: 1.5; flex: 1; }
+  .launch a .go { font-weight: 600; font-size: .95rem; }
+  .hero .meta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+  .hero .meta span { border: 1px solid rgba(246,247,242,.25); border-radius: 999px; padding: 6px 12px; font-size: .85rem; color: #D7E2DC; }
+  @media (prefers-reduced-motion: reduce) { .launch a { transition: none; } }
+</style>
 </head>
 <body>
+
 <section class="hero">
   <div class="wrap">
     <span class="eyebrow">★ FutStar · Maqueta navegable</span>
-    <h1>Acompañamiento integral para las inferiores</h1>
-    <p>FutStar hace que el acompañamiento profesional deje de ser un privilegio de los clubes grandes. Este es el índice del proyecto, organizado en cuatro etapas.</p>
+    <h1>Acompañamiento profesional para las inferiores</h1>
+    <p>FutStar hace que el acompañamiento profesional deje de ser un privilegio de los clubes grandes. Elegí un recorrido para empezar.</p>
+    <div class="meta"><span>17 pantallas</span><span>Jugador en celular</span><span>Club en escritorio</span><span>Datos ficticios</span></div>
   </div>
 </section>
+
 <section>
   <div class="wrap">
-    <div class="grid g2">
-      <a class="card" href="docs/etapa-1-arquitectura.html" style="text-decoration:none;color:inherit">
-        <span class="tag">Aprobada</span>
-        <h3>Etapa 1 · Arquitectura y estrategia</h3>
-        <p class="muted" style="margin:0">Roles y permisos, frontera de privacidad, arquitectura de información, flujos, decisiones de UX y lista de pantallas.</p>
+    <span class="eyebrow">Recorridos</span>
+    <h2>Abrí la maqueta</h2>
+    <div class="launch">
+      <a href="maqueta/jugador.html#bienvenida" class="gold">
+        <span class="n">Pantallas 1 a 10 · mobile</span>
+        <h3>App del jugador</h3>
+        <span class="muted">Ingreso con código, privacidad, situaciones, videos, recetas, consulta anónima, asistente y ayuda.</span>
+        <span class="go">Abrir →</span>
       </a>
-      <a class="card" href="docs/etapa-2-wireframes.html" style="text-decoration:none;color:inherit">
-        <span class="tag">Aprobada</span>
-        <h3>Etapa 2 · Wireframes</h3>
-        <p class="muted" style="margin:0">Baja fidelidad de las 15 pantallas obligatorias: mobile para el jugador, desktop para el club.</p>
+      <a href="maqueta/club.html#inicio">
+        <span class="n">Pantallas 11 a 15 · desktop</span>
+        <h3>Panel del club</h3>
+        <span class="muted">Dashboard, tendencias anónimas, reporte trimestral, jugadores y códigos, suscripción. Con vista de directivo.</span>
+        <span class="go">Abrir →</span>
       </a>
-      <a class="card" href="docs/etapa-3-sistema.html" style="text-decoration:none;color:inherit">
-        <span class="tag">Lista para revisar</span>
-        <h3>Etapa 3 · Sistema de diseño</h3>
-        <p class="muted" style="margin:0">Paleta, tipografía, componentes y reglas de uso.</p>
+      <a href="maqueta/landing.html">
+        <span class="n">Opcional A</span>
+        <h3>Landing para clubes</h3>
+        <span class="muted">Posicionamiento, problema en datos, módulos, respaldo profesional, privacidad, precio y pedido de demo.</span>
+        <span class="go">Abrir →</span>
       </a>
-      <div class="card">
-        <span class="tag gris">Pendiente</span>
-        <h3>Etapa 4 · Maqueta final</h3>
-        <p class="muted" style="margin:0">Prototipo web navegable de las 17 pantallas y guion para la presentación de 12 minutos.</p>
-      </div>
+      <a href="maqueta/admin.html#consultas">
+        <span class="n">Opcional B</span>
+        <h3>Bandeja FutStar</h3>
+        <span class="muted">Consultas anónimas, protocolo de derivación, agenda editorial, contenidos, especialistas y clubes.</span>
+        <span class="go">Abrir →</span>
+      </a>
     </div>
   </div>
 </section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Proceso</span>
+    <h2>Las cuatro etapas</h2>
+    <div class="grid g2" style="margin-top:24px">
+      <a class="card" href="docs/etapa-1-arquitectura.html" style="text-decoration:none;color:inherit">
+        <span class="tag">Etapa 1</span>
+        <h3>Arquitectura y estrategia</h3>
+        <p class="muted" style="margin:0">Roles y permisos, frontera de privacidad, arquitectura de información, flujos, decisiones de UX y lista de pantallas.</p>
+      </a>
+      <a class="card" href="docs/etapa-2-wireframes.html" style="text-decoration:none;color:inherit">
+        <span class="tag">Etapa 2</span>
+        <h3>Wireframes</h3>
+        <p class="muted" style="margin:0">Baja fidelidad de las 15 pantallas obligatorias: mobile para el jugador, desktop para el club.</p>
+      </a>
+      <a class="card" href="docs/etapa-3-sistema.html" style="text-decoration:none;color:inherit">
+        <span class="tag">Etapa 3</span>
+        <h3>Sistema de diseño</h3>
+        <p class="muted" style="margin:0">Paleta, tipografía, íconos, componentes, gráficos, fotografía y voz.</p>
+      </a>
+      <a class="card" href="docs/etapa-4-presentacion.html" style="text-decoration:none;color:inherit">
+        <span class="tag oro">Etapa 4</span>
+        <h3>Maqueta final y presentación</h3>
+        <p class="muted" style="margin:0">Mapa de las 17 pantallas, recorridos clickeables, estructura para Figma y guion de 12 minutos.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="doc"><div class="wrap"><p>Maqueta para tesis universitaria y demo comercial. Club, profesionales, matrículas y métricas son ficticios.</p></div></footer>
 </body>
 </html>
