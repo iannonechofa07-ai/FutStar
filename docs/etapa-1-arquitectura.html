@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FutStar · Etapa 1</title>
+<meta name="description" content="FutStar — Etapa 1: arquitectura y estrategia de la maqueta navegable.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="star">★</span> FutStar</a>
+    <nav aria-label="Secciones">
+      <a href="#alcance">Alcance</a>
+      <a href="#roles">Roles</a>
+      <a href="#privacidad">Privacidad</a>
+      <a href="#ia">Arquitectura</a>
+      <a href="#flujos">Flujos</a>
+      <a href="#decisiones">Decisiones UX</a>
+      <a href="#pantallas">Pantallas</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Etapa 1 de 4 · Arquitectura y estrategia</span>
+    <h1>De qué se compone FutStar y cómo se recorre</h1>
+    <p>Esta etapa define quién usa FutStar, qué puede ver cada rol, cómo se organiza la información y por qué cada decisión responde a la investigación. Es la base de los wireframes de la Etapa 2.</p>
+  </div>
+</section>
+
+<!-- ============ ALCANCE ============ -->
+<section id="alcance">
+  <div class="wrap">
+    <span class="eyebrow">Punto de partida</span>
+    <h2>Alcance y supuestos de la maqueta</h2>
+    <div class="grid g4">
+      <div class="card">
+        <h4>Formato final</h4>
+        <p class="muted">Prototipo web navegable (HTML/CSS/JS) en lugar de Figma: se abre desde un link, en el celular para el recorrido del jugador y en la computadora para el del club.</p>
+      </div>
+      <div class="card">
+        <h4>Club de ejemplo</h4>
+        <p class="muted">6 categorías (4ta a 9na división), 150 jugadores, unos 25 por categoría.</p>
+      </div>
+      <div class="card">
+        <h4>Ticket de ejemplo</h4>
+        <p class="muted"><strong style="color:var(--noche)">$1.125.000 por trimestre</strong>, es decir, $7.500 por jugador por trimestre (unos $2.500 por mes). Es la misma relación que el ejemplo original de 200 jugadores y $1.500.000.</p>
+      </div>
+      <div class="card">
+        <h4>Contenido ficticio</h4>
+        <p class="muted">Los nombres de especialistas, las matrículas, el club y las métricas son ficticios y están marcados como tales en la demo. Las fotos son de stock libre y no muestran estadios, escudos ni famosos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROLES ============ -->
+<section id="roles">
+  <div class="wrap">
+    <span class="eyebrow">1 · Usuarios y roles</span>
+    <h2>Cuatro roles, cuatro niveles de acceso</h2>
+    <p class="lead">Cada rol ve solo lo que necesita para cumplir su objetivo. La regla que ordena todo: <strong>lo que escribe un jugador solo lo lee el equipo profesional de FutStar</strong>.</p>
+
+    <div class="grid g2" style="margin-top:28px">
+      <article class="card">
+        <div class="role-head">
+          <div class="role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div>
+          <div><h3>Jugador</h3><small class="muted">App mobile · 12 a 20 años · inferiores de clubes suscriptos</small></div>
+        </div>
+        <p class="muted" style="font-size:.92rem">Entrena cinco o más veces por semana, va al colegio y usa el celular con datos. Viene mayormente de hogares de nivel socioeconómico bajo. Necesita respuestas rápidas, claras y privadas.</p>
+        <div class="can"><strong>Puede</strong>Ver toda la biblioteca · guardar favoritos · enviar consultas anónimas y ver las suyas · usar el asistente 24 h · pedir derivación profesional</div>
+        <div class="cant"><strong>No puede</strong>Ver consultas de otros jugadores · ver datos del club</div>
+      </article>
+
+      <article class="card">
+        <div class="role-head">
+          <div class="role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M7 13l3-3 3 2 4-4"/></svg></div>
+          <div><h3>Coordinador de inferiores</h3><small class="muted">Panel desktop · cliente que impulsa la compra</small></div>
+        </div>
+        <p class="muted" style="font-size:.92rem">Coordina unos 150 juveniles y no tiene formación ni respaldo profesional para problemáticas que van más allá del fútbol. Necesita saber que sus jugadores están acompañados y poder demostrarlo.</p>
+        <div class="can"><strong>Puede</strong>Dar de alta jugadores con códigos de acceso · ver el uso agregado · ver tendencias temáticas anónimas · descargar el reporte trimestral</div>
+        <div class="cant"><strong>No puede</strong>Leer mensajes individuales · identificar quién consultó · ver qué mira cada jugador</div>
+      </article>
+
+      <article class="card">
+        <div class="role-head">
+          <div class="role-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l8-5 8 5v12"/><path d="M9 21v-6h6v6"/></svg></div>
+          <div><h3>Directivo / Comisión Directiva</h3><small class="muted">Panel desktop · solo lectura · aprueba y paga</small></div>
+        </div>
+        <p class="muted" style="font-size:.92rem">Es conservador con el gasto. Entra pocas veces, sobre todo antes de cada renovación. Necesita un reporte que justifique la inversión con pocos números claros.</p>
+        <div class="can"><strong>Puede</strong>Ver el reporte trimestral · ver el estado de la suscripción y la facturación</div>
+        <div class="cant"><strong>No puede</strong>Dar de alta jugadores · gestionar códigos · usar otras funciones administrativas</div>
+      </article>
+
+      <article class="card dark">
+        <div class="role-head">
+          <div class="role-icon" style="background:rgba(242,182,48,.15);color:var(--dorado)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg></div>
+          <div><h3>Equipo FutStar</h3><small class="muted">Back office · editorial y canal anónimo</small></div>
+        </div>
+        <p class="muted" style="font-size:.92rem">Profesionales matriculados y equipo editorial. Es el único rol que lee consultas y el responsable de activar el protocolo de derivación.</p>
+        <div class="can"><strong style="color:var(--dorado)">Puede</strong>Leer y gestionar consultas · activar el protocolo de derivación · subir y editar contenido · armar la agenda trimestral · gestionar clubes y suscripciones</div>
+        <div class="cant"><strong>No ve</strong>El nombre del jugador. Ve la consulta, el club y la categoría. Solo recibe un contacto si el jugador lo deja al pedir hablar con alguien.</div>
+      </article>
+    </div>
+
+    <h3 style="margin-top:48px">Matriz de permisos</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Funcionalidad</th><th>Jugador</th><th>Coordinador</th><th>Directivo</th><th>Equipo FutStar</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Biblioteca de videos y recetas</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td><td class="c si">Edita</td></tr>
+          <tr><td>Favoritos y progreso</td><td class="c si">Propios</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td></tr>
+          <tr><td>Asistente conversacional 24 h</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td></tr>
+          <tr><td>Enviar consulta anónima</td><td class="c si">Sí</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td></tr>
+          <tr><td>Leer consultas</td><td class="c si">Solo las suyas</td><td class="c no">Nunca</td><td class="c no">Nunca</td><td class="c si">Sí</td></tr>
+          <tr><td>“Necesito hablar con alguien”</td><td class="c si">Activa</td><td class="c no">—</td><td class="c no">—</td><td class="c si">Gestiona</td></tr>
+          <tr><td>Métricas de uso agregadas</td><td class="c no">—</td><td class="c si">Sí</td><td class="c ro">En el reporte</td><td class="c si">Todos los clubes</td></tr>
+          <tr><td>Tendencias anónimas por tema</td><td class="c no">—</td><td class="c si">Sí</td><td class="c ro">En el reporte</td><td class="c si">Sí</td></tr>
+          <tr><td>Reporte trimestral descargable</td><td class="c no">—</td><td class="c si">Sí</td><td class="c ro">Solo lectura</td><td class="c si">Genera</td></tr>
+          <tr><td>Jugadores y códigos de acceso</td><td class="c no">—</td><td class="c si">Sí</td><td class="c no">—</td><td class="c si">Soporte</td></tr>
+          <tr><td>Suscripción y facturación</td><td class="c no">—</td><td class="c si">Ve</td><td class="c ro">Solo lectura</td><td class="c si">Gestiona</td></tr>
+          <tr><td>Agenda editorial, especialistas y clubes</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c si">Sí</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRIVACIDAD ============ -->
+<section id="privacidad">
+  <div class="wrap">
+    <span class="eyebrow">Regla central del producto</span>
+    <h2>La frontera de privacidad</h2>
+    <p class="lead">Es el principio que más pesa en el diseño. Toda la arquitectura se ordena en tres zonas, y del lado del club solo llegan datos agregados.</p>
+
+    <div class="privacy" style="margin-top:28px">
+      <div class="zone z-jugador">
+        <h4>Jugador</h4>
+        <ul>
+          <li>Entra con un código del club y un apodo, sin nombre, mail ni teléfono.</li>
+          <li>Escribe consultas y chatea con el asistente.</li>
+          <li>Ve solo sus propias consultas y respuestas.</li>
+        </ul>
+      </div>
+      <div class="arrow"><div><span>→</span>consultas y pedidos de ayuda</div></div>
+      <div class="zone z-futstar">
+        <h4>Equipo FutStar</h4>
+        <ul>
+          <li>Profesionales matriculados leen y responden.</li>
+          <li>Ven la consulta, el club y la categoría, nunca el nombre.</li>
+          <li>Activan el protocolo de derivación.</li>
+        </ul>
+      </div>
+      <div class="arrow filter"><div><span>→</span>solo conteos por tema, con un mínimo de 5 jugadores</div></div>
+      <div class="zone z-club">
+        <h4>Club</h4>
+        <ul>
+          <li>“6 jugadores consultaron sobre presión familiar este mes”.</li>
+          <li>Uso total, módulos y contenidos más vistos.</li>
+          <li>Sin mensajes, sin nombres y sin actividad individual.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Umbral mínimo de 5.</strong> Si menos de 5 jugadores distintos consultaron por un tema, o si el filtro por categoría deja un grupo menor a 5, el panel muestra “menos de 5” y no el número exacto. Así, en una categoría de 25 jugadores, nadie puede deducir quién consultó.
+    </div>
+    <div class="note verde">
+      <strong>Qué sabe el club de cada jugador.</strong> Solo si activó su código, porque lo necesita para gestionar cupos. Nunca sabe qué mira, cuánto usa la app ni qué consulta. Esto se explica igual en el onboarding del jugador y en la pantalla de gestión del club.
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARQUITECTURA ============ -->
+<section id="ia">
+  <div class="wrap">
+    <span class="eyebrow">2 · Arquitectura de información</span>
+    <h2>Cuatro superficies, un mismo producto</h2>
+    <p class="lead">Los números negros indican las 15 pantallas obligatorias y los dorados, las 2 opcionales. Lo que no lleva número son estados o secciones dentro de una pantalla, no pantallas nuevas.</p>
+
+    <div class="grid g2" style="margin-top:28px">
+      <div class="card">
+        <h3>App del jugador <small class="muted">· mobile</small></h3>
+        <ul class="tree">
+          <li><span class="n">Acceso</span>
+            <ul>
+              <li><span class="num">1</span>Bienvenida e ingreso con código del club → elegir apodo</li>
+              <li><span class="num">2</span>Onboarding de anonimato → “Entendido”</li>
+            </ul>
+          </li>
+          <li><span class="n">Inicio</span> <small class="muted">(pestaña)</small>
+            <ul>
+              <li><span class="num">3</span>Home: saludo · “¿Qué estás atravesando?” (10 situaciones) · 3 módulos · “Nuevo este trimestre” · accesos a ayuda</li>
+            </ul>
+          </li>
+          <li><span class="n">Biblioteca</span> <small class="muted">(pestaña)</small>
+            <ul>
+              <li><span class="num">4</span>Módulo Psicología deportiva, con filtro por situación
+                <ul><li>Nutrición y Educación financiera usan la misma plantilla</li></ul>
+              </li>
+              <li><span class="num">5</span>Reproductor de video + ficha del especialista + relacionados</li>
+              <li><span class="num">6</span>Receta o recomendación nutricional</li>
+              <li>Especialistas: quiénes están detrás, con matrícula y avales</li>
+            </ul>
+          </li>
+          <li><span class="n">Asistente</span> <small class="muted">(pestaña)</small>
+            <ul><li><span class="num">8</span>Chat 24 h que orienta, sugiere contenido y deriva</li></ul>
+          </li>
+          <li><span class="n">Consultar</span> <small class="muted">(pestaña)</small>
+            <ul><li><span class="num">7</span>Canal anónimo: escribir → aviso de anonimato → enviada</li></ul>
+          </li>
+          <li><span class="n">Perfil</span> <small class="muted">(pestaña)</small>
+            <ul><li><span class="num">10</span>Favoritos · Progreso · Mis consultas · Cerrar sesión</li></ul>
+          </li>
+          <li><span class="n">Siempre visible</span>
+            <ul><li><span class="num">9</span>“Necesito hablar con alguien” → protocolo de derivación</li></ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Panel del club <small class="muted">· desktop</small></h3>
+        <ul class="tree">
+          <li><span class="n">Coordinador</span> <small class="muted">(menú lateral completo)</small>
+            <ul>
+              <li><span class="num">11</span>Inicio: jugadores activos, vistas, módulos y contenidos más vistos</li>
+              <li><span class="num">12</span>Tendencias anónimas por tema</li>
+              <li><span class="num">13</span>Reporte trimestral (vista previa + descarga)</li>
+              <li><span class="num">14</span>Jugadores y códigos de acceso, por categoría</li>
+              <li><span class="num">15</span>Suscripción y facturación</li>
+            </ul>
+          </li>
+          <li><span class="n">Directivo</span> <small class="muted">(menú reducido, solo lectura)</small>
+            <ul>
+              <li><span class="num">13</span>Reporte trimestral</li>
+              <li><span class="num">15</span>Suscripción y facturación</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3 style="margin-top:28px">Sitio público <small class="muted">· desktop y mobile</small></h3>
+        <ul class="tree">
+          <li><span class="num opt">A</span>Landing para clubes
+            <ul>
+              <li>Hero y posicionamiento · el problema en datos · 3 módulos</li>
+              <li>Beneficios para clubes, jugadores y especialistas</li>
+              <li>Respaldo profesional · privacidad · cómo se contrata</li>
+              <li>“Solicitar una demo para mi club” (formulario)</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3 style="margin-top:28px">Back office FutStar <small class="muted">· desktop</small></h3>
+        <ul class="tree">
+          <li><span class="num opt">B</span>Bandeja del admin
+            <ul>
+              <li>Consultas: nueva → en revisión → derivada / resuelta</li>
+              <li>Activar protocolo de derivación</li>
+              <li>Agenda editorial trimestral</li>
+              <li>Contenidos · Especialistas · Clubes y suscripciones</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:48px">Taxonomía de la biblioteca: situación × módulo</h3>
+    <p class="muted">El jugador entra por lo que le pasa, no por la disciplina. Cada situación agrupa contenidos de uno o más módulos.</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Situación (como la ve el jugador)</th><th>Psicología deportiva</th><th>Nutrición</th><th>Educación financiera</th></tr></thead>
+        <tbody>
+          <tr><td>Estoy lesionado</td><td class="c si">●</td><td class="c si">●</td><td class="c no">—</td></tr>
+          <tr><td>Presión de mi familia</td><td class="c si">●</td><td class="c no">—</td><td class="c no">—</td></tr>
+          <tr><td>Tensión con el cuerpo técnico</td><td class="c si">●</td><td class="c no">—</td><td class="c no">—</td></tr>
+          <tr><td>Presión por rendir</td><td class="c si">●</td><td class="c si">●</td><td class="c no">—</td></tr>
+          <tr><td>Miedo a quedar libre</td><td class="c si">●</td><td class="c no">—</td><td class="c si">●</td></tr>
+          <tr><td>Qué comer</td><td class="c no">—</td><td class="c si">●</td><td class="c no">—</td></tr>
+          <tr><td>Exposición pública y redes</td><td class="c si">●</td><td class="c no">—</td><td class="c no">—</td></tr>
+          <tr><td>Manejo de la plata</td><td class="c no">—</td><td class="c no">—</td><td class="c si">●</td></tr>
+          <tr><td>Si el fútbol no se da</td><td class="c si">●</td><td class="c no">—</td><td class="c si">●</td></tr>
+          <tr><td>Club y colegio</td><td class="c si">●</td><td class="c si">●</td><td class="c si">●</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="margin-top:48px">Navegación</h3>
+    <div class="grid g2">
+      <div class="card">
+        <h4>Jugador: barra inferior de 5 pestañas</h4>
+        <p class="muted" style="margin-bottom:10px">Inicio · Biblioteca · Asistente · Consultar · Perfil</p>
+        <p class="muted" style="margin:0">El acceso a “Necesito hablar con alguien” está fijo en el encabezado de todas las pantallas, a un toque desde cualquier lugar. Es el único elemento con color de alerta en toda la app.</p>
+      </div>
+      <div class="card">
+        <h4>Club: menú lateral según el rol</h4>
+        <p class="muted" style="margin-bottom:10px">Coordinador: Inicio · Tendencias · Reporte · Jugadores y códigos · Suscripción</p>
+        <p class="muted" style="margin:0">El directivo ve solo Reporte y Suscripción, con la etiqueta “Solo lectura”. El encabezado muestra el club, el trimestre en curso y el estado de la suscripción.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLUJOS ============ -->
+<section id="flujos">
+  <div class="wrap">
+    <span class="eyebrow">3 · Flujos principales</span>
+    <h2>Cómo se recorre</h2>
+    <div class="legend">
+      <span class="tag">Paso clave</span><span class="tag oro">Momento de privacidad</span><span class="tag ayuda">Derivación</span>
+    </div>
+
+    <h3>Jugador</h3>
+
+    <div class="flow">
+      <h4>J1 · Primer ingreso</h4>
+      <p>Del código que le dio el club al Home, en menos de un minuto y sin dar datos personales.</p>
+      <div class="steps">
+        <div class="step"><b>1</b>Bienvenida</div><span class="to">→</span>
+        <div class="step key"><b>1</b>Ingresa el código del club</div><span class="to">→</span>
+        <div class="step"><b>1</b>Elige un apodo</div><span class="to">→</span>
+        <div class="step priv"><b>2</b>“Nadie del club ve lo que escribís”</div><span class="to">→</span>
+        <div class="step key"><b>2</b>“Entendido”</div><span class="to">→</span>
+        <div class="step"><b>3</b>Home</div>
+      </div>
+      <div class="branch"><div class="steps"><div class="step"><b>Error</b>Código inválido o vencido</div><span class="to">→</span><div class="step"><b>1</b>“Pedile un código nuevo a tu coordinador”</div></div></div>
+    </div>
+
+    <div class="flow">
+      <h4>J2 · Buscar ayuda por situación</h4>
+      <p>Es el recorrido central de la demo: “me pasa algo” → contenido de un profesional real.</p>
+      <div class="steps">
+        <div class="step"><b>3</b>Home</div><span class="to">→</span>
+        <div class="step key"><b>3</b>Elige “Estoy lesionado”</div><span class="to">→</span>
+        <div class="step"><b>4</b>Módulo filtrado por situación</div><span class="to">→</span>
+        <div class="step key"><b>5</b>Video + ficha del especialista</div><span class="to">→</span>
+        <div class="step"><b>5</b>Guarda en favoritos</div><span class="to">→</span>
+        <div class="step"><b>6</b>Relacionado: receta para la recuperación</div>
+      </div>
+    </div>
+
+    <div class="flow">
+      <h4>J3 · Consulta anónima</h4>
+      <p>Para la duda que no está en un video. La responde un profesional, no el club.</p>
+      <div class="steps">
+        <div class="step"><b>7</b>Consultar</div><span class="to">→</span>
+        <div class="step"><b>7</b>Escribe y elige un tema (opcional)</div><span class="to">→</span>
+        <div class="step priv"><b>7</b>Aviso: “Nadie del club ve lo que escribís”</div><span class="to">→</span>
+        <div class="step key"><b>7</b>“Tu consulta fue enviada de forma anónima”</div><span class="to">→</span>
+        <div class="step"><b>B</b>Un profesional la revisa</div><span class="to">→</span>
+        <div class="step"><b>10</b>La respuesta aparece en Mis consultas</div>
+      </div>
+      <div class="branch"><div class="steps"><div class="step"><b>B</b>Si el caso lo requiere</div><span class="to">→</span><div class="step help"><b>9</b>Se activa el protocolo de derivación</div></div></div>
+    </div>
+
+    <div class="flow">
+      <h4>J4 · Asistente → derivación</h4>
+      <p>El asistente orienta y, cuando el tema excede lo grabado, ofrece hablar con una persona.</p>
+      <div class="steps">
+        <div class="step"><b>8</b>Asistente</div><span class="to">→</span>
+        <div class="step"><b>8</b>“Mi viejo me grita en cada partido”</div><span class="to">→</span>
+        <div class="step key"><b>8</b>Sugiere un video sobre presión familiar</div><span class="to">→</span>
+        <div class="step help"><b>8</b>Ofrece “Necesito hablar con alguien”</div><span class="to">→</span>
+        <div class="step help"><b>9</b>Explica qué pasa → confirma</div><span class="to">→</span>
+        <div class="step"><b>9</b>Pasos del protocolo y contención</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:40px">Club</h3>
+
+    <div class="flow">
+      <h4>C1 · Coordinador: revisión mensual</h4>
+      <p>En 30 segundos sabe si FutStar se usa y qué preocupa a sus jugadores, sin saber quién.</p>
+      <div class="steps">
+        <div class="step"><b>11</b>Inicio: 4 números grandes</div><span class="to">→</span>
+        <div class="step key"><b>12</b>Tendencias por tema</div><span class="to">→</span>
+        <div class="step priv"><b>12</b>“6 jugadores consultaron sobre presión familiar”</div><span class="to">→</span>
+        <div class="step"><b>13</b>Reporte trimestral</div><span class="to">→</span>
+        <div class="step key"><b>13</b>Descargar reporte</div>
+      </div>
+    </div>
+
+    <div class="flow">
+      <h4>C2 · Coordinador: dar de alta una categoría</h4>
+      <div class="steps">
+        <div class="step"><b>14</b>Jugadores y códigos</div><span class="to">→</span>
+        <div class="step"><b>14</b>Elige categoría (ej. 7ma)</div><span class="to">→</span>
+        <div class="step"><b>14</b>Carga jugadores</div><span class="to">→</span>
+        <div class="step key"><b>14</b>Genera códigos</div><span class="to">→</span>
+        <div class="step"><b>14</b>Los comparte</div><span class="to">→</span>
+        <div class="step"><b>14</b>Pendiente → Activo</div>
+      </div>
+    </div>
+
+    <div class="flow">
+      <h4>C3 · Directivo: decidir la renovación</h4>
+      <div class="steps">
+        <div class="step"><b>13</b>Ingresa (solo lectura)</div><span class="to">→</span>
+        <div class="step key"><b>13</b>Lee el reporte: uso, temas, costo por jugador</div><span class="to">→</span>
+        <div class="step"><b>15</b>Suscripción: renovación y facturas</div>
+      </div>
+    </div>
+
+    <div class="flow">
+      <h4>C4 · Club potencial: de la landing a la demo</h4>
+      <div class="steps">
+        <div class="step"><b>A</b>Hero: posicionamiento</div><span class="to">→</span>
+        <div class="step"><b>A</b>3 módulos y respaldo profesional</div><span class="to">→</span>
+        <div class="step priv"><b>A</b>Qué ve y qué no ve el club</div><span class="to">→</span>
+        <div class="step key"><b>A</b>“Solicitar una demo para mi club”</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:40px">Equipo FutStar</h3>
+    <div class="flow">
+      <h4>F1 · Gestión de una consulta</h4>
+      <div class="steps">
+        <div class="step"><b>B</b>Bandeja: Nueva</div><span class="to">→</span>
+        <div class="step"><b>B</b>En revisión (asignada a un profesional)</div><span class="to">→</span>
+        <div class="step key"><b>B</b>Responde → Resuelta</div>
+      </div>
+      <div class="branch"><div class="steps"><div class="step"><b>B</b>Si excede el canal</div><span class="to">→</span><div class="step help"><b>B</b>Activa la derivación → Derivada</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DECISIONES ============ -->
+<section id="decisiones">
+  <div class="wrap">
+    <span class="eyebrow">4 · Decisiones de UX</span>
+    <h2>Qué dice la investigación y qué hace el diseño</h2>
+
+    <div style="margin-top:20px">
+      <div class="decision">
+        <div class="dato">100%<small>de los jugadores atravesó al menos una situación difícil</small></div>
+        <div>
+          <h4>Entrar por la situación, no por la disciplina</h4>
+          <ul>
+            <li>El Home abre con “¿Qué estás atravesando?” y 10 situaciones dichas como las diría el jugador.</li>
+            <li>Los módulos aparecen en segundo lugar, para quien ya sabe qué busca.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="decision">
+        <div class="dato">94,4%<small>se quedó con una duda sin saber a quién preguntar</small></div>
+        <div>
+          <h4>Una escalera de ayuda, siempre a un toque</h4>
+          <ul>
+            <li>Cuatro niveles: biblioteca (al instante) → asistente 24 h (orienta) → consulta anónima (responde un profesional) → “Necesito hablar con alguien” (una persona).</li>
+            <li>Ninguna pantalla termina en un callejón sin salida: siempre se ofrece el siguiente nivel.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="decision">
+        <div class="dato">27,8%<small>no habla con nadie</small></div>
+        <div>
+          <h4>Anonimato como primer mensaje, no como letra chica</h4>
+          <ul>
+            <li>Sin nombre, mail ni teléfono: código del club y un apodo.</li>
+            <li>Onboarding obligatorio de anonimato antes del primer uso, y el aviso se repite antes de enviar cada consulta.</li>
+            <li>La confidencialidad se explica con honestidad, incluido su único límite: si hay riesgo para la vida del jugador o de otra persona, el profesional puede activar ayuda, y siempre se lo va a decir.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="decision">
+        <div class="dato">94,1%<small>pidió contenido práctico de nutrición</small></div>
+        <div>
+          <h4>Nutrición que se puede hacer hoy</h4>
+          <ul>
+            <li>Recetas con ingredientes baratos y fáciles de conseguir, tiempo de preparación visible y sin balanza ni suplementos.</li>
+            <li>Cada receta cierra con una recomendación aplicada a un día real: entrenamiento más colegio.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="decision">
+        <div class="dato" style="font-size:2rem">Celular con datos<small>hogares de nivel socioeconómico bajo</small></div>
+        <div>
+          <h4>Mobile first y liviano</h4>
+          <ul>
+            <li>Duración visible en cada video (de 5 a 10 minutos), para decidir si verlo ahora.</li>
+            <li>Textos cortos, botones grandes y una sola acción principal por pantalla.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="decision">
+        <div class="dato" style="font-size:2rem">El dirigente necesita confianza</div>
+        <div>
+          <h4>Respaldo profesional en cada contenido</h4>
+          <ul>
+            <li>Cada video y cada receta muestran nombre, especialidad y matrícula.</li>
+            <li>Sección de especialistas en la app y en la landing, con avales y credenciales.</li>
+            <li>Reporte con el costo por jugador ($7.500 por trimestre) frente al costo de sumar profesionales a la nómina.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="decision">
+        <div class="dato" style="font-size:2rem">IA que orienta</div>
+        <div>
+          <h4>Un asistente que no se hace pasar por persona</h4>
+          <ul>
+            <li>Se llama “Asistente FutStar”: sin nombre humano ni avatar con cara.</li>
+            <li>Aviso fijo arriba del chat: “No soy un profesional de la salud. Puedo orientarte y derivarte, pero no reemplazo a un especialista.”</li>
+            <li>Cada respuesta termina en un contenido de la biblioteca o en la opción de derivación. Nunca evalúa ni diagnostica.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="decision">
+        <div class="dato" style="font-size:2rem">Datos agregados</div>
+        <div>
+          <h4>Información útil para el club sin vulnerar la confidencialidad</h4>
+          <ul>
+            <li>Solo conteos por tema y por mes, con un umbral mínimo de 5 jugadores.</li>
+            <li>La nota de anonimato está siempre visible en Tendencias y en el Reporte.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="decision">
+        <div class="dato" style="font-size:2rem">Biblioteca acumulativa</div>
+        <div>
+          <h4>Que se vea que crece</h4>
+          <ul>
+            <li>Badge dorado “Nuevo este trimestre” y una fila propia en el Home.</li>
+            <li>Contador en la biblioteca, por ejemplo “96 contenidos · 24 nuevos este trimestre”, y la evolución en el reporte del club.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:40px">Doble tono: la misma información, dos voces</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Tema</th><th>App del jugador (cercano, voseo)</th><th>Panel del club (institucional)</th></tr></thead>
+        <tbody>
+          <tr><td>Privacidad</td><td>“Nadie del club ve lo que escribís.”</td><td>“Los datos son anónimos y agregados. El club no puede ver mensajes individuales ni identificar consultas.”</td></tr>
+          <tr><td>Uso</td><td>“Viste 6 videos este mes.”</td><td>“128 de 150 jugadores activos (85%).”</td></tr>
+          <tr><td>Contenido nuevo</td><td>“Nuevo este trimestre”</td><td>“24 contenidos nuevos este trimestre. La biblioteca suma 96.”</td></tr>
+          <tr><td>Ayuda</td><td>“Necesito hablar con alguien”</td><td>“Protocolo de derivación profesional a cargo del equipo FutStar.”</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted" style="margin-top:12px;font-size:.9rem">Prohibido en la app del jugador: frases tipo “¡Vos podés, campeón!”, tecnicismos y textos largos. Tampoco se le habla como a un nene: hay usuarios de hasta 20 años.</p>
+  </div>
+</section>
+
+<!-- ============ PANTALLAS ============ -->
+<section id="pantallas">
+  <div class="wrap">
+    <span class="eyebrow">5 · Lista final de pantallas</span>
+    <h2>17 pantallas: objetivo, contenido y acciones</h2>
+    <div class="legend">
+      <span class="tag noche">Anonimato</span><span class="tag">Respaldo profesional</span><span class="tag gris">IA orientadora</span><span class="tag ayuda">Derivación</span><span class="tag borde">Datos agregados</span><span class="tag oro">Biblioteca acumulativa</span>
+    </div>
+
+    <h3>Jugador · mobile</h3>
+    <div class="grid g2">
+      <article class="screen">
+        <header><span class="id">01</span><div><h3>Bienvenida e ingreso</h3><span class="platform">Mobile</span></div></header>
+        <dl>
+          <dt>Objetivo</dt><dd>Entrar rápido y con confianza, sin datos personales.</dd>
+          <dt>Contenido</dt><dd>Logo · “Tener a quién preguntarle, a cualquier hora y sin que nadie se entere.” · campo “Código de tu club” · ayuda “Te lo da tu coordinador” · paso siguiente: elegir un apodo.</dd>
+          <dt>Acciones</dt><dd>Ingresar código → Continuar · Elegir apodo · Error: código inválido.</dd>
+        </dl>
+        <div class="tags"><span class="tag noche">Anonimato</span></div>
+      </article>
+
+      <article class="screen">
+        <header><span class="id">02</span><div><h3>Onboarding de anonimato</h3><span class="platform">Mobile</span></div></header>
+        <dl>
+          <dt>Objetivo</dt><dd>Que el jugador sepa, antes de usar la app, que nadie del club lo identifica.</dd>
+          <dt>Contenido</dt><dd>Ícono de candado o escudo · “Nadie del club ve lo que escribís.” · Lo que ve el club: solo tendencias anónimas, por ejemplo “6 jugadores consultaron sobre…” · Lo que nunca ve: tus mensajes, tu nombre, qué mirás · Quién lee tus consultas: profesionales de FutStar.</dd>
+          <dt>Acciones</dt><dd>“Entendido” → Home.</dd>
+        </dl>
+        <div class="tags"><span class="tag noche">Anonimato</span><span class="tag borde">Datos agregados</span></div>
+      </article>
+
+      <article class="screen">
+        <header><span class="id">03</span><div><h3>Home del jugador</h3><span class="platform">Mobile · pestaña Inicio</span></div></header>
+        <dl>
+          <dt>Objetivo</dt><dd>Llegar a lo que le pasa en un toque.</dd>
+          <dt>Contenido</dt><dd>Saludo breve (“Hola, Tomi”) · “¿Qué estás atravesando?” con 10 chips o tarjetas de situación · 3 módulos · fila “Nuevo este trimestre” · accesos al canal anónimo, al asistente y a la ayuda.</dd>
+          <dt>Acciones</dt><dd>Abrir situación → Módulo filtrado · Abrir módulo · Abrir contenido nuevo · Consultar · Asistente · Necesito hablar con alguien.</dd>
+        </dl>
+        <div class="tags"><span class="tag oro">Biblioteca acumulativa</span><span class="tag ayuda">Derivación</span></div>
+      </article>
+
+      <article class="screen">
+        <header><span class="id">04</span><div><h3>Módulo: Psicología deportiva</h3><span class="platform">Mobile · pestaña Biblioteca</span></div></header>
+        <dl>
+          <dt>Objetivo</dt><dd>Encontrar el video justo para su situación.</dd>
+          <dt>Contenido</dt><dd>Encabezado del módulo · contador “X contenidos · Y nuevos” · chips de situación para filtrar · tarjetas de video con miniatura, título, duración, especialista, matrícula y badge “Nuevo este trimestre” · estado vacío si un filtro no tiene resultados.</dd>
+          <dt>Acciones</dt><dd>Filtrar por situación · Abrir video · Guardar en favoritos.</dd>
+        </dl>
+        <div class="tags"><span class="tag">Respaldo profesional</span><span class="tag oro">Biblioteca acumulativa</span></div>
+      </article>
+
+      <article class="screen">
+        <header><span class="id">05</span><div><h3>Reproductor y ficha del especialista</h3><span class="platform">Mobile</span></div></header>
+        <dl>
+          <dt>Objetivo</dt><dd>Ver el contenido y confiar en quien lo explica.</dd>
+          <dt>Contenido</dt><dd>Video con controles simples (play, barra, pantalla completa) · título y duración · ficha: foto, nombre, especialidad, matrícula y bio breve · relacionados.</dd>
+          <dt>Acciones</dt><dd>Reproducir · Guardar en favoritos · Abrir relacionado · “¿Te quedó una duda? Consultá anónimo”.</dd>
+        </dl>
+        <div class="tags"><span class="tag">Respaldo profesional</span></div>
+      </article>
+
+      <article class="screen">
+        <header><span class="id">06</span><div><h3>Receta o recomendación nutricional</h3><span class="platform">Mobile</span></div></header>
+        <dl>
+          <dt>Objetivo</dt><dd>Algo concreto para comer bien entre entrenamiento y colegio.</dd>
+          <dt>Contenido</dt><dd>Foto · título · tiempo y porciones · ingredientes accesibles · 3 a 5 pasos · “Cuándo te sirve” (por ejemplo, antes de entrenar o en la vianda del colegio) · nutricionista con matrícula.</dd>
+          <dt>Acciones</dt><dd>Guardar en favoritos · Ver más recetas.</dd>
+        </dl>
+        <div class="tags"><span class="tag">Respaldo profesional</span></div>
+      </article>
+
+      <article class="screen">
+        <header><span class="id">07</span><div><h3>Canal de consultas anónimas</h3><span class="platform">Mobile · pestaña Consultar</span></div></header>
+        <dl>
+          <dt>Objetivo</dt><dd>Preguntar lo que no se anima a preguntar en persona.</dd>
+          <dt>Contenido</dt><dd>Sello fijo “Nadie del club ve lo que escribís” · campo de texto · tema (opcional) · <em>estado de aviso</em>: confirmación de anonimato antes de enviar · <em>estado enviado</em>: “Tu consulta fue enviada de forma anónima” + qué pasa ahora: la revisa un profesional y, si corresponde, se activa el protocolo de derivación.</dd>
+          <dt>Acciones</dt><dd>Escribir · Enviar · Ver mis consultas.</dd>
+        </dl>
+        <div class="tags"><span class="tag noche">Anonimato</span><span class="tag">Respaldo profesional</span><span class="tag ayuda">Derivación</span></div>
+      </article>
+
+      <article class="screen">
+        <header><span class="id">08</span><div><h3>Asistente conversacional</h3><span class="platform">Mobile · pestaña Asistente</span></div></header>
+        <dl>
+          <dt>Objetivo</dt><dd>Orientar a cualquier hora hacia el contenido justo o hacia una persona.</dd>
+          <dt>Contenido</dt><dd>Aviso fijo: “No soy un profesional de la salud. Puedo orientarte y derivarte, pero no reemplazo a un especialista.” · conversación de ejemplo · tarjeta de video sugerido dentro del chat · respuestas rápidas · botón “Necesito hablar con alguien”.</dd>
+          <dt>Acciones</dt><dd>Escribir · Abrir el contenido sugerido · Derivar.</dd>
+        </dl>
+        <div class="tags"><span class="tag gris">IA orientadora</span><span class="tag ayuda">Derivación</span></div>
+      </article>
+
+      <article class="screen">
+        <header><span class="id">09</span><div><h3>Ayuda y derivación profesional</h3><span class="platform">Mobile · siempre accesible</span></div></header>
+        <dl>
+          <dt>Objetivo</dt><dd>Pedir hablar con una persona sin miedo, sabiendo qué va a pasar.</dd>
+          <dt>Contenido</dt><dd>Mensaje de contención · qué pasa al activarlo, en 3 o 4 pasos · cómo querés que te contacten (opcional, solo lo ve el profesional) · confidencialidad y su límite · en una emergencia, líneas de ayuda nacionales (a validar con el equipo profesional).</dd>
+          <dt>Acciones</dt><dd>“Necesito hablar con alguien” → confirmar → estado “Pedido recibido”.</dd>
+        </dl>
+        <div class="tags"><span class="tag ayuda">Derivación</span><span class="tag noche">Anonimato</span></div>
+      </article>
+
+      <article class="screen">
+        <header><span class="id">10</span><div><h3>Perfil del jugador</h3><span class="platform">Mobile · pestaña Perfil</span></div></header>
+        <dl>
+          <dt>Objetivo</dt><dd>Volver a lo suyo: lo guardado, lo visto y lo consultado.</dd>
+          <dt>Contenido</dt><dd>Apodo y club · Favoritos · Progreso: contenidos vistos por módulo · Mis consultas con estado (enviada, respondida) y respuesta · recordatorio de privacidad · Cerrar sesión.</dd>
+          <dt>Acciones</dt><dd>Abrir favorito · Ver consulta y respuesta · Cerrar sesión.</dd>
+        </dl>
+        <div class="tags"><span class="tag noche">Anonimato</span></div>
+      </article>
+    </div>
+
+    <h3 style="margin-top:40px">Club · desktop</h3>
+    <div class="grid g2">
+      <article class="screen">
+        <header><span class="id">11</span><div><h3>Dashboard del coordinador</h3><span class="platform">Desktop</span></div></header>
+        <dl>
+          <dt>Objetivo</dt><dd>Entender en 30 segundos que FutStar se usa y aporta valor.</dd>
+          <dt>Contenido</dt><dd>4 números grandes: 128 de 150 jugadores activos · vistas del trimestre · módulo más usado · contenido más visto · uso por mes · resumen de la suscripción (6 categorías, $1.125.000 por trimestre) · acceso a tendencias y reporte.</dd>
+          <dt>Acciones</dt><dd>Ir a Tendencias · Descargar reporte · Gestionar jugadores.</dd>
+        </dl>
+        <div class="tags"><span class="tag borde">Datos agregados</span></div>
+      </article>
+
+      <article class="screen">
+        <header><span class="id">12</span><div><h3>Tendencias anónimas por tema</h3><span class="platform">Desktop</span></div></header>
+        <dl>
+          <dt>Objetivo</dt><dd>Saber qué preocupa a las inferiores para actuar como club, sin identificar a nadie.</dd>
+          <dt>Contenido</dt><dd>Nota fija de anonimato · ranking de temas en barras · frase destacada: “6 jugadores consultaron sobre presión familiar este mes” · evolución mensual · filtro por mes y categoría, respetando el umbral de 5.</dd>
+          <dt>Acciones</dt><dd>Cambiar período · Filtrar por categoría · Ver contenidos sugeridos para el tema.</dd>
+        </dl>
+        <div class="tags"><span class="tag borde">Datos agregados</span><span class="tag noche">Anonimato</span></div>
+      </article>
+
+      <article class="screen">
+        <header><span class="id">13</span><div><h3>Reporte trimestral</h3><span class="platform">Desktop · coordinador y directivo</span></div></header>
+        <dl>
+          <dt>Objetivo</dt><dd>Justificar la renovación ante la Comisión Directiva.</dd>
+          <dt>Contenido</dt><dd>Vista previa tipo documento: resumen ejecutivo · uso · temas más consultados · contenidos nuevos del trimestre · evolución de la biblioteca · costo por jugador · nota de anonimato.</dd>
+          <dt>Acciones</dt><dd>“Descargar reporte trimestral” · Elegir trimestre.</dd>
+        </dl>
+        <div class="tags"><span class="tag borde">Datos agregados</span><span class="tag oro">Biblioteca acumulativa</span><span class="tag">Respaldo profesional</span></div>
+      </article>
+
+      <article class="screen">
+        <header><span class="id">14</span><div><h3>Jugadores y códigos de acceso</h3><span class="platform">Desktop · solo coordinador</span></div></header>
+        <dl>
+          <dt>Objetivo</dt><dd>Dar de alta a todas las inferiores sin trabajo extra.</dd>
+          <dt>Contenido</dt><dd>Resumen por categoría (cupos, activos, pendientes) · tabla con nombre, categoría, código y estado (activo, pendiente o inactivo) · aclaración: “El club ve si el jugador activó su cuenta, nunca qué mira ni qué consulta”.</dd>
+          <dt>Acciones</dt><dd>Agregar jugadores · Generar códigos · Copiar o compartir código · Dar de baja.</dd>
+        </dl>
+        <div class="tags"><span class="tag noche">Anonimato</span></div>
+      </article>
+
+      <article class="screen">
+        <header><span class="id">15</span><div><h3>Suscripción y facturación</h3><span class="platform">Desktop · coordinador y directivo (solo lectura)</span></div></header>
+        <dl>
+          <dt>Objetivo</dt><dd>Tener a mano el estado del servicio y lo pagado.</dd>
+          <dt>Contenido</dt><dd>Estado: activa · plan único trimestral · 150 jugadores incluidos · $1.125.000 por trimestre · próxima renovación · historial de facturas.</dd>
+          <dt>Acciones</dt><dd>Descargar factura · Contactar a FutStar.</dd>
+        </dl>
+      </article>
+    </div>
+
+    <h3 style="margin-top:40px">Opcionales</h3>
+    <div class="grid g2">
+      <article class="screen">
+        <header><span class="id opt">A</span><div><h3>Landing pública para clubes</h3><span class="platform">Desktop y mobile</span></div></header>
+        <dl>
+          <dt>Objetivo</dt><dd>Que un coordinador entienda en 30 segundos qué contrata y pida una demo.</dd>
+          <dt>Contenido</dt><dd>Hero: “FutStar hace que el acompañamiento profesional deje de ser un privilegio de los clubes grandes.” · “Un equipo interdisciplinario completo para todas tus inferiores, sin sumar un solo profesional a tu nómina.” · el problema en datos de la investigación · 3 módulos · beneficios para clubes, jugadores y especialistas · especialistas y avales · qué ve el club · cómo se contrata · misión, visión y valores.</dd>
+          <dt>Acciones</dt><dd>“Solicitar una demo para mi club” · Ingresar al panel.</dd>
+        </dl>
+        <div class="tags"><span class="tag">Respaldo profesional</span><span class="tag noche">Anonimato</span></div>
+      </article>
+
+      <article class="screen">
+        <header><span class="id opt">B</span><div><h3>Bandeja del admin FutStar</h3><span class="platform">Desktop</span></div></header>
+        <dl>
+          <dt>Objetivo</dt><dd>Gestionar consultas y contenido con orden y cuidado.</dd>
+          <dt>Contenido</dt><dd>Bandeja de consultas con estado (nueva, en revisión, derivada, resuelta), club y categoría, sin identidad · detalle de la consulta con respuesta · agenda editorial trimestral · accesos a contenidos, especialistas y clubes.</dd>
+          <dt>Acciones</dt><dd>Asignar · Responder · Activar protocolo de derivación · Planificar contenido.</dd>
+        </dl>
+        <div class="tags"><span class="tag ayuda">Derivación</span><span class="tag noche">Anonimato</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer class="doc">
+  <div class="wrap">
+    <p><strong style="color:var(--noche)">Próximo paso:</strong> Etapa 2, wireframes de baja fidelidad de las 15 pantallas obligatorias, cuando apruebes esta etapa.</p>
+    <a class="next" href="../index.html">← Volver al índice del proyecto</a>
+  </div>
+</footer>
+
+</body>
+</html>
