@@ -1,0 +1,1027 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FutStar · Wireframes</title>
+<meta name="description" content="FutStar — Etapa 2: wireframes de baja fidelidad de las 15 pantallas obligatorias.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs.css">
+<link rel="stylesheet" href="wireframes.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="star">★</span> FutStar</a>
+    <nav aria-label="Secciones">
+      <a href="#leyenda">Leyenda</a>
+      <a href="#jugador">Jugador</a>
+      <a href="#club">Club</a>
+      <a href="#navegacion">Navegación</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Etapa 2 de 4 · Wireframes</span>
+    <h1>Las 15 pantallas, en baja fidelidad</h1>
+    <p>Estructura, jerarquía y navegación, sin color ni estilo final. El jugador en celular (pantallas 1 a 10) y el club en escritorio (11 a 15). Los marcadores de color señalan dónde se cumple cada principio del brief.</p>
+  </div>
+</section>
+
+<!-- ============ LEYENDA ============ -->
+<section id="leyenda">
+  <div class="wrap">
+    <span class="eyebrow">Cómo leer los wireframes</span>
+    <h2>Leyenda</h2>
+    <div class="keys">
+      <div><span class="mk a">A</span><span><strong>Anonimato.</strong> Dónde se le dice al jugador que nadie del club lo identifica.</span></div>
+      <div><span class="mk r">R</span><span><strong>Respaldo profesional.</strong> Nombre, especialidad y matrícula visibles.</span></div>
+      <div><span class="mk i">IA</span><span><strong>IA orientadora.</strong> El asistente orienta y deriva, no diagnostica.</span></div>
+      <div><span class="mk d">D</span><span><strong>Derivación.</strong> Acceso a “Necesito hablar con alguien”. Único elemento en rojo.</span></div>
+      <div><span class="mk g">G</span><span><strong>Datos agregados.</strong> El club ve conteos por tema, nunca personas.</span></div>
+      <div><span class="mk n">N</span><span><strong>Biblioteca acumulativa.</strong> Badge “Nuevo este trimestre”.</span></div>
+    </div>
+    <div class="conv">
+      <div><span class="sw"><span class="w-img" style="display:block;height:40px"></span></span>Imagen, foto o video</div>
+      <div><span class="sw w-lines"><i></i><i></i><i></i></span>Texto corrido</div>
+      <div><span class="sw"><span class="w-btn pri sm" style="display:block">Acción</span></span>Acción principal (una por pantalla)</div>
+      <div><span class="sw"><span class="w-btn sm" style="display:block">Acción</span></span>Acción secundaria</div>
+      <div><span class="sw"><span class="w-badge">Nuevo</span></span>Badge “Nuevo este trimestre”</div>
+    </div>
+    <p class="muted" style="margin-top:20px;font-size:.92rem">Los números en las notas de “Jerarquía” indican el orden de lectura. Los textos son los propuestos para la versión final. Datos de ejemplo ficticios: club con 6 categorías y 150 jugadores; biblioteca de 96 contenidos, 24 nuevos en el trimestre (T4 2026).</p>
+  </div>
+</section>
+
+<!-- ============ JUGADOR ============ -->
+<section id="jugador">
+  <div class="wrap">
+    <span class="eyebrow">Recorrido del jugador · mobile first</span>
+    <h2>Pantallas 1 a 10</h2>
+    <p class="lead">Barra inferior fija con cinco pestañas: Inicio, Biblioteca, Asistente, Consultar y Perfil. El botón “Ayuda” (derivación) queda arriba a la derecha en todas las pantallas con sesión iniciada.</p>
+
+    <!-- 01 -->
+    <div class="wf-screen desk-row" id="p01">
+      <div class="frames">
+        <div>
+          <div class="phone">
+            <div class="sb"><span>9:41</span><span>●●●</span></div><div class="notch"></div>
+            <div class="body">
+              <div class="w-row" style="margin-top:6px"><span class="w-icon"></span><span class="w-h2">FutStar</span></div>
+              <div class="w-img" style="height:120px"></div>
+              <div class="w-h1">Tener a quién preguntarle, a cualquier hora y sin que nadie se entere.</div>
+              <div class="w-t">Psicología, nutrición y orientación financiera, con profesionales matriculados.</div>
+              <div class="w-col" style="margin-top:6px">
+                <span class="w-label">Código de tu club</span>
+                <div class="w-input focus w-mono">7MA-4K2Q</div>
+                <span class="w-t" style="font-size:11px">Te lo da tu coordinador.</span>
+              </div>
+              <div class="w-btn pri">Continuar</div>
+              <div class="w-row" style="justify-content:center;font-size:11px"><span class="mk a">A</span><span class="w-t">Sin nombre, sin mail, sin teléfono.</span></div>
+            </div>
+          </div>
+          <div class="frame-cap">1a · Código</div>
+        </div>
+        <div>
+          <div class="phone">
+            <div class="sb"><span>9:41</span><span>●●●</span></div><div class="notch"></div>
+            <div class="body">
+              <div class="w-t" style="margin-top:6px">← Volver</div>
+              <div class="w-h1">Elegí un apodo</div>
+              <div class="w-row"><span class="mk a">A</span><span class="w-t">Es solo para vos. No hace falta tu nombre real.</span></div>
+              <div class="w-col">
+                <span class="w-label">Apodo</span>
+                <div class="w-input focus">Tomi</div>
+              </div>
+              <div class="w-card dash"><span class="w-t" style="font-size:11px">Club: Club Social y Deportivo (ejemplo) · 7ma división</span></div>
+              <div style="flex:1;min-height:120px"></div>
+              <div class="w-btn pri">Continuar</div>
+            </div>
+          </div>
+          <div class="frame-cap">1b · Apodo</div>
+        </div>
+      </div>
+      <div class="wf-notes">
+        <h3><span class="id">01</span> Bienvenida e ingreso con código</h3>
+        <dl>
+          <dt>Jerarquía</dt>
+          <dd><ol><li>Promesa para el jugador</li><li>Campo del código</li><li>“Continuar”</li><li>Microcopy de anonimato</li></ol></dd>
+          <dt>Componentes</dt><dd>Imagen de juveniles en cancha de barrio · título · campo de código con ejemplo de formato · botón principal · texto de ayuda.</dd>
+          <dt>Estados</dt>
+          <dd><ul>
+            <li><strong>Vacío:</strong> “Continuar” deshabilitado.</li>
+            <li><strong>Validando:</strong> spinner en el botón.</li>
+            <li><strong>Error:</strong> “Ese código no existe o ya se usó. Pedile uno nuevo a tu coordinador.”</li>
+            <li><strong>1b:</strong> confirma el club y la categoría del código para que el jugador sepa que entró al lugar correcto.</li>
+          </ul></dd>
+          <dt>Navegación</dt><dd>1a → 1b → 02 Onboarding. Después del primer ingreso, la app abre directo en 03.</dd>
+          <dt>Principios</dt>
+          <dd><ul class="pins"><li><span class="mk a">A</span>El acceso no pide datos personales, y eso se dice en la primera pantalla.</li></ul></dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="wf-screen" id="p02">
+      <div class="frames">
+        <div>
+          <div class="phone">
+            <div class="sb"><span>9:41</span><span>●●●</span></div><div class="notch"></div>
+            <div class="body">
+              <div class="w-icon lg"><span class="mk a">A</span></div>
+              <div class="w-h1" style="text-align:center">Nadie del club ve lo que escribís.</div>
+              <div class="w-t" style="text-align:center">Antes de arrancar, te contamos cómo cuidamos lo tuyo.</div>
+              <div class="w-card">
+                <div class="w-row"><span class="w-icon"></span><strong>Lo que escribís</strong><span class="mk r">R</span></div>
+                <span class="w-t">Lo leen solo profesionales de FutStar.</span>
+              </div>
+              <div class="w-card">
+                <div class="w-row"><span class="w-icon"></span><strong>Lo que ve el club</strong><span class="mk g">G</span></div>
+                <span class="w-t">Solo tendencias anónimas, como “6 jugadores consultaron sobre presión familiar”.</span>
+              </div>
+              <div class="w-card">
+                <div class="w-row"><span class="w-icon"></span><strong>Lo que el club nunca ve</strong></div>
+                <span class="w-t">Tus mensajes, tu nombre ni qué mirás.</span>
+              </div>
+              <div class="w-row" style="font-size:11px"><span class="mk d">D</span><span class="w-link">¿Hay alguna excepción?</span></div>
+              <div class="w-btn pri">Entendido</div>
+            </div>
+          </div>
+          <div class="frame-cap">02 · Una sola pantalla</div>
+        </div>
+      </div>
+      <div class="wf-notes">
+        <h3><span class="id">02</span> Onboarding de anonimato</h3>
+        <dl>
+          <dt>Jerarquía</dt>
+          <dd><ol><li>Ícono de candado</li><li>“Nadie del club ve lo que escribís.”</li><li>Las tres tarjetas: quién lee, qué ve el club y qué nunca ve</li><li>“Entendido”</li></ol></dd>
+          <dt>Componentes</dt><dd>Ilustración o ícono de privacidad · 3 tarjetas informativas con ícono · link a la excepción · botón principal.</dd>
+          <dt>Estados</dt>
+          <dd><ul>
+            <li><strong>Excepción desplegada</strong> (hoja inferior): “Si lo que contás muestra un riesgo para tu vida o la de otra persona, un profesional puede activar ayuda. Siempre te lo va a decir antes.”</li>
+            <li>Una sola pantalla en lugar de un carrusel: el mensaje entra completo sin deslizar.</li>
+          </ul></dd>
+          <dt>Navegación</dt><dd>“Entendido” → 03 Home. Se vuelve a ver desde Perfil → “Cómo cuidamos tu privacidad”.</dd>
+          <dt>Principios</dt>
+          <dd><ul class="pins">
+            <li><span class="mk a">A</span>Es el mensaje central, ubicado antes del primer uso.</li>
+            <li><span class="mk r">R</span>Quién lee: profesionales, no el club.</li>
+            <li><span class="mk g">G</span>Ejemplo concreto de lo que ve el club.</li>
+            <li><span class="mk d">D</span>El límite de la confidencialidad, dicho con calma.</li>
+          </ul></dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="wf-screen" id="p03">
+      <div class="frames">
+        <div>
+          <div class="phone">
+            <div class="sb"><span>9:41</span><span>●●●</span></div><div class="notch"></div>
+            <div class="body">
+              <div class="w-row sb">
+                <span class="w-h1">Hola, Tomi</span>
+                <span class="w-row" style="gap:4px"><span class="w-btn help sm">Ayuda</span><span class="mk d">D</span></span>
+              </div>
+              <div class="w-h2">¿Qué estás atravesando?</div>
+              <div class="w-grid2">
+                <span class="w-sit">Estoy lesionado</span><span class="w-sit">Presión de mi familia</span>
+                <span class="w-sit">Tensión con el DT</span><span class="w-sit">Presión por rendir</span>
+                <span class="w-sit">Miedo a quedar libre</span><span class="w-sit">Qué comer</span>
+                <span class="w-sit">Redes y exposición</span><span class="w-sit">Manejo de la plata</span>
+                <span class="w-sit">Si el fútbol no se da</span><span class="w-sit">Club y colegio</span>
+              </div>
+              <div class="w-h2">Módulos</div>
+              <div class="w-grid3">
+                <div class="w-card" style="padding:7px"><span class="w-icon"></span><span style="font-size:10px">Psicología deportiva</span></div>
+                <div class="w-card" style="padding:7px"><span class="w-icon"></span><span style="font-size:10px">Nutrición</span></div>
+                <div class="w-card" style="padding:7px"><span class="w-icon"></span><span style="font-size:10px">Educación financiera</span></div>
+              </div>
+              <div class="w-row sb"><span class="w-h2">Nuevo este trimestre <span class="mk n">N</span></span><span class="w-t" style="font-size:11px">Ver todo</span></div>
+              <div class="w-scroll">
+                <div style="min-width:120px" class="w-col"><div class="w-img" style="height:66px"><span class="dur">7 min</span></div><span class="w-badge">Nuevo</span><span style="font-size:11px">Volver después de una lesión</span></div>
+                <div style="min-width:120px" class="w-col"><div class="w-img" style="height:66px"><span class="dur">6 min</span></div><span class="w-badge">Nuevo</span><span style="font-size:11px">Tu primer sueldo</span></div>
+              </div>
+              <div class="w-card">
+                <div class="w-row"><span class="mk a">A</span><strong>¿Una duda que no está acá?</strong></div>
+                <div class="w-grid2"><span class="w-btn sm">Consultá anónimo</span><span class="w-btn sm">Asistente 24 h</span></div>
+                <div class="w-row" style="font-size:10px"><span class="mk i">IA</span><span class="w-t">El asistente orienta, no reemplaza a un profesional.</span></div>
+              </div>
+            </div>
+            <div class="tabbar"><span class="on">Inicio</span><span>Biblioteca</span><span>Asistente</span><span>Consultar</span><span>Perfil</span></div>
+          </div>
+          <div class="frame-cap">03 · Pantalla completa con scroll</div>
+        </div>
+      </div>
+      <div class="wf-notes">
+        <h3><span class="id">03</span> Home del jugador</h3>
+        <dl>
+          <dt>Jerarquía</dt>
+          <dd><ol><li>“¿Qué estás atravesando?” con las 10 situaciones</li><li>Fila “Nuevo este trimestre”</li><li>Módulos</li><li>Bloque “¿Una duda que no está acá?”</li></ol>
+          En el wireframe, Módulos aparece arriba de Nuevo porque es corto y ordena la lectura. Se valida en la Etapa 4.</dd>
+          <dt>Componentes</dt><dd>Saludo con apodo · botón Ayuda · 10 tarjetas de situación con ícono lineal · 3 accesos a módulos · fila horizontal de videos con badge · tarjeta de ayuda con dos botones · barra de pestañas.</dd>
+          <dt>Estados</dt>
+          <dd><ul>
+            <li><strong>Primer ingreso:</strong> subtítulo “Elegí lo que más se parece a lo que te pasa”.</li>
+            <li><strong>Con historial:</strong> fila “Seguí viendo” arriba de “Nuevo este trimestre”.</li>
+          </ul></dd>
+          <dt>Navegación</dt><dd>Situación → 04 filtrado por esa situación · Módulo → 04 · Video nuevo → 05 · Consultá anónimo → 07 · Asistente → 08 · Ayuda → 09.</dd>
+          <dt>Principios</dt>
+          <dd><ul class="pins">
+            <li><span class="mk n">N</span>Fila propia y badge dorado.</li>
+            <li><span class="mk d">D</span>Ayuda siempre visible arriba.</li>
+            <li><span class="mk a">A</span><span class="mk i">IA</span>Escalera de ayuda a un toque.</li>
+          </ul></dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="wf-screen" id="p04">
+      <div class="frames">
+        <div>
+          <div class="phone">
+            <div class="sb"><span>9:41</span><span>●●●</span></div><div class="notch"></div>
+            <div class="body">
+              <div class="w-row sb"><span class="w-t">← Biblioteca</span><span class="w-btn help sm">Ayuda</span></div>
+              <div class="w-h1">Psicología deportiva</div>
+              <div class="w-row" style="font-size:11px"><span class="w-t">38 videos · 9 nuevos este trimestre</span><span class="mk n">N</span></div>
+              <div class="w-scroll"><span class="w-chip">Todos</span><span class="w-chip on">Lesión</span><span class="w-chip">Presión familiar</span><span class="w-chip">Cuerpo técnico</span></div>
+              <div class="w-card">
+                <div class="w-img" style="height:96px"><span class="dur">7 min</span></div>
+                <div class="w-row sb"><span class="w-badge">Nuevo este trimestre</span><span class="w-icon" style="width:16px;height:16px;border-radius:4px"></span></div>
+                <strong>Volver después de una lesión</strong>
+                <div class="w-row" style="font-size:11px"><span class="w-avatar" style="width:20px;height:20px"></span><span class="w-t">Lic. Paula Ferreyra · M.N. 45.218</span><span class="mk r">R</span></div>
+              </div>
+              <div class="w-card">
+                <div class="w-row">
+                  <div class="w-img" style="width:96px;height:60px;flex:none"><span class="dur">9 min</span></div>
+                  <div class="w-col" style="min-width:0"><strong style="font-size:11px">El miedo a volver a lesionarte</strong><span class="w-t" style="font-size:10px">Lic. Paula Ferreyra · M.N. 45.218</span></div>
+                </div>
+              </div>
+              <div class="w-card">
+                <div class="w-row">
+                  <div class="w-img" style="width:96px;height:60px;flex:none"><span class="dur">5 min</span></div>
+                  <div class="w-col" style="min-width:0"><strong style="font-size:11px">Qué hacer los días que no entrenás</strong><span class="w-t" style="font-size:10px">Lic. Diego Acuña · M.N. 51.907</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="tabbar"><span>Inicio</span><span class="on">Biblioteca</span><span>Asistente</span><span>Consultar</span><span>Perfil</span></div>
+          </div>
+          <div class="frame-cap">04 · Filtrado por “Lesión”</div>
+        </div>
+      </div>
+      <div class="wf-notes">
+        <h3><span class="id">04</span> Módulo: Psicología deportiva</h3>
+        <dl>
+          <dt>Jerarquía</dt>
+          <dd><ol><li>Nombre del módulo y contador</li><li>Chips de situación</li><li>Video destacado, el más nuevo para esa situación</li><li>Lista compacta</li></ol></dd>
+          <dt>Componentes</dt><dd>Contador de la biblioteca · chips de filtro con scroll horizontal · tarjeta de video grande · tarjeta de video en lista (miniatura, duración, título, especialista y matrícula) · ícono de guardar.</dd>
+          <dt>Estados</dt>
+          <dd><ul>
+            <li><strong>Filtro activo:</strong> chip relleno; “Todos” lo limpia.</li>
+            <li><strong>Sin resultados:</strong> “Todavía no hay videos de esto en Psicología. Mirá en Nutrición o consultá anónimo.”</li>
+            <li><strong>Guardado:</strong> el ícono se rellena y aparece “Guardado en favoritos”.</li>
+          </ul></dd>
+          <dt>Navegación</dt><dd>Video → 05 · Volver → Biblioteca, que lista los 3 módulos y Especialistas. Nutrición y Educación financiera usan esta misma plantilla; en Nutrición las recetas abren 06.</dd>
+          <dt>Principios</dt>
+          <dd><ul class="pins">
+            <li><span class="mk r">R</span>Especialista y matrícula en cada tarjeta.</li>
+            <li><span class="mk n">N</span>Badge y contador de nuevos.</li>
+          </ul></dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 05 -->
+    <div class="wf-screen" id="p05">
+      <div class="frames">
+        <div>
+          <div class="phone">
+            <div class="sb"><span>9:41</span><span>●●●</span></div><div class="notch"></div>
+            <div class="body">
+              <div class="w-row sb"><span class="w-t">← Volver</span><span class="w-btn help sm">Ayuda</span></div>
+              <div class="w-img" style="height:140px"><span class="play"></span></div>
+              <div class="w-row" style="font-size:10px"><span>▶</span><div class="w-bar" style="flex:1"><i style="width:35%"></i></div><span class="w-t">2:30 / 7:00</span><span>⤢</span></div>
+              <div class="w-h1">Volver después de una lesión</div>
+              <div class="w-row sb"><span class="w-t">7 min · Psicología deportiva</span><span class="w-btn sm">Guardar</span></div>
+              <div class="w-card strong">
+                <div class="w-row"><span class="w-avatar lg"></span><div class="w-col" style="gap:2px"><strong>Lic. Paula Ferreyra</strong><span class="w-t" style="font-size:11px">Psicóloga deportiva · M.N. 45.218</span></div><span class="mk r">R</span></div>
+                <div class="w-lines"><i></i><i></i></div>
+                <span class="w-link" style="font-size:11px">Ver más del especialista</span>
+              </div>
+              <div class="w-row" style="font-size:11px"><span class="mk a">A</span><span class="w-link">¿Te quedó una duda? Consultá anónimo</span></div>
+              <div class="w-h2">Relacionados</div>
+              <div class="w-grid2">
+                <div class="w-col"><div class="w-img" style="height:56px"><span class="dur">receta</span></div><span style="font-size:10px">Qué comer para recuperarte</span></div>
+                <div class="w-col"><div class="w-img" style="height:56px"><span class="dur">9 min</span></div><span style="font-size:10px">El miedo a volver a lesionarte</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="frame-cap">05 · Reproduciendo</div>
+        </div>
+      </div>
+      <div class="wf-notes">
+        <h3><span class="id">05</span> Reproductor y ficha del especialista</h3>
+        <dl>
+          <dt>Jerarquía</dt>
+          <dd><ol><li>Video</li><li>Título y “Guardar”</li><li>Ficha del especialista</li><li>Consulta anónima</li><li>Relacionados</li></ol></dd>
+          <dt>Componentes</dt><dd>Reproductor con play, barra de progreso, tiempo y pantalla completa · botón secundario Guardar · tarjeta de especialista (foto, nombre, especialidad, matrícula y bio de dos líneas) · link a consulta · grilla de relacionados que mezcla módulos.</dd>
+          <dt>Estados</dt>
+          <dd><ul>
+            <li><strong>Antes de reproducir:</strong> miniatura con play centrado.</li>
+            <li><strong>Terminado:</strong> “Siguiente: El miedo a volver a lesionarte”.</li>
+            <li><strong>Guardado:</strong> el botón pasa a “Guardado ✓”.</li>
+            <li><strong>Bio expandida:</strong> formación, años de experiencia y avales.</li>
+          </ul></dd>
+          <dt>Navegación</dt><dd>Relacionado → 05 u 06 · Consultá anónimo → 07 · Especialista → Especialistas, dentro de Biblioteca.</dd>
+          <dt>Principios</dt>
+          <dd><ul class="pins"><li><span class="mk r">R</span>La ficha va pegada al video, no escondida.</li><li><span class="mk a">A</span>Puente a la consulta anónima.</li></ul></dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 06 -->
+    <div class="wf-screen" id="p06">
+      <div class="frames">
+        <div>
+          <div class="phone">
+            <div class="sb"><span>9:41</span><span>●●●</span></div><div class="notch"></div>
+            <div class="body">
+              <div class="w-row sb"><span class="w-t">← Nutrición</span><span class="w-btn help sm">Ayuda</span></div>
+              <div class="w-img" style="height:110px"></div>
+              <span class="w-badge" style="align-self:flex-start">Nuevo este trimestre</span>
+              <div class="w-h1">Tostadas de avena y banana para antes de entrenar</div>
+              <div class="w-row" style="flex-wrap:wrap"><span class="w-pill">10 min</span><span class="w-pill">2 porciones</span><span class="w-pill">Sin horno</span></div>
+              <div class="w-h2">Ingredientes</div>
+              <div class="w-col" style="gap:3px;font-size:11px"><span>☐ 2 rebanadas de pan</span><span>☐ 1 banana</span><span>☐ 2 cdas. de avena</span><span>☐ 1 cdita. de miel</span></div>
+              <div class="w-h2">Preparación</div>
+              <div class="w-step"><b>1</b><span>Tostá el pan.</span></div>
+              <div class="w-step"><b>2</b><span>Pisá la banana y untala.</span></div>
+              <div class="w-step"><b>3</b><span>Sumá la avena y la miel.</span></div>
+              <div class="w-card" style="background:var(--wf-fill);border-color:var(--wf-fill)"><strong>Cuándo te sirve</strong><span class="w-t">Una hora antes de entrenar, si venís directo del colegio.</span></div>
+              <div class="w-row" style="font-size:11px"><span class="w-avatar" style="width:24px;height:24px"></span><span>Lic. Martín Sosa · Nutricionista · M.N. 7.312</span><span class="mk r">R</span></div>
+              <div class="w-btn pri">Guardar receta</div>
+            </div>
+          </div>
+          <div class="frame-cap">06 · Receta</div>
+        </div>
+      </div>
+      <div class="wf-notes">
+        <h3><span class="id">06</span> Receta o recomendación nutricional</h3>
+        <dl>
+          <dt>Jerarquía</dt>
+          <dd><ol><li>Foto y título</li><li>Tiempo, porciones y requisitos</li><li>Ingredientes</li><li>Pasos</li><li>“Cuándo te sirve”</li><li>Nutricionista</li></ol></dd>
+          <dt>Componentes</dt><dd>Foto · badge · pills de metadatos · checklist de ingredientes · pasos numerados (máximo 5) · tarjeta de recomendación · firma del profesional · botón Guardar.</dd>
+          <dt>Estados</dt>
+          <dd><ul>
+            <li><strong>Ingrediente tildado:</strong> se tacha, sirve para cocinar mirando el celular.</li>
+            <li><strong>Variante “recomendación”:</strong> sin ingredientes, con 3 a 5 tips cortos; por ejemplo, “Qué llevar al colegio los días de doble turno”.</li>
+          </ul></dd>
+          <dt>Navegación</dt><dd>Volver → Nutrición (04) · Guardar → aparece en Perfil (10).</dd>
+          <dt>Principios</dt>
+          <dd><ul class="pins"><li><span class="mk r">R</span>Firma con matrícula.</li><li><span class="mk n">N</span>Badge si es del trimestre.</li></ul>
+          Respuesta al 94,1% que pidió nutrición práctica: ingredientes baratos y la vida real del jugador como contexto.</dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 07 -->
+    <div class="wf-screen desk-row" id="p07">
+      <div class="frames">
+        <div>
+          <div class="phone">
+            <div class="sb"><span>9:41</span><span>●●●</span></div><div class="notch"></div>
+            <div class="body">
+              <div class="w-row sb"><span class="w-h1">Consultar</span><span class="w-btn help sm">Ayuda</span></div>
+              <div class="w-seal"><span class="mk a">A</span>Nadie del club ve lo que escribís.</div>
+              <div class="w-h2">Contanos qué te pasa</div>
+              <div class="w-input tall focus">El DT no me pone hace tres partidos y no sé si preguntarle…</div>
+              <span class="w-label">Tema (opcional)</span>
+              <div class="w-row" style="flex-wrap:wrap;gap:4px"><span class="w-chip on">Cuerpo técnico</span><span class="w-chip">Familia</span><span class="w-chip">Otro</span></div>
+              <div class="w-row" style="font-size:11px"><span class="mk r">R</span><span class="w-t">Te responde un profesional de FutStar.</span></div>
+              <div style="flex:1;min-height:30px"></div>
+              <div class="w-btn pri">Revisar y enviar</div>
+            </div>
+            <div class="tabbar"><span>Inicio</span><span>Biblioteca</span><span>Asistente</span><span class="on">Consultar</span><span>Perfil</span></div>
+          </div>
+          <div class="frame-cap">7a · Escribir</div>
+        </div>
+        <div>
+          <div class="phone">
+            <div class="sb"><span>9:41</span><span>●●●</span></div><div class="notch"></div>
+            <div class="body w-dim">
+              <div class="w-h1">Consultar</div>
+              <div class="w-input tall">El DT no me pone hace tres partidos…</div>
+              <div class="w-lines"><i></i><i></i></div>
+            </div>
+            <div class="w-sheet">
+              <div class="w-h2">Antes de enviar <span class="mk a">A</span></div>
+              <div class="w-step"><b>✓</b><span>Va sin tu nombre ni tu apodo.</span></div>
+              <div class="w-step"><b>✓</b><span>La lee solo un profesional de FutStar.</span></div>
+              <div class="w-step"><b>✓</b><span>Nadie del club la ve.</span></div>
+              <div class="w-btn pri">Enviar anónimo</div>
+              <div class="w-btn">Seguir editando</div>
+            </div>
+          </div>
+          <div class="frame-cap">7b · Aviso antes de enviar</div>
+        </div>
+        <div>
+          <div class="phone">
+            <div class="sb"><span>9:41</span><span>●●●</span></div><div class="notch"></div>
+            <div class="body">
+              <div class="w-check"></div>
+              <div class="w-h1" style="text-align:center">Tu consulta fue enviada de forma anónima</div>
+              <div class="w-h2">Qué pasa ahora</div>
+              <div class="w-step"><b>1</b><span>Un profesional del equipo FutStar la revisa. <span class="mk r">R</span></span></div>
+              <div class="w-step"><b>2</b><span>Te responde acá, en Perfil → Mis consultas.</span></div>
+              <div class="w-step"><b>3</b><span>Si hace falta, se activa el protocolo de derivación para que hables con alguien. <span class="mk d">D</span></span></div>
+              <div style="flex:1;min-height:40px"></div>
+              <div class="w-btn pri">Ver mis consultas</div>
+              <div class="w-t" style="text-align:center">Volver al inicio</div>
+            </div>
+          </div>
+          <div class="frame-cap">7c · Enviada</div>
+        </div>
+      </div>
+      <div class="wf-notes">
+        <h3><span class="id">07</span> Canal de consultas anónimas</h3>
+        <dl>
+          <dt>Jerarquía</dt>
+          <dd>7a: sello de anonimato → campo de texto → enviar. 7b: los tres ✓ → “Enviar anónimo”. 7c: confirmación → qué pasa ahora.</dd>
+          <dt>Componentes</dt><dd>Sello fijo de anonimato · área de texto · chips de tema opcionales · hoja inferior de confirmación · ilustración de éxito · pasos numerados.</dd>
+          <dt>Estados</dt>
+          <dd><ul>
+            <li><strong>Vacío:</strong> placeholder “Escribí con tus palabras. No hace falta que esté perfecto.”; botón deshabilitado.</li>
+            <li><strong>Aviso (7b):</strong> se muestra en cada envío, no solo la primera vez.</li>
+            <li><strong>Error de conexión:</strong> “No se pudo enviar. Tu texto quedó guardado en este celular, probá de nuevo.”</li>
+          </ul></dd>
+          <dt>Navegación</dt><dd>7a → 7b → 7c → Perfil, Mis consultas (10) o Inicio (03).</dd>
+          <dt>Principios</dt>
+          <dd><ul class="pins"><li><span class="mk a">A</span>Tres refuerzos: sello, aviso y confirmación.</li><li><span class="mk r">R</span>Quién responde.</li><li><span class="mk d">D</span>El protocolo explicado antes de necesitarlo.</li></ul></dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 08 -->
+    <div class="wf-screen" id="p08">
+      <div class="frames">
+        <div>
+          <div class="phone">
+            <div class="sb"><span>9:41</span><span>●●●</span></div><div class="notch"></div>
+            <div class="body">
+              <div class="w-row sb"><div class="w-col" style="gap:0"><span class="w-h2">Asistente FutStar</span><span class="w-t" style="font-size:10px">Disponible 24 h</span></div><span class="w-btn help sm">Ayuda</span></div>
+              <div class="w-banner"><span class="mk i">IA</span><span>No soy un profesional de la salud. Puedo orientarte y derivarte, pero no reemplazo a un especialista.</span></div>
+              <div class="w-bubble">Hola. Contame qué estás atravesando y te busco algo que te sirva.</div>
+              <div class="w-bubble me">Mi viejo me grita en cada partido y ya no tengo ganas de jugar.</div>
+              <div class="w-bubble">Eso pesa. Hay un video sobre presión familiar que te puede servir:
+                <div class="w-card" style="margin-top:6px;padding:6px">
+                  <div class="w-row"><div class="w-img" style="width:54px;height:36px;flex:none"></div><div class="w-col" style="gap:0;min-width:0"><strong style="font-size:10px">Cuando tu familia te presiona</strong><span class="w-t" style="font-size:9px">6 min · Lic. P. Ferreyra · M.N. 45.218</span></div><span class="mk r">R</span></div>
+                </div>
+              </div>
+              <div class="w-bubble">Si preferís hablarlo con una persona, te conecto con el equipo profesional.
+                <div class="w-row" style="margin-top:6px"><span class="w-btn help sm" style="flex:1">Necesito hablar con alguien</span><span class="mk d">D</span></div>
+              </div>
+              <div class="w-row" style="flex-wrap:wrap;gap:4px"><span class="w-chip">Ver más videos</span><span class="w-chip">Consultar anónimo</span></div>
+              <div class="w-input">Escribí acá…</div>
+            </div>
+            <div class="tabbar"><span>Inicio</span><span>Biblioteca</span><span class="on">Asistente</span><span>Consultar</span><span>Perfil</span></div>
+          </div>
+          <div class="frame-cap">08 · Conversación de ejemplo</div>
+        </div>
+      </div>
+      <div class="wf-notes">
+        <h3><span class="id">08</span> Asistente conversacional</h3>
+        <dl>
+          <dt>Jerarquía</dt>
+          <dd><ol><li>Aviso fijo de límites</li><li>Conversación</li><li>Tarjeta de contenido sugerido</li><li>“Necesito hablar con alguien”</li><li>Respuestas rápidas y campo de texto</li></ol></dd>
+          <dt>Componentes</dt><dd>Encabezado sin avatar humano · banner fijo (no se puede cerrar) · burbujas · tarjeta de video dentro del chat · botón de derivación · chips de respuesta rápida · campo de texto.</dd>
+          <dt>Reglas de contenido</dt>
+          <dd><ul>
+            <li>Cada respuesta termina en un contenido de la biblioteca o en la opción de derivación.</li>
+            <li>No evalúa, no diagnostica, no da indicaciones clínicas.</li>
+            <li>Ante palabras de riesgo, el botón de derivación se muestra primero, antes de cualquier contenido.</li>
+          </ul></dd>
+          <dt>Estados</dt><dd>Vacío: mensaje de bienvenida y 4 chips con situaciones frecuentes · “Escribiendo…” · Sin conexión.</dd>
+          <dt>Navegación</dt><dd>Tarjeta → 05 · Derivación → 09 · Consultar anónimo → 07.</dd>
+          <dt>Principios</dt>
+          <dd><ul class="pins"><li><span class="mk i">IA</span>Aviso con el texto exacto del brief.</li><li><span class="mk r">R</span>Sugiere contenido profesional.</li><li><span class="mk d">D</span>Deriva dentro de la conversación.</li></ul></dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 09 -->
+    <div class="wf-screen desk-row" id="p09">
+      <div class="frames">
+        <div>
+          <div class="phone">
+            <div class="sb"><span>9:41</span><span>●●●</span></div><div class="notch"></div>
+            <div class="body">
+              <div class="w-t">← Volver</div>
+              <div class="w-h1">Hablar con alguien</div>
+              <div class="w-t">Pedir ayuda está bien. Una persona del equipo profesional de FutStar te va a contactar.</div>
+              <div class="w-h2">Qué pasa cuando lo activás</div>
+              <div class="w-step"><b>1</b><span>Recibimos tu pedido, sin tu nombre.</span></div>
+              <div class="w-step"><b>2</b><span>Lo toma un profesional matriculado.</span></div>
+              <div class="w-step"><b>3</b><span>Te contacta por donde elijas.</span></div>
+              <div class="w-step"><b>4</b><span>Si hace falta, te ayuda a conseguir atención presencial cerca tuyo.</span></div>
+              <span class="w-label">¿Cómo querés que te contacten?</span>
+              <div class="w-row"><span class="w-dot f"></span>Por chat en la app</div>
+              <div class="w-row"><span class="w-dot"></span>Por WhatsApp (opcional)</div>
+              <div class="w-row" style="font-size:10px"><span class="mk a">A</span><span class="w-t">Ese dato lo ve solo el profesional. El club, nunca.</span></div>
+              <div class="w-btn help fill">Necesito hablar con alguien</div>
+              <div class="w-banner"><span>Si estás en peligro ahora, llamá al <strong>911</strong>.</span></div>
+            </div>
+          </div>
+          <div class="frame-cap">9a · Antes de activar</div>
+        </div>
+        <div>
+          <div class="phone">
+            <div class="sb"><span>9:41</span><span>●●●</span></div><div class="notch"></div>
+            <div class="body">
+              <div class="w-check"></div>
+              <div class="w-h1" style="text-align:center">Pedido recibido</div>
+              <div class="w-t" style="text-align:center">Un profesional te va a escribir por chat en la app. Hiciste bien en pedirlo.</div>
+              <div class="w-card">
+                <div class="w-row"><span class="w-dot f"></span><span>Pedido recibido</span></div>
+                <div class="w-row"><span class="w-dot h"></span><span class="w-t">Lo toma un profesional</span></div>
+                <div class="w-row"><span class="w-dot x"></span><span class="w-t">Te contacta</span></div>
+              </div>
+              <div class="w-card" style="background:var(--wf-fill);border-color:var(--wf-fill)"><div class="w-row"><span class="mk a">A</span><strong>Es confidencial</strong></div><span class="w-t">Lo que hables queda entre vos y el profesional. Solo si hay riesgo para tu vida o la de otra persona puede activar más ayuda, y te lo va a decir.</span></div>
+              <div style="flex:1;min-height:20px"></div>
+              <div class="w-btn">Volver al inicio</div>
+            </div>
+          </div>
+          <div class="frame-cap">9b · Pedido enviado</div>
+        </div>
+      </div>
+      <div class="wf-notes">
+        <h3><span class="id">09</span> Ayuda y derivación profesional</h3>
+        <dl>
+          <dt>Jerarquía</dt>
+          <dd><ol><li>Mensaje de contención</li><li>Los 4 pasos</li><li>Forma de contacto</li><li>Botón “Necesito hablar con alguien”</li><li>Emergencia</li></ol></dd>
+          <dt>Componentes</dt><dd>Texto de contención · pasos numerados · opción de contacto (radio) · único botón relleno en rojo de la app · banner de emergencia · seguimiento de estado (9b) · tarjeta de confidencialidad.</dd>
+          <dt>Estados</dt>
+          <dd><ul>
+            <li><strong>Con WhatsApp:</strong> se despliega el campo de número.</li>
+            <li><strong>Pedido activo:</strong> si vuelve a entrar, ve 9b con el estado en lugar de 9a.</li>
+            <li><strong>Líneas de emergencia:</strong> el 911 y otras líneas nacionales, a validar con el equipo profesional antes de la versión final.</li>
+          </ul></dd>
+          <dt>Navegación</dt><dd>Llega desde Ayuda (cualquier pantalla), 03, 07c y 08. 9a → 9b → Inicio.</dd>
+          <dt>Principios</dt>
+          <dd><ul class="pins"><li><span class="mk d">D</span>Protocolo visible sin exponer datos sensibles.</li><li><span class="mk a">A</span>El contacto solo lo ve el profesional.</li></ul>
+          Tono: calmo, sin dramatizar. Es la única pantalla donde el rojo es protagonista.</dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="wf-screen" id="p10">
+      <div class="frames">
+        <div>
+          <div class="phone">
+            <div class="sb"><span>9:41</span><span>●●●</span></div><div class="notch"></div>
+            <div class="body">
+              <div class="w-row sb"><span class="w-h1">Perfil</span><span class="w-btn help sm">Ayuda</span></div>
+              <div class="w-row"><span class="w-avatar lg"></span><div class="w-col" style="gap:0"><strong>Tomi</strong><span class="w-t" style="font-size:11px">7ma división · Club Social y Deportivo (ejemplo)</span></div></div>
+              <div class="w-row sb"><span class="w-h2">Favoritos</span><span class="w-t" style="font-size:11px">Ver los 5</span></div>
+              <div class="w-scroll">
+                <div class="w-col" style="min-width:100px"><div class="w-img" style="height:52px"></div><span style="font-size:10px">Volver después de una lesión</span></div>
+                <div class="w-col" style="min-width:100px"><div class="w-img" style="height:52px"></div><span style="font-size:10px">Tostadas de avena</span></div>
+              </div>
+              <div class="w-h2">Tu progreso</div>
+              <div class="w-col" style="font-size:11px">
+                <div class="w-row sb"><span>Psicología</span><span class="w-t">8 vistos</span></div><div class="w-bar"><i style="width:60%"></i></div>
+                <div class="w-row sb"><span>Nutrición</span><span class="w-t">5 vistos</span></div><div class="w-bar"><i style="width:38%"></i></div>
+                <div class="w-row sb"><span>Educación financiera</span><span class="w-t">2 vistos</span></div><div class="w-bar"><i style="width:15%"></i></div>
+              </div>
+              <div class="w-row"><span class="w-h2">Mis consultas</span><span class="mk a">A</span></div>
+              <div class="w-card"><div class="w-row sb"><strong style="font-size:11px">El DT no me pone hace…</strong><span class="w-pill dark">Respondida</span></div></div>
+              <div class="w-card"><div class="w-row sb"><strong style="font-size:11px">¿Cuánta agua tengo que…</strong><span class="w-pill">En revisión</span></div></div>
+              <div class="w-t" style="font-size:10px">Solo vos ves tus consultas.</div>
+              <div class="w-hr"></div>
+              <div class="w-row sb"><span>Cómo cuidamos tu privacidad</span><span>›</span></div>
+              <div class="w-row sb"><span>Cerrar sesión</span><span>›</span></div>
+            </div>
+            <div class="tabbar"><span>Inicio</span><span>Biblioteca</span><span>Asistente</span><span>Consultar</span><span class="on">Perfil</span></div>
+          </div>
+          <div class="frame-cap">10 · Con actividad</div>
+        </div>
+      </div>
+      <div class="wf-notes">
+        <h3><span class="id">10</span> Perfil del jugador</h3>
+        <dl>
+          <dt>Jerarquía</dt>
+          <dd><ol><li>Apodo y categoría</li><li>Favoritos</li><li>Progreso</li><li>Mis consultas</li><li>Privacidad y cerrar sesión</li></ol></dd>
+          <dt>Componentes</dt><dd>Cabecera con avatar genérico (sin foto) · fila de favoritos · barras de progreso por módulo · lista de consultas con estado · filas de ajustes.</dd>
+          <dt>Estados</dt>
+          <dd><ul>
+            <li><strong>Sin favoritos:</strong> “Guardá videos y recetas para tenerlos a mano.”</li>
+            <li><strong>Sin consultas:</strong> “Todavía no hiciste consultas.” + “Consultar anónimo”.</li>
+            <li><strong>Consulta abierta:</strong> muestra tu texto, la respuesta y quién respondió (profesional con matrícula).</li>
+            <li><strong>Cerrar sesión:</strong> confirmación “Para volver a entrar vas a necesitar tu código.”</li>
+          </ul></dd>
+          <dt>Navegación</dt><dd>Favorito → 05 o 06 · Consulta → detalle · Privacidad → 02 en modo lectura · Cerrar sesión → 01.</dd>
+          <dt>Principios</dt>
+          <dd><ul class="pins"><li><span class="mk a">A</span>Solo las propias consultas; el progreso no se comparte con el club.</li></ul></dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLUB ============ -->
+<section id="club">
+  <div class="wrap">
+    <span class="eyebrow">Recorrido del club · desktop</span>
+    <h2>Pantallas 11 a 15</h2>
+    <p class="lead">Menú lateral según el rol y barra superior con el club, el trimestre en curso y el estado de la suscripción. Pocos números, grandes y con contexto.</p>
+
+    <!-- 11 -->
+    <div class="wf-screen desk-row" id="p11">
+      <div class="desk-scroll">
+        <div class="desk">
+          <div class="chrome"><i></i><i></i><i></i><span class="url">panel.futstar.com.ar/inicio</span></div>
+          <div class="app">
+            <div class="side">
+              <span class="brand">★ FutStar</span>
+              <span class="nav on">Inicio</span><span class="nav">Tendencias</span><span class="nav">Reporte trimestral</span><span class="nav">Jugadores y códigos</span><span class="nav">Suscripción</span>
+              <div class="role"><strong>Coordinador</strong><br><span class="w-t">Club Social y Deportivo (ejemplo)</span></div>
+            </div>
+            <div class="main">
+              <div class="topbar"><b>Inicio</b><span class="sp"></span><span>T4 2026 · oct–dic</span><span class="w-pill">Suscripción activa</span></div>
+              <div class="w-row sb"><span class="w-h1">Así acompaña FutStar a tus inferiores</span><span class="mk g">G</span></div>
+              <div class="w-grid4">
+                <div class="w-kpi"><span class="w-t">Jugadores activos</span><span class="big">128 / 150</span><span class="w-t">85% de las inferiores</span></div>
+                <div class="w-kpi"><span class="w-t">Vistas en el trimestre</span><span class="big">2.940</span><span class="w-t">+18% vs. T3</span></div>
+                <div class="w-kpi"><span class="w-t">Módulo más usado</span><span class="big" style="font-size:20px">Psicología deportiva</span><span class="w-t">52% de las vistas</span></div>
+                <div class="w-kpi"><span class="w-t">Contenido más visto</span><span class="big" style="font-size:18px">Volver después de una lesión</span><span class="w-t">214 vistas</span></div>
+              </div>
+              <div class="w-split">
+                <div class="w-chart">
+                  <div class="w-row sb"><strong>Uso por mes</strong><span class="w-t">vistas</span></div>
+                  <div class="w-cols"><i style="height:40%"></i><i style="height:52%"></i><i style="height:48%"></i><i style="height:61%"></i><i style="height:70%"></i><i class="on" style="height:82%"></i></div>
+                  <div class="w-axis"><span>may</span><span>jun</span><span>jul</span><span>ago</span><span>sep</span><span>oct</span></div>
+                </div>
+                <div class="w-col" style="gap:14px">
+                  <div class="w-chart">
+                    <div class="w-row sb"><strong>Tendencias del mes</strong><span class="mk g">G</span></div>
+                    <span>Presión familiar · <strong>6 jugadores</strong></span>
+                    <span>Miedo a quedar libre · <strong>5 jugadores</strong></span>
+                    <span class="w-link">Ver todas las tendencias →</span>
+                  </div>
+                  <div class="w-card strong">
+                    <strong>Reporte T3 2026 listo</strong>
+                    <span class="w-t">Para presentar a la Comisión Directiva.</span>
+                    <span class="w-btn pri sm" style="align-self:flex-start">Descargar reporte</span>
+                  </div>
+                </div>
+              </div>
+              <div class="w-row w-t" style="font-size:11px"><span class="mk a">A</span>Datos anónimos y agregados.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-notes">
+        <h3><span class="id">11</span> Dashboard del coordinador</h3>
+        <dl>
+          <dt>Jerarquía</dt>
+          <dd><ol><li>Los 4 números grandes</li><li>Uso por mes</li><li>Tendencias del mes</li><li>Reporte listo</li></ol></dd>
+          <dt>Componentes</dt><dd>Menú lateral · barra superior con trimestre y estado · 4 tarjetas KPI con contexto · gráfico de columnas con el mes actual destacado · tarjeta de tendencias · tarjeta de reporte con acción.</dd>
+        </dl>
+        <dl>
+          <dt>Estados</dt>
+          <dd><ul>
+            <li><strong>Primer mes:</strong> KPIs en 0 y tarjeta “Activá a tus jugadores” → 14.</li>
+            <li><strong>Pocos activos (menos del 50%):</strong> sugerencia de reenviar códigos pendientes.</li>
+          </ul></dd>
+          <dt>Navegación</dt><dd>Tendencias → 12 · Descargar → 13 · Activos → 14.</dd>
+        </dl>
+        <dl>
+          <dt>Principios</dt>
+          <dd><ul class="pins"><li><span class="mk g">G</span>Todo es agregado; ningún número baja a una persona.</li><li><span class="mk a">A</span>Recordatorio al pie.</li></ul>
+          Criterio de éxito: en 30 segundos se entiende que se usa (85%) y en qué (Psicología).</dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 12 -->
+    <div class="wf-screen desk-row" id="p12">
+      <div class="desk-scroll">
+        <div class="desk">
+          <div class="chrome"><i></i><i></i><i></i><span class="url">panel.futstar.com.ar/tendencias</span></div>
+          <div class="app">
+            <div class="side">
+              <span class="brand">★ FutStar</span>
+              <span class="nav">Inicio</span><span class="nav on">Tendencias</span><span class="nav">Reporte trimestral</span><span class="nav">Jugadores y códigos</span><span class="nav">Suscripción</span>
+              <div class="role"><strong>Coordinador</strong></div>
+            </div>
+            <div class="main">
+              <div class="topbar"><b>Tendencias</b><span class="sp"></span><span class="w-pill">Mes: Octubre 2026 ▾</span><span class="w-pill">Categoría: Todas ▾</span></div>
+              <div class="w-banner" style="font-size:12px"><span class="mk a">A</span><span><strong>Los datos son anónimos y agregados.</strong> El club no puede ver mensajes individuales ni identificar consultas.</span></div>
+              <div class="w-card strong" style="padding:14px"><div class="w-row"><span class="mk g">G</span><span class="w-h1" style="font-size:20px">6 jugadores consultaron sobre presión familiar este mes</span></div><span class="w-t">Es el tema más consultado de octubre. En septiembre fueron 4.</span></div>
+              <div class="w-split r">
+                <div class="w-chart">
+                  <div class="w-row sb"><strong>Temas consultados en octubre</strong><span class="w-t">jugadores distintos</span></div>
+                  <div class="w-hbar"><span>Presión familiar</span><div class="w-bar"><i style="width:100%"></i></div><span>6</span></div>
+                  <div class="w-hbar"><span>Miedo a quedar libre</span><div class="w-bar"><i style="width:83%"></i></div><span>5</span></div>
+                  <div class="w-hbar"><span>Qué comer</span><div class="w-bar"><i style="width:83%"></i></div><span>5</span></div>
+                  <div class="w-hbar"><span>Presión por rendir</span><div class="w-bar"><i style="width:40%;background:var(--wf-fill-2)"></i></div><span class="w-t">menos de 5</span></div>
+                  <div class="w-hbar"><span>Club y colegio</span><div class="w-bar"><i style="width:40%;background:var(--wf-fill-2)"></i></div><span class="w-t">menos de 5</span></div>
+                  <div class="w-hbar"><span>Lesión</span><div class="w-bar"><i style="width:40%;background:var(--wf-fill-2)"></i></div><span class="w-t">menos de 5</span></div>
+                </div>
+                <div class="w-col" style="gap:14px">
+                  <div class="w-chart">
+                    <strong>Presión familiar · últimos 3 meses</strong>
+                    <div class="w-cols" style="height:70px"><i style="height:50%"></i><i style="height:66%"></i><i class="on" style="height:100%"></i></div>
+                    <div class="w-axis"><span>ago · menos de 5</span><span>sep · 4</span><span>oct · 6</span></div>
+                  </div>
+                  <div class="w-card">
+                    <strong>Contenido para acompañar el tema</strong>
+                    <span class="w-t">3 videos sobre presión familiar disponibles para tus jugadores.</span>
+                    <span class="w-link">Ver contenidos</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-notes">
+        <h3><span class="id">12</span> Tendencias anónimas por tema</h3>
+        <dl>
+          <dt>Jerarquía</dt>
+          <dd><ol><li>Nota de anonimato</li><li>Frase destacada</li><li>Ranking de temas</li><li>Evolución del tema principal</li></ol></dd>
+          <dt>Componentes</dt><dd>Filtros de mes y categoría · banner fijo · tarjeta de insight · barras horizontales · columnas de evolución · tarjeta de contenido relacionado.</dd>
+        </dl>
+        <dl>
+          <dt>Estados</dt>
+          <dd><ul>
+            <li><strong>Umbral:</strong> si hay menos de 5 jugadores, la barra queda en gris y dice “menos de 5”.</li>
+            <li><strong>Filtro por categoría:</strong> si el grupo filtrado tiene menos de 5 consultas en total, aparece “No hay datos suficientes para mostrar esta categoría sin identificar a nadie”.</li>
+          </ul></dd>
+        </dl>
+        <dl>
+          <dt>Principios</dt>
+          <dd><ul class="pins"><li><span class="mk a">A</span>Nota con el texto exacto del brief.</li><li><span class="mk g">G</span>Conteos con umbral mínimo.</li></ul>
+          Navegación: Inicio (11) → 12 → Reporte (13).</dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 13 -->
+    <div class="wf-screen desk-row" id="p13">
+      <div class="desk-scroll">
+        <div class="desk">
+          <div class="chrome"><i></i><i></i><i></i><span class="url">panel.futstar.com.ar/reporte</span></div>
+          <div class="app">
+            <div class="side">
+              <span class="brand">★ FutStar</span>
+              <span class="nav">Inicio</span><span class="nav">Tendencias</span><span class="nav on">Reporte trimestral</span><span class="nav">Jugadores y códigos</span><span class="nav">Suscripción</span>
+              <div class="role"><strong>Coordinador</strong></div>
+            </div>
+            <div class="main">
+              <div class="topbar"><b>Reporte trimestral</b><span class="sp"></span><span class="w-pill">T3 2026 · jul–sep ▾</span></div>
+              <div class="w-split r">
+                <div class="w-doc">
+                  <div class="w-row sb"><span class="w-h2">★ FutStar · Reporte T3 2026</span><span class="w-t">Club Social y Deportivo (ejemplo)</span></div>
+                  <div class="w-h1">Resumen ejecutivo</div>
+                  <div class="w-lines"><i></i><i></i></div>
+                  <div class="w-grid4">
+                    <div class="w-kpi" style="padding:8px"><span class="w-t">Activos</span><span class="big" style="font-size:18px">85%</span></div>
+                    <div class="w-kpi" style="padding:8px"><span class="w-t">Vistas</span><span class="big" style="font-size:18px">2.490</span></div>
+                    <div class="w-kpi" style="padding:8px"><span class="w-t">Consultas</span><span class="big" style="font-size:18px">41</span></div>
+                    <div class="w-kpi" style="padding:8px"><span class="w-t">Por jugador</span><span class="big" style="font-size:18px">$7.500</span></div>
+                  </div>
+                  <div class="w-row"><strong>Temas más consultados</strong><span class="mk g">G</span></div>
+                  <div class="w-hbar" style="grid-template-columns:130px 1fr 30px"><span>Presión familiar</span><div class="w-bar"><i style="width:90%"></i></div><span>11</span></div>
+                  <div class="w-hbar" style="grid-template-columns:130px 1fr 30px"><span>Qué comer</span><div class="w-bar"><i style="width:70%"></i></div><span>9</span></div>
+                  <div class="w-row"><strong>Biblioteca: 72 → 96 contenidos</strong><span class="mk n">N</span></div>
+                  <div class="w-cols" style="height:50px"><i style="height:40%"></i><i style="height:60%"></i><i style="height:75%"></i><i class="on" style="height:100%"></i></div>
+                  <div class="w-row"><strong>Equipo profesional del trimestre</strong><span class="mk r">R</span></div>
+                  <div class="w-lines"><i></i><i></i></div>
+                  <div class="w-t" style="font-size:10px">Los datos son anónimos y agregados. El club no puede ver mensajes individuales ni identificar consultas.</div>
+                </div>
+                <div class="w-col" style="gap:12px">
+                  <span class="w-btn pri">Descargar reporte trimestral</span>
+                  <span class="w-t" style="text-align:center">PDF · 4 páginas</span>
+                  <div class="w-card">
+                    <strong>Incluye</strong>
+                    <span>· Uso y jugadores activos</span>
+                    <span>· Temas más consultados</span>
+                    <span>· Contenidos nuevos del trimestre</span>
+                    <span>· Evolución de la biblioteca</span>
+                    <span>· Costo por jugador</span>
+                  </div>
+                  <div class="w-card dash"><strong>Pensado para la Comisión Directiva</strong><span class="w-t">Una página de resumen, con lo necesario para decidir la renovación.</span></div>
+                  <span class="w-t">Trimestres anteriores: T2 2026 · T1 2026</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-notes">
+        <h3><span class="id">13</span> Reporte trimestral descargable</h3>
+        <dl>
+          <dt>Jerarquía</dt>
+          <dd><ol><li>Vista previa del documento</li><li>“Descargar reporte trimestral”</li><li>Qué incluye</li></ol></dd>
+          <dt>Componentes</dt><dd>Selector de trimestre · vista previa tipo hoja (resumen, KPIs, temas, biblioteca, profesionales, nota de anonimato) · botón principal · lista de contenido · historial.</dd>
+        </dl>
+        <dl>
+          <dt>Estados</dt>
+          <dd><ul>
+            <li><strong>Trimestre en curso:</strong> “El reporte de T4 estará listo el 5 de enero”, con vista previa parcial.</li>
+            <li><strong>Descargando:</strong> el botón muestra progreso y luego “Descargado ✓”.</li>
+            <li><strong>Vista directivo:</strong> la misma pantalla, con menú reducido y la etiqueta “Solo lectura”.</li>
+          </ul></dd>
+        </dl>
+        <dl>
+          <dt>Principios</dt>
+          <dd><ul class="pins"><li><span class="mk g">G</span>Temas agregados.</li><li><span class="mk n">N</span>Crecimiento de la biblioteca.</li><li><span class="mk r">R</span>Profesionales que produjeron contenido.</li></ul>
+          El costo por jugador ($7.500 por trimestre) es el argumento de renovación.</dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 14 -->
+    <div class="wf-screen desk-row" id="p14">
+      <div class="desk-scroll">
+        <div class="desk">
+          <div class="chrome"><i></i><i></i><i></i><span class="url">panel.futstar.com.ar/jugadores</span></div>
+          <div class="app">
+            <div class="side">
+              <span class="brand">★ FutStar</span>
+              <span class="nav">Inicio</span><span class="nav">Tendencias</span><span class="nav">Reporte trimestral</span><span class="nav on">Jugadores y códigos</span><span class="nav">Suscripción</span>
+              <div class="role"><strong>Coordinador</strong></div>
+            </div>
+            <div class="main">
+              <div class="topbar"><b>Jugadores y códigos</b><span class="sp"></span><span>150 cupos · 128 activos · 17 pendientes · 5 inactivos</span></div>
+              <div class="w-banner"><span class="mk a">A</span><span>El club ve si cada jugador activó su cuenta, nunca qué mira ni qué consulta.</span></div>
+              <div class="w-grid3" style="grid-template-columns:repeat(6,1fr)">
+                <div class="w-card"><strong>4ta</strong><span class="w-t">22/25 activos</span></div>
+                <div class="w-card"><strong>5ta</strong><span class="w-t">21/25 activos</span></div>
+                <div class="w-card"><strong>6ta</strong><span class="w-t">23/25 activos</span></div>
+                <div class="w-card strong"><strong>7ma</strong><span class="w-t">20/25 activos</span></div>
+                <div class="w-card"><strong>8va</strong><span class="w-t">22/25 activos</span></div>
+                <div class="w-card"><strong>9na</strong><span class="w-t">20/25 activos</span></div>
+              </div>
+              <div class="w-row"><span class="w-input" style="flex:1">Buscar por nombre</span><span class="w-pill">Estado: Todos ▾</span><span class="w-btn sm">Agregar jugadores</span><span class="w-btn pri sm">Generar códigos</span></div>
+              <table class="w-table">
+                <thead><tr><th>Jugador</th><th>Categoría</th><th>Código</th><th>Estado</th><th></th></tr></thead>
+                <tbody>
+                  <tr><td>Bautista G.</td><td>7ma</td><td class="w-mono">7MA-4K2Q</td><td><span class="w-dot f"></span>Activo</td><td class="w-t">···</td></tr>
+                  <tr><td>Lautaro M.</td><td>7ma</td><td class="w-mono">7MA-9PZ3</td><td><span class="w-dot h"></span>Pendiente</td><td class="w-link">Copiar código</td></tr>
+                  <tr><td>Thiago R.</td><td>7ma</td><td class="w-mono">7MA-2WL8</td><td><span class="w-dot f"></span>Activo</td><td class="w-t">···</td></tr>
+                  <tr><td>Santino P.</td><td>7ma</td><td class="w-mono w-t">—</td><td><span class="w-dot x"></span>Inactivo</td><td class="w-link">Reactivar</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-notes">
+        <h3><span class="id">14</span> Gestión de jugadores y códigos</h3>
+        <dl>
+          <dt>Jerarquía</dt>
+          <dd><ol><li>Resumen por categoría</li><li>“Generar códigos”</li><li>Tabla de jugadores</li></ol></dd>
+          <dt>Componentes</dt><dd>Banner de privacidad · tarjetas por categoría (seleccionables como filtro) · buscador · filtro de estado · botones Agregar y Generar · tabla con nombre abreviado, categoría, código y estado.</dd>
+        </dl>
+        <dl>
+          <dt>Estados</dt>
+          <dd><ul>
+            <li><strong>Activo:</strong> usó su código. <strong>Pendiente:</strong> código generado y sin usar. <strong>Inactivo:</strong> baja del club; el código queda anulado.</li>
+            <li><strong>Modal “Generar códigos”:</strong> elegir categoría y jugadores → códigos de un solo uso → copiar todos o compartir por WhatsApp.</li>
+            <li><strong>Cupo completo:</strong> aviso para ampliar el plan desde Suscripción.</li>
+          </ul></dd>
+        </dl>
+        <dl>
+          <dt>Datos mínimos</dt>
+          <dd>Nombre y categoría. Sin DNI, edad, teléfono ni actividad en la app.</dd>
+          <dt>Principios</dt>
+          <dd><ul class="pins"><li><span class="mk a">A</span>Lo que el club ve y lo que no, dicho en la misma pantalla.</li></ul></dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- 15 -->
+    <div class="wf-screen desk-row" id="p15">
+      <div class="desk-scroll">
+        <div class="desk">
+          <div class="chrome"><i></i><i></i><i></i><span class="url">panel.futstar.com.ar/suscripcion</span></div>
+          <div class="app">
+            <div class="side">
+              <span class="brand">★ FutStar</span>
+              <span class="nav off">Inicio</span><span class="nav off">Tendencias</span><span class="nav">Reporte trimestral</span><span class="nav off">Jugadores y códigos</span><span class="nav on">Suscripción</span>
+              <div class="role"><strong>Directivo</strong><br><span class="w-pill">Solo lectura</span></div>
+            </div>
+            <div class="main">
+              <div class="topbar"><b>Suscripción y facturación</b><span class="sp"></span><span class="w-pill">Solo lectura</span></div>
+              <div class="w-split">
+                <div class="w-card strong" style="padding:14px">
+                  <div class="w-row sb"><span class="w-h1">Plan único trimestral</span><span class="w-pill dark">Activa</span></div>
+                  <div class="w-grid3">
+                    <div class="w-col" style="gap:2px"><span class="w-t">Jugadores incluidos</span><strong style="font-size:18px">150</strong></div>
+                    <div class="w-col" style="gap:2px"><span class="w-t">Precio por trimestre</span><strong style="font-size:18px">$1.125.000</strong></div>
+                    <div class="w-col" style="gap:2px"><span class="w-t">Por jugador</span><strong style="font-size:18px">$7.500</strong></div>
+                  </div>
+                  <div class="w-hr"></div>
+                  <div class="w-row sb"><span>Próxima renovación: <strong>1 de enero de 2027</strong></span><span class="w-t">Faltan 84 días</span></div>
+                </div>
+                <div class="w-card">
+                  <strong>Qué incluye</strong>
+                  <span>· Biblioteca completa para las 6 categorías</span>
+                  <span>· Asistente 24 h y canal anónimo</span>
+                  <span>· Protocolo de derivación profesional</span>
+                  <span>· Reporte trimestral</span>
+                  <span class="w-link" style="margin-top:6px">Contactar a FutStar</span>
+                </div>
+              </div>
+              <strong>Historial de facturación</strong>
+              <table class="w-table">
+                <thead><tr><th>Período</th><th>Fecha</th><th>Monto</th><th>Estado</th><th></th></tr></thead>
+                <tbody>
+                  <tr><td>T4 2026</td><td>01/10/2026</td><td>$1.125.000</td><td><span class="w-dot f"></span>Pagada</td><td class="w-link">Descargar factura</td></tr>
+                  <tr><td>T3 2026</td><td>01/07/2026</td><td>$1.125.000</td><td><span class="w-dot f"></span>Pagada</td><td class="w-link">Descargar factura</td></tr>
+                  <tr><td>T2 2026</td><td>01/04/2026</td><td>$1.125.000</td><td><span class="w-dot f"></span>Pagada</td><td class="w-link">Descargar factura</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-notes">
+        <h3><span class="id">15</span> Suscripción y facturación</h3>
+        <dl>
+          <dt>Jerarquía</dt>
+          <dd><ol><li>Estado y plan</li><li>Próxima renovación</li><li>Historial</li></ol></dd>
+          <dt>Componentes</dt><dd>Tarjeta de plan con pill de estado · 3 datos clave · lista de lo incluido · tabla de facturas · contacto.</dd>
+        </dl>
+        <dl>
+          <dt>Estados</dt>
+          <dd><ul>
+            <li><strong>Por vencer (15 días o menos):</strong> aviso “Renová antes del 1 de enero para que tus jugadores no pierdan el acceso”.</li>
+            <li><strong>Pago pendiente:</strong> pill de estado “Pendiente” en la factura.</li>
+            <li><strong>Vista directivo</strong> (la del wireframe): el menú muestra solo Reporte y Suscripción, sin acciones de edición.</li>
+          </ul></dd>
+        </dl>
+        <dl>
+          <dt>Navegación</dt><dd>Directivo: 13 ⇄ 15. Coordinador: accesible desde el menú y desde el aviso de cupo completo (14).</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NAVEGACIÓN ============ -->
+<section id="navegacion">
+  <div class="wrap">
+    <span class="eyebrow">Resumen</span>
+    <h2>Mapa de navegación</h2>
+    <div class="navmap" style="margin-top:20px">
+      <div class="card">
+        <h4>Jugador · pestañas</h4>
+        <ul>
+          <li><b>03</b>Inicio → 04, 05, 07, 08, 09</li>
+          <li><b>04</b>Biblioteca → 05, 06, Especialistas</li>
+          <li><b>08</b>Asistente → 05, 07, 09</li>
+          <li><b>07</b>Consultar → 10 (Mis consultas)</li>
+          <li><b>10</b>Perfil → 05, 06, 02, 01</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Jugador · accesos fijos</h4>
+        <ul>
+          <li><b>09</b>Ayuda, arriba a la derecha en toda la app</li>
+          <li><b>01</b>Solo en el primer ingreso o al cerrar sesión</li>
+          <li><b>02</b>Antes del primer uso y desde Perfil</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Club · menú lateral</h4>
+        <ul>
+          <li><b>11</b>Inicio → 12, 13, 14</li>
+          <li><b>12</b>Tendencias → 13</li>
+          <li><b>13</b>Reporte (coordinador y directivo)</li>
+          <li><b>14</b>Jugadores y códigos → 15</li>
+          <li><b>15</b>Suscripción (coordinador y directivo)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="doc">
+  <div class="wrap">
+    <p><strong>Próximo paso:</strong> Etapa 3, sistema de diseño (paleta, tipografía, componentes y reglas), cuando apruebes estos wireframes.</p>
+    <a class="next" href="../index.html">← Volver al índice del proyecto</a>
+  </div>
+</footer>
+
+</body>
+</html>
