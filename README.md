@@ -1,33 +1,29 @@
 # FutStar
 
-Maqueta navegable de FutStar, plataforma de acompañamiento integral para futbolistas de divisiones formativas en Argentina. Es un proyecto de tesis universitaria y demo comercial: no es una plataforma funcional.
+Sitio web de FutStar, plataforma de acompañamiento integral para futbolistas de divisiones formativas en Argentina: psicología deportiva, nutrición y educación financiera con profesionales matriculados.
 
-Sitio estático (HTML, CSS y JS), sin paso de build. Se abre `index.html` en el navegador o se sube tal cual a cualquier hosting estático.
+HTML + CSS + JavaScript sin frameworks ni build: se sube tal cual a Hostinger (o cualquier hosting estático).
 
-## Etapas
+## Páginas
 
-1. **Arquitectura y estrategia**: `docs/etapa-1-arquitectura.html`
-2. **Wireframes**: `docs/etapa-2-wireframes.html`
-3. **Sistema de diseño**: `docs/etapa-3-sistema.html`. Los tokens y componentes reutilizables están en `assets/css/futstar.css` y los íconos en `assets/js/icons.js`.
-4. **Maqueta final**: `docs/etapa-4-presentacion.html` (mapa de pantallas, recorridos, guion de 12 minutos y estructura para Figma)
-
-## Maqueta navegable
-
-La portada es `index.html`. Desde ahí se abren los cuatro recorridos:
-
-| Archivo | Pantallas |
+| Archivo | Contenido |
 |---|---|
-| `maqueta/jugador.html` | 1 a 10: app del jugador (mobile). Cada pantalla tiene su link: `#bienvenida`, `#privacidad`, `#inicio`, `#psicologia`, `#video`, `#receta`, `#consultar`, `#asistente`, `#ayuda`, `#perfil` |
-| `maqueta/club.html` | 11 a 15: panel del club (desktop): `#inicio`, `#tendencias`, `#reporte`, `#jugadores`, `#suscripcion`. Arriba a la derecha se cambia a la vista de directivo |
-| `maqueta/landing.html` | A: landing pública para clubes |
-| `maqueta/admin.html` | B: bandeja del equipo FutStar |
+| `index.html` | Sitio público para clubes: propuesta, datos de la investigación, módulos, cómo funciona, profesionales, privacidad, precio y pedido de demo |
+| `app/jugador.html` | App del jugador. En el celular ocupa toda la pantalla; en la computadora se ve dentro de un marco de celular. Cada pantalla tiene su link: `#bienvenida`, `#privacidad`, `#inicio`, `#psicologia`, `#video`, `#receta`, `#consultar`, `#asistente`, `#ayuda`, `#perfil` |
+| `app/club.html` | Panel del club: `#inicio`, `#tendencias`, `#reporte`, `#jugadores`, `#suscripcion`. Arriba a la derecha se cambia a la vista de directivo (solo lectura) |
+| `app/equipo.html` | Bandeja del equipo FutStar: consultas anónimas, derivación, agenda editorial, contenidos, especialistas y clubes |
+| `docs/` | Proceso de diseño: arquitectura, wireframes y sistema de diseño |
 
-- Estilos: `assets/css/futstar.css` (sistema de diseño) y `assets/css/maqueta.css` (pantallas).
-- Datos de ejemplo: `assets/js/datos.js` (videos, especialistas, recetas, métricas y consultas).
-- Fotos: se suman en `assets/img/fotos/` con los nombres de `assets/img/fotos/LEEME.md`.
+## Dónde editar cada cosa
+
+- **Colores, tipografías y componentes** → `assets/css/futstar.css`
+- **Estructura de las pantallas** → `assets/css/maqueta.css`
+- **Videos, recetas, especialistas, métricas y consultas de ejemplo** → `assets/js/datos.js`
+- **Íconos** → `assets/js/icons.js`
+- **Fotos** → guardalas en `assets/img/fotos/` con los nombres de `assets/img/fotos/LEEME.md` y aparecen solas. Si falta una foto, se ve una trama de cancha.
 
 ## Publicar en Hostinger
 
-Subí todo el contenido del repositorio a `public_html`. No hace falta compilar nada.
+Subí todo el contenido del repositorio a `public_html`. La portada es `index.html`.
 
-Los datos de la demo (club, especialistas, matrículas y métricas) son ficticios.
+El club, los profesionales, las matrículas y las métricas son de ejemplo.

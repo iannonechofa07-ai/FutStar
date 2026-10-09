@@ -3,100 +3,278 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FutStar · Maqueta navegable</title>
-<meta name="description" content="FutStar: maqueta navegable de la plataforma de acompañamiento integral para futbolistas de divisiones formativas.">
+<title>FutStar · Acompañamiento para inferiores</title>
+<meta name="description" content="FutStar: acompañamiento profesional en psicología, nutrición y educación financiera para las inferiores de tu club.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="docs/docs.css">
-<style>
-  .launch { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 16px; margin-top: 28px; }
-  .launch a { display: flex; flex-direction: column; gap: 10px; padding: 22px; border-radius: 20px; text-decoration: none; color: var(--ink-text); background: var(--ink); min-height: 220px; transition: transform .15s ease; }
-  .launch a:hover { transform: translateY(-3px); }
-  .launch a.gold { background: #F2B630; color: #0E2A20; }
-  .launch a.gold .muted { color: #3A2F12; }
-  .launch a .n { font: 700 14px/1 "Barlow Semi Condensed", sans-serif; letter-spacing: .08em; text-transform: uppercase; opacity: .8; }
-  .launch a h3 { font-size: 1.7rem; margin: 0; }
-  .launch a .muted { color: var(--ink-muted); font-size: .95rem; line-height: 1.5; flex: 1; }
-  .launch a .go { font-weight: 600; font-size: .95rem; }
-  .hero .meta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
-  .hero .meta span { border: 1px solid rgba(246,247,242,.25); border-radius: 999px; padding: 6px 12px; font-size: .85rem; color: #D7E2DC; }
-  @media (prefers-reduced-motion: reduce) { .launch a { transition: none; } }
-</style>
+<link rel="stylesheet" href="assets/css/futstar.css">
+<link rel="stylesheet" href="assets/css/maqueta.css">
 </head>
-<body>
+<body class="fs fs--desk">
 
-<section class="hero">
-  <div class="wrap">
-    <span class="eyebrow">★ FutStar · Maqueta navegable</span>
-    <h1>Acompañamiento profesional para las inferiores</h1>
-    <p>FutStar hace que el acompañamiento profesional deje de ser un privilegio de los clubes grandes. Elegí un recorrido para empezar.</p>
-    <div class="meta"><span>17 pantallas</span><span>Jugador en celular</span><span>Club en escritorio</span><span>Datos ficticios</span></div>
+<header class="lp-nav">
+  <div class="in">
+    <a class="lp-brand" href="#top"><svg class="fs-i lg"><use href="#i-star"/></svg>FutStar</a>
+    <nav aria-label="Secciones">
+      <a href="#modulos">Qué incluye</a>
+      <a href="#como">Cómo funciona</a>
+      <a href="#respaldo">Profesionales</a>
+      <a href="#privacidad">Privacidad</a>
+      <a href="#precio">Precio</a>
+    </nav>
+    <a class="fs-btn fs-btn--secondary fs-btn--sm" href="app/club.html">Ingresar al panel</a>
+    <a class="fs-btn fs-btn--accent fs-btn--sm" href="#demo">Solicitar una demo</a>
   </div>
-</section>
+</header>
 
-<section>
-  <div class="wrap">
-    <span class="eyebrow">Recorridos</span>
-    <h2>Abrí la maqueta</h2>
-    <div class="launch">
-      <a href="maqueta/jugador.html#bienvenida" class="gold">
-        <span class="n">Pantallas 1 a 10 · mobile</span>
-        <h3>App del jugador</h3>
-        <span class="muted">Ingreso con código, privacidad, situaciones, videos, recetas, consulta anónima, asistente y ayuda.</span>
-        <span class="go">Abrir →</span>
-      </a>
-      <a href="maqueta/club.html#inicio">
-        <span class="n">Pantallas 11 a 15 · desktop</span>
-        <h3>Panel del club</h3>
-        <span class="muted">Dashboard, tendencias anónimas, reporte trimestral, jugadores y códigos, suscripción. Con vista de directivo.</span>
-        <span class="go">Abrir →</span>
-      </a>
-      <a href="maqueta/landing.html">
-        <span class="n">Opcional A</span>
-        <h3>Landing para clubes</h3>
-        <span class="muted">Posicionamiento, problema en datos, módulos, respaldo profesional, privacidad, precio y pedido de demo.</span>
-        <span class="go">Abrir →</span>
-      </a>
-      <a href="maqueta/admin.html#consultas">
-        <span class="n">Opcional B</span>
-        <h3>Bandeja FutStar</h3>
-        <span class="muted">Consultas anónimas, protocolo de derivación, agenda editorial, contenidos, especialistas y clubes.</span>
-        <span class="go">Abrir →</span>
-      </a>
+<main id="top">
+  <!-- HERO -->
+  <section class="lp-wrap">
+    <div class="lp-hero">
+      <div>
+        <span class="lp-eyebrow">Acompañamiento integral para divisiones formativas</span>
+        <h1>FutStar hace que el acompañamiento profesional deje de ser <em>un privilegio de los clubes grandes.</em></h1>
+        <p class="lp-lead">Un equipo interdisciplinario completo para todas tus inferiores, sin sumar un solo profesional a tu nómina.</p>
+        <div class="cta">
+          <a class="fs-btn fs-btn--accent" href="#demo">Solicitar una demo para mi club</a>
+          <a class="fs-btn fs-btn--secondary" href="app/jugador.html">Ver la app del jugador</a>
+        </div>
+        <div class="proof">
+          <span><svg class="fs-i"><use href="#i-shield"/></svg>Profesionales matriculados</span>
+          <span><svg class="fs-i"><use href="#i-lock"/></svg>Consultas anónimas</span>
+          <span><svg class="fs-i"><use href="#i-file"/></svg>Reporte trimestral</span>
+        </div>
+      </div>
+      <div class="lp-visual">
+        <div class="ph" data-img="hero-landing"><svg class="ph-ico"><use href="#i-users"/></svg></div>
+        <a class="lp-phone" href="app/jugador.html#inicio" aria-label="Abrir la app del jugador" style="text-decoration:none;color:inherit">
+          <span class="top"><b><svg class="fs-i"><use href="#i-star"/></svg>FutStar</b><span class="help">Ayuda</span></span>
+          <span class="q">¿Qué estás atravesando?</span>
+          <span class="sits">
+            <span class="fs-sit"><span class="ico"><svg class="fs-i"><use href="#s-lesion"/></svg></span>Estoy lesionado</span>
+            <span class="fs-sit"><span class="ico"><svg class="fs-i"><use href="#s-familia"/></svg></span>Presión de mi familia</span>
+            <span class="fs-sit"><span class="ico"><svg class="fs-i"><use href="#s-libre"/></svg></span>Miedo a quedar libre</span>
+            <span class="fs-sit"><span class="ico"><svg class="fs-i"><use href="#s-comer"/></svg></span>Qué comer</span>
+            <span class="fs-sit"><span class="ico"><svg class="fs-i"><use href="#s-plata"/></svg></span>Manejo de la plata</span>
+            <span class="fs-sit"><span class="ico"><svg class="fs-i"><use href="#s-colegio"/></svg></span>Club y colegio</span>
+          </span>
+          <span class="seal"><svg class="fs-i"><use href="#i-lock"/></svg>Nadie del club ve lo que escribís.</span>
+        </a>
+        <div class="lp-float f1"><span class="ic"><svg class="fs-i"><use href="#i-shield"/></svg></span><span><b>Lic. Paula Ferreyra</b><br>Psicóloga deportiva · M.N. 45.218</span></div>
+        <div class="lp-float f2"><span class="ic"><svg class="fs-i"><use href="#i-trend"/></svg></span><span><b>6 jugadores</b> consultaron sobre presión familiar este mes.</span></div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="wrap">
-    <span class="eyebrow">Proceso</span>
-    <h2>Las cuatro etapas</h2>
-    <div class="grid g2" style="margin-top:24px">
-      <a class="card" href="docs/etapa-1-arquitectura.html" style="text-decoration:none;color:inherit">
-        <span class="tag">Etapa 1</span>
-        <h3>Arquitectura y estrategia</h3>
-        <p class="muted" style="margin:0">Roles y permisos, frontera de privacidad, arquitectura de información, flujos, decisiones de UX y lista de pantallas.</p>
-      </a>
-      <a class="card" href="docs/etapa-2-wireframes.html" style="text-decoration:none;color:inherit">
-        <span class="tag">Etapa 2</span>
-        <h3>Wireframes</h3>
-        <p class="muted" style="margin:0">Baja fidelidad de las 15 pantallas obligatorias: mobile para el jugador, desktop para el club.</p>
-      </a>
-      <a class="card" href="docs/etapa-3-sistema.html" style="text-decoration:none;color:inherit">
-        <span class="tag">Etapa 3</span>
-        <h3>Sistema de diseño</h3>
-        <p class="muted" style="margin:0">Paleta, tipografía, íconos, componentes, gráficos, fotografía y voz.</p>
-      </a>
-      <a class="card" href="docs/etapa-4-presentacion.html" style="text-decoration:none;color:inherit">
-        <span class="tag oro">Etapa 4</span>
-        <h3>Maqueta final y presentación</h3>
-        <p class="muted" style="margin:0">Mapa de las 17 pantallas, recorridos clickeables, estructura para Figma y guion de 12 minutos.</p>
-      </a>
+  <!-- PROBLEMA -->
+  <section class="lp-sec dark">
+    <div class="lp-wrap">
+      <span class="lp-eyebrow">Lo que encontramos</span>
+      <h2 class="lp-h2">Los juveniles atraviesan situaciones difíciles y la mayoría no tiene a quién preguntarle.</h2>
+      <p class="lp-lead">Los clubes grandes lo resuelven con equipos propios. Los del ascenso y las ligas regionales no pueden sostener psicólogos y nutricionistas en nómina, y las familias tampoco.</p>
+      <div class="stats">
+        <div class="stat"><b>100%</b><span>de los jugadores encuestados atravesó al menos una situación difícil.</span></div>
+        <div class="stat"><b>94,4%</b><span>se quedó con una duda sin saber a quién preguntar.</span></div>
+        <div class="stat"><b>27,8%</b><span>no habla con nadie de lo que le pasa.</span></div>
+        <div class="stat"><b>94,1%</b><span>pidió contenido práctico de nutrición.</span></div>
+      </div>
+      <p class="fs-caption" style="color:#B4C6BC;margin-top:24px">Fuente: investigación propia con jugadores de divisiones formativas.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="doc"><div class="wrap"><p>Maqueta para tesis universitaria y demo comercial. Club, profesionales, matrículas y métricas son ficticios.</p></div></footer>
+  <!-- MÓDULOS -->
+  <section class="lp-sec" id="modulos">
+    <div class="lp-wrap">
+      <span class="lp-eyebrow">Qué incluye</span>
+      <h2 class="lp-h2">Tres módulos, organizados por lo que le pasa al jugador.</h2>
+      <p class="lp-lead">Videos de 5 a 10 minutos y contenido práctico producido por especialistas matriculados. Cada trimestre se suma contenido nuevo y el anterior sigue disponible.</p>
+      <div class="lp-mods">
+        <article class="lp-mod">
+          <div class="ph" data-img="modulo-psico"><svg class="ph-ico"><use href="#m-psico"/></svg></div>
+          <div class="body"><svg class="fs-i"><use href="#m-psico"/></svg><h3 class="fs-h2">Psicología deportiva</h3>
+            <ul><li>Lesiones y regreso a la cancha</li><li>Presión familiar y del rendimiento</li><li>Relación con el cuerpo técnico</li><li>Miedo a quedar libre y exposición en redes</li></ul></div>
+        </article>
+        <article class="lp-mod">
+          <div class="ph t-gold" data-img="modulo-nutri"><svg class="ph-ico"><use href="#m-nutri"/></svg></div>
+          <div class="body"><svg class="fs-i" style="color:#B68824"><use href="#m-nutri"/></svg><h3 class="fs-h2">Nutrición</h3>
+            <ul><li>Recetas simples y baratas</li><li>Qué comer antes y después de entrenar</li><li>Viandas para el colegio</li><li>Alimentación en la recuperación</li></ul></div>
+        </article>
+        <article class="lp-mod">
+          <div class="ph t-blue" data-img="modulo-fin"><svg class="ph-ico"><use href="#m-finanzas"/></svg></div>
+          <div class="body"><svg class="fs-i" style="color:#3E6FA8"><use href="#m-finanzas"/></svg><h3 class="fs-h2">Educación financiera</h3>
+            <ul><li>Primer sueldo y ahorro</li><li>Contratos y representantes</li><li>Qué hacer si el fútbol no se da</li><li>Combinar el club con el colegio</li></ul></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+  <section class="lp-sec white" id="como">
+    <div class="lp-wrap">
+      <span class="lp-eyebrow">Cómo funciona</span>
+      <h2 class="lp-h2">En marcha en una semana, sin trabajo extra para el club.</h2>
+      <div class="how">
+        <div><b>El club contrata</b>Plan único trimestral. El precio depende de la cantidad de jugadores.</div>
+        <div><b>Repartís los códigos</b>Generás un código por jugador desde el panel. Entran sin dar datos personales.</div>
+        <div><b>Los jugadores usan la app</b>Biblioteca, asistente 24 h, consultas anónimas y derivación profesional.</div>
+        <div><b>Recibís el reporte</b>Uso, temas consultados y evolución de la biblioteca, siempre anónimos.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUIÉN -->
+  <section class="lp-sec">
+    <div class="lp-wrap">
+      <span class="lp-eyebrow">Beneficios</span>
+      <h2 class="lp-h2">Gana el club, gana el jugador, ganan los especialistas.</h2>
+      <div class="aud">
+        <div class="fs-card"><svg class="fs-i"><use href="#i-chart"/></svg><h3 class="fs-h2">Para el club</h3>
+          <ul><li>Acompañamiento profesional para todas las categorías</li><li>Un costo trimestral fijo y previsible</li><li>Tendencias para anticiparse a los problemas</li><li>Un reporte para justificar la inversión</li></ul></div>
+        <div class="fs-card"><svg class="fs-i"><use href="#i-user"/></svg><h3 class="fs-h2">Para el jugador</h3>
+          <ul><li>Alguien a quien preguntarle, a cualquier hora</li><li>Sin que nadie del club se entere</li><li>Contenido corto, claro y práctico</li><li>Ayuda profesional cuando la necesita</li></ul></div>
+        <div class="fs-card"><svg class="fs-i"><use href="#i-shield"/></svg><h3 class="fs-h2">Para los especialistas</h3>
+          <ul><li>Llegar a cientos de juveniles por trimestre</li><li>Contenido con su nombre y matrícula</li><li>Un trabajo editorial planificado</li><li>Derivaciones ordenadas por protocolo</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESPALDO -->
+  <section class="lp-sec white" id="respaldo">
+    <div class="lp-wrap">
+      <span class="lp-eyebrow">Respaldo profesional</span>
+      <h2 class="lp-h2">Cada contenido lleva el nombre y la matrícula de quien lo hizo.</h2>
+      <div class="specs" id="specs"></div>
+      <div class="cred">
+        <span><svg class="fs-i"><use href="#i-shield"/></svg>Matrícula vigente verificada</span>
+        <span><svg class="fs-i"><use href="#i-check"/></svg>Contenido revisado por el equipo interdisciplinario</span>
+        <span><svg class="fs-i"><use href="#i-help"/></svg>Protocolo de derivación profesional</span>
+        <span><svg class="fs-i"><use href="#i-file"/></svg>Avales institucionales (a confirmar)</span>
+      </div>
+      <p class="fs-caption" style="margin-top:16px">Profesionales y matrículas ficticios, solo para la demo.</p>
+    </div>
+  </section>
+
+  <!-- PRIVACIDAD -->
+  <section class="lp-sec dark" id="privacidad">
+    <div class="lp-wrap">
+      <span class="lp-eyebrow">Confidencialidad</span>
+      <h2 class="lp-h2">Información útil para el club, sin vulnerar la confianza del jugador.</h2>
+      <p class="lp-lead">Es la condición para que los jugadores consulten. Por eso el club ve tendencias, nunca personas.</p>
+      <div class="sees">
+        <div class="yes">
+          <h3><svg class="fs-i" style="color:#F2B630"><use href="#i-chart"/></svg>Lo que ve el club</h3>
+          <ul><li>Cuántos jugadores usan FutStar</li><li>Qué módulos y contenidos se ven más</li><li>Temas consultados, agregados y con un mínimo de 5 jugadores</li><li>El reporte trimestral</li></ul>
+          <div class="quote"><b>6</b><span>jugadores consultaron sobre presión familiar este mes.</span></div>
+        </div>
+        <div class="noo">
+          <h3><svg class="fs-i"><use href="#i-eye-off"/></svg>Lo que el club nunca ve</h3>
+          <ul><li>Los mensajes de los jugadores</li><li>Quién hizo cada consulta</li><li>Qué mira cada jugador</li><li>Los pedidos de ayuda individuales</li></ul>
+          <p style="color:#B4C6BC;font-size:15px;line-height:23px">Las consultas las leen solo profesionales de FutStar. El asistente orienta y deriva: nunca diagnostica ni reemplaza a un especialista.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIO -->
+  <section class="lp-sec" id="precio">
+    <div class="lp-wrap">
+      <span class="lp-eyebrow">Precio</span>
+      <h2 class="lp-h2">Un plan único, trimestral, según la cantidad de jugadores.</h2>
+      <div class="price">
+        <div class="price-card">
+          <span class="fs-overline" style="color:#F2B630">Ejemplo · club de 6 categorías</span>
+          <span class="amt">$1.125.000<small> / trimestre</small></span>
+          <span style="color:#B4C6BC">150 jugadores · $7.500 por jugador por trimestre (unos $2.500 por mes)</span>
+          <ul>
+            <li><svg class="fs-i"><use href="#i-check"/></svg>Biblioteca completa y contenido nuevo cada trimestre</li>
+            <li><svg class="fs-i"><use href="#i-check"/></svg>Asistente 24 h y canal de consultas anónimas</li>
+            <li><svg class="fs-i"><use href="#i-check"/></svg>Protocolo de derivación profesional</li>
+            <li><svg class="fs-i"><use href="#i-check"/></svg>Panel del club y reporte trimestral</li>
+          </ul>
+          <a class="fs-btn fs-btn--accent" href="#demo" style="align-self:flex-start">Pedir una cotización</a>
+        </div>
+        <div class="compare">
+          <h3 class="fs-h2">Lo que suma tu club</h3>
+          <p class="fs-muted">Psicología deportiva, nutrición y educación financiera, con profesionales matriculados, para todas las categorías a la vez.</p>
+          <div class="fs-card fs-card--flat" style="display:flex;flex-direction:column;gap:14px">
+            <div class="row" style="display:flex;gap:12px;align-items:center"><svg class="fs-i" style="color:#1B7A4A"><use href="#m-psico"/></svg><span>Equipo de psicología deportiva</span></div>
+            <div class="row" style="display:flex;gap:12px;align-items:center"><svg class="fs-i" style="color:#B68824"><use href="#m-nutri"/></svg><span>Nutricionistas con recetas reales</span></div>
+            <div class="row" style="display:flex;gap:12px;align-items:center"><svg class="fs-i" style="color:#3E6FA8"><use href="#m-finanzas"/></svg><span>Orientación financiera y vocacional</span></div>
+            <div class="row" style="display:flex;gap:12px;align-items:center"><svg class="fs-i" style="color:#C2410C"><use href="#i-help"/></svg><span>Derivación cuando hace falta una persona</span></div>
+          </div>
+          <p class="fs-caption">Sin sumar un solo profesional a tu nómina.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISIÓN -->
+  <section class="lp-sec white">
+    <div class="lp-wrap">
+      <span class="lp-eyebrow">Quiénes somos</span>
+      <div class="mvv">
+        <div><h3>Misión</h3><p>Brindar acompañamiento profesional en psicología, nutrición y educación a los futbolistas de divisiones formativas, permitiendo a los clubes de bajos recursos poseer una prestación que hoy no pueden sostener.</p></div>
+        <div><h3>Visión</h3><p>Convertirnos en los referentes para el acompañamiento integral de los juveniles en el fútbol argentino, llegando a clubes de todas las categorías y regiones del país.</p></div>
+        <div><h3>Valores</h3><div class="vals"><span class="fs-pill fs-pill--plain">Calidad profesional</span><span class="fs-pill fs-pill--plain">Accesibilidad</span><span class="fs-pill fs-pill--plain">Confidencialidad</span><span class="fs-pill fs-pill--plain">Compromiso</span><span class="fs-pill fs-pill--plain">Actualización permanente</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO -->
+  <section class="lp-sec dark" id="demo">
+    <div class="lp-wrap demo-form">
+      <div>
+        <span class="lp-eyebrow">Demo</span>
+        <h2 class="lp-h2">Solicitá una demo para tu club.</h2>
+        <p class="lp-lead">Te mostramos la app del jugador y el panel del club en 20 minutos, y armamos una cotización según la cantidad de jugadores.</p>
+      </div>
+      <form id="f-demo" novalidate>
+        <div class="fs-field"><label for="d-name">Nombre</label><input id="d-name" class="fs-input" placeholder="Tu nombre"></div>
+        <div class="fs-field"><label for="d-club">Club</label><input id="d-club" class="fs-input" placeholder="Nombre del club"></div>
+        <div class="fs-field"><label for="d-role">Rol</label><select id="d-role" class="fs-select" style="min-height:48px"><option>Coordinador de inferiores</option><option>Comisión Directiva</option><option>Otro</option></select></div>
+        <div class="fs-field"><label for="d-n">Jugadores en inferiores</label><input id="d-n" class="fs-input" inputmode="numeric" placeholder="Ej. 150"></div>
+        <div class="fs-field full"><label for="d-contact">WhatsApp o mail</label><input id="d-contact" class="fs-input" placeholder="Para coordinar la demo"></div>
+        <button class="fs-btn fs-btn--accent full" type="submit">Solicitar una demo para mi club</button>
+        <div class="fs-alert fs-alert--success full" id="d-ok" hidden><svg class="fs-i"><use href="#i-check"/></svg><span><strong>¡Listo!</strong> Te vamos a contactar para coordinar la demo. (Formulario de demostración: no se envían datos.)</span></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="lp-foot">
+  <div class="lp-wrap in">
+    <span>© 2026 FutStar · Club, profesionales y métricas de ejemplo</span>
+    <span style="display:flex;gap:18px;flex-wrap:wrap"><a href="app/jugador.html">App del jugador</a><a href="app/club.html">Panel del club</a><a href="app/equipo.html">Equipo FutStar</a><a href="docs/index.html">Proceso de diseño</a></span>
+  </div>
+</footer>
+
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/datos.js"></script>
+<script>
+(function () {
+  var E = window.FS.especialistas;
+  document.getElementById('specs').innerHTML = ['pf', 'ms', 'jr'].map(function (k) {
+    var e = E[k];
+    return '<div class="fs-card fs-specialist"><div class="head"><span class="fs-avatar fs-avatar--lg">' + e.ini + '</span><div><div class="name">' + e.nombre + '</div><div class="role">' + e.rol + '</div></div></div>' +
+      '<span class="fs-mat"><svg class="fs-i"><use href="#i-shield"/></svg>' + e.matLarga + '</span><p class="fs-small fs-muted">' + e.bio + '</p></div>';
+  }).join('');
+  document.querySelectorAll('[data-img]').forEach(function (el) {
+    var src = 'assets/img/fotos/' + el.dataset.img + '.jpg', im = new Image();
+    im.onload = function () { el.style.setProperty('--img', 'url("' + src + '")'); el.classList.add('has-photo'); };
+    im.src = src;
+  });
+  var f = document.getElementById('f-demo');
+  f.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var ok = true;
+    ['d-name', 'd-club', 'd-contact'].forEach(function (id) {
+      var i = document.getElementById(id), bad = !i.value.trim();
+      i.classList.toggle('is-error', bad); if (bad) ok = false;
+    });
+    document.getElementById('d-ok').hidden = !ok;
+  });
+})();
+</script>
 </body>
 </html>

@@ -28,7 +28,7 @@ body.fs { background: var(--fs-hueso); min-height: 100vh; }
 .ph.t-gold { --ph-a: #B68824; --ph-b: #3A2F12; }
 .ph.t-blue { --ph-a: #3E6FA8; --ph-b: #0E2A20; }
 .ph.t-night { --ph-a: #1E3D31; --ph-b: #0E2A20; }
-.ph .ph-ico { position: absolute; inset: 0; margin: auto; width: 44px; height: 44px; color: rgba(246, 247, 242, .55); }
+.ph .ph-ico { position: absolute; inset: 0; margin: auto; width: 44px; height: 44px; color: rgba(246, 247, 242, .55); fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 .ph.has-photo .ph-ico { display: none; }
 
 /* ---------- Toast ---------- */
@@ -477,3 +477,20 @@ body.fs { background: var(--fs-hueso); min-height: 100vh; }
   .lp-nav .fs-btn--secondary { display: none; }
   .lp-nav .fs-btn { white-space: nowrap; }
 }
+
+/* Celular de muestra en la portada */
+.lp-phone { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 268px; max-width: 78%; border-radius: 36px; border: 9px solid var(--fs-noche); background: var(--fs-hueso); box-shadow: var(--fs-sombra-2); padding: 18px 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+.lp-phone .top { display: flex; justify-content: space-between; align-items: center; }
+.lp-phone .top b { font: 700 18px/1 var(--fs-display); display: flex; gap: 6px; align-items: center; }
+.lp-phone .top .fs-i { width: 18px; height: 18px; color: var(--fs-dorado); fill: var(--fs-dorado); }
+.lp-phone .help { font: 500 11px/1 var(--fs-texto); color: var(--fs-ayuda); border: 1.5px solid var(--fs-ayuda); border-radius: 999px; padding: 5px 9px; }
+.lp-phone .q { font: 700 17px/20px var(--fs-display); }
+.lp-phone .sits { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.lp-phone .fs-sit { min-height: 44px; padding: 7px; font-size: 11px; line-height: 13px; gap: 6px; border-radius: 10px; }
+.lp-phone .fs-sit .ico { width: 26px; height: 26px; border-radius: 8px; }
+.lp-phone .fs-sit .ico .fs-i { width: 16px; height: 16px; }
+.lp-phone .seal { display: flex; gap: 8px; align-items: center; background: var(--fs-noche); color: var(--fs-blanco); border-radius: 10px; padding: 9px 10px; font: 600 11px/14px var(--fs-texto); }
+.lp-phone .seal .fs-i { width: 16px; height: 16px; color: var(--fs-dorado); }
+.lp-visual .ph.has-photo + .lp-phone { display: none; }
+.lp-visual .ph .ph-ico { display: none; }
+@media (max-width: 520px) { .lp-phone { width: 230px; } .lp-phone .sits .fs-sit:nth-child(n+5) { display: none; } }
