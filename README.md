@@ -8,7 +8,7 @@ Sitio estático (HTML, CSS y JS), sin paso de build. Se abre `index.html` en el 
 
 1. **Arquitectura y estrategia**: `docs/etapa-1-arquitectura.html`
 2. **Wireframes**: `docs/etapa-2-wireframes.html`
-3. Sistema de diseño: pendiente
+3. **Sistema de diseño**: `docs/etapa-3-sistema.html`. Los tokens y componentes reutilizables están en `assets/css/futstar.css` y los íconos en `assets/js/icons.js`.
 4. Maqueta final navegable: pendiente
 
 Los datos de la demo (club, especialistas, matrículas y métricas) son ficticios.

@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FutStar · Sistema de diseño</title>
+<meta name="description" content="FutStar — Etapa 3: sistema de diseño.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs.css">
+<link rel="stylesheet" href="../assets/css/futstar.css">
+<style>
+  /* Lienzo del producto: siempre en su versión clara */
+  .canvas { background: #F6F7F2; color: #0E2A20; border: 1px solid var(--linea); border-radius: var(--radio); padding: 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+  .canvas.col { flex-direction: column; flex-wrap: nowrap; align-items: stretch; }
+  .canvas > div[style*="grid"] { align-items: start; }
+  .canvas.white { background: #FFFFFF; }
+  .canvas .lbl { font: 500 11px/14px "Inter", sans-serif; letter-spacing: .06em; text-transform: uppercase; color: #5E6573; margin-bottom: 8px; display: block; }
+  .comp { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 28px; padding: 32px 0; border-top: 1px solid var(--linea); }
+  .comp:first-of-type { border-top: 0; }
+  .comp h3 { margin-bottom: 8px; }
+  .comp ul { margin: 0; padding-left: 1.1em; font-size: .92rem; color: var(--gris); }
+  .comp li { margin-bottom: 4px; }
+  @media (max-width: 820px) { .comp { grid-template-columns: 1fr; gap: 14px; } }
+
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 14px; }
+  .sw { border: 1px solid var(--linea); border-radius: 14px; overflow: hidden; background: var(--blanco); }
+  .sw .chip { height: 92px; display: flex; align-items: flex-end; padding: 10px 12px; font: 600 13px/1 "Inter", sans-serif; }
+  .sw .meta { padding: 12px; font-size: .85rem; display: flex; flex-direction: column; gap: 3px; }
+  .sw .meta b { font-family: "Barlow Semi Condensed", sans-serif; font-size: 1.15rem; }
+  .sw .meta code { font-size: .8rem; color: var(--gris); }
+  .ramp { display: grid; grid-template-columns: repeat(6, 1fr); border-radius: 12px; overflow: hidden; border: 1px solid var(--linea); }
+  .ramp div { height: 64px; padding: 8px; font: 500 11px/1.3 ui-monospace, Menlo, monospace; display: flex; align-items: flex-end; }
+  .ratio { display: flex; height: 44px; border-radius: 12px; overflow: hidden; border: 1px solid var(--linea); }
+  .ratio div { display: flex; align-items: center; padding: 0 12px; font: 600 12px/1 "Inter", sans-serif; white-space: nowrap; overflow: hidden; }
+
+  .type-row { display: grid; grid-template-columns: 150px minmax(0, 1fr) 190px; gap: 20px; align-items: baseline; padding: 14px 0; border-top: 1px solid #E1E4DD; }
+  .type-row:first-child { border-top: 0; }
+  .type-row code { font-size: .78rem; color: #5E6573; }
+  @media (max-width: 760px) { .type-row { grid-template-columns: 1fr; gap: 4px; } }
+
+  .tokens { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .space-scale { display: flex; flex-direction: column; gap: 8px; font-size: .85rem; }
+  .space-scale div { display: flex; align-items: center; gap: 12px; }
+  .space-scale i { display: block; height: 14px; background: #1B7A4A; border-radius: 3px; }
+  .space-scale code { width: 64px; color: var(--gris); }
+  .radii { display: flex; gap: 14px; flex-wrap: wrap; }
+  .radii div { width: 76px; height: 76px; background: #E3F0E8; border: 1.5px solid #1B7A4A; display: grid; place-items: end start; padding: 6px; font: 500 11px/1 ui-monospace, Menlo, monospace; color: #0E2A20; }
+
+  .icons { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 10px; }
+  .icons div { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 6px; border-radius: 12px; background: #FFFFFF; border: 1px solid #E1E4DD; font: 400 11px/1.3 "Inter", sans-serif; color: #5E6573; text-align: center; }
+  .icons .fs-i { color: #0E2A20; width: 28px; height: 28px; }
+
+  .dodont { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .dodont .card h4 { display: flex; gap: 8px; align-items: center; }
+  .dodont .do h4 { color: var(--verde); }
+  .dodont .dont h4 { color: var(--ayuda); }
+  .phone-mini { width: 320px; max-width: 100%; background: #F6F7F2; border: 1px solid #E1E4DD; border-radius: 24px; overflow: hidden; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="star">★</span> FutStar</a>
+    <nav aria-label="Secciones">
+      <a href="#color">Color</a>
+      <a href="#tipografia">Tipografía</a>
+      <a href="#base">Espacio y forma</a>
+      <a href="#iconos">Íconos</a>
+      <a href="#componentes">Componentes</a>
+      <a href="#datos">Gráficos</a>
+      <a href="#fotografia">Fotografía</a>
+      <a href="#voz">Voz</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Etapa 3 de 4 · Sistema de diseño</span>
+    <h1>Las piezas con las que se construye FutStar</h1>
+    <p>Profesional, limpio y con aire. Verde cancha para actuar, verde noche para leer y dorado solo para lo importante. Todos los componentes de esta página son los reales de la maqueta: están en <code style="color:var(--dorado)">assets/css/futstar.css</code>.</p>
+  </div>
+</section>
+
+<!-- ============ COLOR ============ -->
+<section id="color">
+  <div class="wrap">
+    <span class="eyebrow">1 · Color</span>
+    <h2>Paleta y jerarquía de uso</h2>
+    <p class="lead">Cinco colores de marca, un rojo reservado para pedir ayuda y tres colores de datos para el panel del club. Los contrastes están calculados según WCAG 2.1.</p>
+
+    <div class="swatches" style="margin-top:24px">
+      <div class="sw"><div class="chip" style="background:#1B7A4A;color:#FFFFFF">Aa 5,3:1</div><div class="meta"><b>Verde cancha</b><code>#1B7A4A · --fs-verde</code><span class="muted">Principal. Botones, enlaces, selección, ícono activo.</span></div></div>
+      <div class="sw"><div class="chip" style="background:#0E2A20;color:#F6F7F2">Aa 14,2:1</div><div class="meta"><b>Verde noche</b><code>#0E2A20 · --fs-noche</code><span class="muted">Texto principal, menú del panel, superficies de privacidad.</span></div></div>
+      <div class="sw"><div class="chip" style="background:#F2B630;color:#0E2A20">Aa 8,4:1</div><div class="meta"><b>Dorado estrella</b><code>#F2B630 · --fs-dorado</code><span class="muted">Acento. Badge “Nuevo este trimestre” y un CTA clave por pantalla. Siempre con texto verde noche.</span></div></div>
+      <div class="sw"><div class="chip" style="background:#F6F7F2;color:#0E2A20;border-bottom:1px solid #E1E4DD">Aa 14,2:1</div><div class="meta"><b>Blanco hueso</b><code>#F6F7F2 · --fs-hueso</code><span class="muted">Fondo general de la app y del panel.</span></div></div>
+      <div class="sw"><div class="chip" style="background:#6B7280;color:#FFFFFF">Aa 4,8:1</div><div class="meta"><b>Gris</b><code>#6B7280 · --fs-gris</code><span class="muted">Íconos inactivos y texto secundario de 14px o más. Para texto chico sobre hueso se usa #5E6573.</span></div></div>
+      <div class="sw"><div class="chip" style="background:#C2410C;color:#FFFFFF">Aa 5,2:1</div><div class="meta"><b>Rojo ayuda</b><code>#C2410C · --fs-ayuda</code><span class="muted">Exclusivo de “Necesito hablar con alguien” y de la pantalla de derivación.</span></div></div>
+    </div>
+
+    <h3 style="margin-top:40px">Escalas</h3>
+    <p class="muted">Tonos derivados para fondos suaves, hover y texto sobre fondos de color. No se agregan colores nuevos.</p>
+    <div class="ramp" style="margin-bottom:10px">
+      <div style="background:#EEF5F0;color:#0E2A20">50<br>#EEF5F0</div><div style="background:#E3F0E8;color:#0E2A20">100<br>#E3F0E8</div><div style="background:#8DBCA4;color:#0E2A20">300<br>#8DBCA4</div><div style="background:#1B7A4A;color:#FFFFFF">500<br>#1B7A4A</div><div style="background:#145C38;color:#FFFFFF">700<br>#145C38</div><div style="background:#0E2A20;color:#FFFFFF">900<br>#0E2A20</div>
+    </div>
+    <div class="ramp">
+      <div style="background:#FEF8EA;color:#0E2A20">50<br>#FEF8EA</div><div style="background:#FCEDCB;color:#0E2A20">100<br>#FCEDCB</div><div style="background:#F8DA98;color:#0E2A20">300<br>#F8DA98</div><div style="background:#F2B630;color:#0E2A20">500<br>#F2B630</div><div style="background:#B68824;color:#0E2A20">600<br>#B68824</div><div style="background:#85641A;color:#FFFFFF">700<br>#85641A</div>
+    </div>
+
+    <h3 style="margin-top:40px">Proporción en pantalla</h3>
+    <p class="muted">Cuánto ocupa cada color en una pantalla típica. El dorado y el rojo pierden fuerza si aparecen mucho.</p>
+    <div class="ratio">
+      <div style="flex:60;background:#F6F7F2;color:#0E2A20">Hueso y blanco · 60%</div>
+      <div style="flex:22;background:#0E2A20;color:#F6F7F2">Noche · 22%</div>
+      <div style="flex:12;background:#1B7A4A;color:#FFFFFF">Verde · 12%</div>
+      <div style="flex:5;background:#F2B630;color:#0E2A20">5%</div>
+      <div style="flex:1.4;background:#C2410C"></div>
+    </div>
+
+    <div class="dodont" style="margin-top:28px">
+      <div class="card do">
+        <h4>✓ Reglas</h4>
+        <ul>
+          <li>Una sola acción principal verde por pantalla.</li>
+          <li>Dorado solo para “Nuevo este trimestre” y un CTA clave: “Entendido”, “Solicitar una demo”, “Descargar reporte trimestral”.</li>
+          <li>Texto sobre dorado, siempre en verde noche.</li>
+          <li>Las superficies verde noche marcan momentos de privacidad: onboarding, avisos de anonimato y menú del panel.</li>
+        </ul>
+      </div>
+      <div class="card dont">
+        <h4>✕ Evitar</h4>
+        <ul>
+          <li>Rojo, naranja o colores de alarma fuera de la ayuda. Los errores de formulario usan el rojo ayuda en el borde y el texto, nunca de fondo.</li>
+          <li>Texto blanco sobre dorado (contraste 1,7:1).</li>
+          <li>Degradados, neón o estética de cancha de estadio.</li>
+          <li>Colores de clubes reales.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIPOGRAFÍA ============ -->
+<section id="tipografia">
+  <div class="wrap">
+    <span class="eyebrow">2 · Tipografía</span>
+    <h2>Barlow Semi Condensed + Inter</h2>
+    <p class="lead">Barlow Semi Condensed, condensada y deportiva sin gritar, para títulos y números grandes. Inter para todo lo que se lee y se completa. Las dos se cargan gratis desde Google Fonts.</p>
+
+    <div class="grid g2" style="margin-top:24px">
+      <div class="canvas col white fs">
+        <span class="lbl">Mobile · app del jugador</span>
+        <div class="type-row"><code>Display<br>32/36 · Bold</code><span class="fs-display">¿Qué estás atravesando?</span><code>Bienvenida y pantallas de un solo mensaje</code></div>
+        <div class="type-row"><code>H1<br>26/30 · Bold</code><span class="fs-h1">Psicología deportiva</span><code>Título de pantalla</code></div>
+        <div class="type-row"><code>H2<br>20/24 · SemiBold</code><span class="fs-h2">Nuevo este trimestre</span><code>Título de sección</code></div>
+        <div class="type-row"><code>H3 · Inter<br>17/22 · SemiBold</code><span class="fs-h3">Volver después de una lesión</span><code>Título de tarjeta</code></div>
+        <div class="type-row"><code>Cuerpo<br>16/24 · Regular</code><span class="fs-body">Nadie del club ve lo que escribís.</span><code>Texto corrido, nunca más chico en mobile</code></div>
+        <div class="type-row"><code>Chico<br>14/20 · Regular</code><span class="fs-small">Te responde un profesional de FutStar.</span><code>Ayudas y metadatos</code></div>
+        <div class="type-row"><code>Leyenda<br>12/16 · Medium</code><span class="fs-caption">7 min · M.N. 45.218</span><code>Duración, matrícula</code></div>
+        <div class="type-row"><code>Overline<br>11/14 · SemiBold</code><span class="fs-overline">Psicología deportiva</span><code>Rótulos de sección</code></div>
+      </div>
+      <div class="canvas col white fs fs--desk">
+        <span class="lbl">Desktop · panel del club y landing</span>
+        <div class="type-row"><code>Display<br>48/52 · Bold</code><span class="fs-display">Acompañamiento para tus inferiores</span><code>Landing</code></div>
+        <div class="type-row"><code>H1<br>32/38 · Bold</code><span class="fs-h1">Tendencias</span><code>Título de página</code></div>
+        <div class="type-row"><code>H2<br>24/30 · SemiBold</code><span class="fs-h2">Temas consultados en octubre</span><code>Título de bloque</code></div>
+        <div class="type-row"><code>H3 · Inter<br>18/24 · SemiBold</code><span class="fs-h3">Plan único trimestral</span><code>Título de tarjeta</code></div>
+        <div class="type-row"><code>Número KPI<br>40/44 · SemiBold</code><span class="fs-kpi"><span class="value">128<small> / 150</small></span></span><code>Tabular, siempre con unidad o contexto</code></div>
+        <div class="type-row"><code>Cuerpo<br>16/24 · Regular</code><span class="fs-body">Los datos son anónimos y agregados.</span><code>Textos y notas</code></div>
+        <div class="type-row"><code>Tabla<br>14/20 · Regular</code><span class="fs-small fs-num">7MA-4K2Q · Activo</span><code>Tablas y filtros</code></div>
+      </div>
+    </div>
+    <p class="muted" style="margin-top:16px;font-size:.92rem">Reglas: títulos en oración (no en mayúsculas sostenidas), máximo 65 caracteres por línea en textos corridos, cifras con <code>tabular-nums</code> y separador de miles con punto ($1.125.000).</p>
+  </div>
+</section>
+
+<!-- ============ ESPACIO, BORDES, SOMBRAS ============ -->
+<section id="base">
+  <div class="wrap">
+    <span class="eyebrow">3 · Espacio y forma</span>
+    <h2>Espaciado, bordes y sombras</h2>
+    <div class="tokens" style="margin-top:24px">
+      <div class="card">
+        <h3>Espaciado · base 4</h3>
+        <div class="space-scale">
+          <div><code>4 · fs-1</code><i style="width:4px"></i>ícono ↔ texto</div>
+          <div><code>8 · fs-2</code><i style="width:8px"></i>dentro de un componente</div>
+          <div><code>12 · fs-3</code><i style="width:12px"></i>entre tarjetas de una grilla</div>
+          <div><code>16 · fs-4</code><i style="width:16px"></i>margen lateral mobile</div>
+          <div><code>24 · fs-6</code><i style="width:24px"></i>entre bloques</div>
+          <div><code>32 · fs-8</code><i style="width:32px"></i>entre secciones mobile</div>
+          <div><code>48 · fs-12</code><i style="width:48px"></i>entre secciones desktop</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Bordes redondeados</h3>
+        <div class="radii">
+          <div style="border-radius:8px">8</div><div style="border-radius:12px">12</div><div style="border-radius:20px">20</div><div style="border-radius:28px">28</div><div style="border-radius:999px;place-items:center">pill</div>
+        </div>
+        <ul style="margin-top:14px">
+          <li><b>8:</b> miniaturas chicas y matrícula.</li>
+          <li><b>12:</b> campos, chips de situación y alertas.</li>
+          <li><b>20:</b> tarjetas grandes.</li>
+          <li><b>28:</b> hojas inferiores y contenedores destacados.</li>
+          <li><b>Pill:</b> botones, filtros y badges.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Sombras · dos niveles</h3>
+        <div style="display:flex;gap:16px;margin:8px 0 16px">
+          <div style="flex:1;height:76px;border-radius:16px;background:#FFFFFF;box-shadow:0 1px 2px rgba(14,42,32,.06),0 2px 8px rgba(14,42,32,.04);display:grid;place-items:center;font-size:.8rem;color:#5E6573">Nivel 1</div>
+          <div style="flex:1;height:76px;border-radius:16px;background:#FFFFFF;box-shadow:0 12px 32px rgba(14,42,32,.14);display:grid;place-items:center;font-size:.8rem;color:#5E6573">Nivel 2</div>
+        </div>
+        <ul>
+          <li><b>Nivel 1:</b> tarjetas sobre fondo hueso.</li>
+          <li><b>Nivel 2:</b> solo lo que flota: hojas inferiores, menús y tooltips.</li>
+          <li>Bordes de 1px #E1E4DD antes que sombras fuertes.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note verde"><strong>Grillas.</strong> Mobile: 4 columnas, margen de 16px y separación de 12px; objetivos táctiles de 44px como mínimo. Desktop: menú lateral de 240px y contenido en 12 columnas, con un máximo de 1200px y separación de 24px.</div>
+  </div>
+</section>
+
+<!-- ============ ÍCONOS ============ -->
+<section id="iconos">
+  <div class="wrap">
+    <span class="eyebrow">4 · Iconografía</span>
+    <h2>Íconos lineales</h2>
+    <p class="lead">Grilla de 24px, trazo de 1,75px, puntas y uniones redondeadas, sin rellenos. Las únicas excepciones con relleno son la estrella del logo y la del badge.</p>
+
+    <h3 style="margin-top:24px">Situaciones</h3>
+    <div class="icons">
+      <div><svg class="fs-i"><use href="#s-lesion"/></svg>Estoy lesionado</div>
+      <div><svg class="fs-i"><use href="#s-familia"/></svg>Presión de mi familia</div>
+      <div><svg class="fs-i"><use href="#s-dt"/></svg>Tensión con el cuerpo técnico</div>
+      <div><svg class="fs-i"><use href="#s-rendimiento"/></svg>Presión por rendir</div>
+      <div><svg class="fs-i"><use href="#s-libre"/></svg>Miedo a quedar libre</div>
+      <div><svg class="fs-i"><use href="#s-comer"/></svg>Qué comer</div>
+      <div><svg class="fs-i"><use href="#s-redes"/></svg>Redes y exposición</div>
+      <div><svg class="fs-i"><use href="#s-plata"/></svg>Manejo de la plata</div>
+      <div><svg class="fs-i"><use href="#s-futuro"/></svg>Si el fútbol no se da</div>
+      <div><svg class="fs-i"><use href="#s-colegio"/></svg>Club y colegio</div>
+    </div>
+
+    <h3 style="margin-top:28px">Módulos</h3>
+    <div class="icons">
+      <div><svg class="fs-i"><use href="#m-psico"/></svg>Psicología deportiva</div>
+      <div><svg class="fs-i"><use href="#m-nutri"/></svg>Nutrición</div>
+      <div><svg class="fs-i"><use href="#m-finanzas"/></svg>Educación financiera</div>
+    </div>
+
+    <h3 style="margin-top:28px">Navegación y acciones</h3>
+    <div class="icons">
+      <div><svg class="fs-i"><use href="#i-home"/></svg>Inicio</div>
+      <div><svg class="fs-i"><use href="#i-library"/></svg>Biblioteca</div>
+      <div><svg class="fs-i"><use href="#i-assistant"/></svg>Asistente</div>
+      <div><svg class="fs-i"><use href="#i-consult"/></svg>Consultar</div>
+      <div><svg class="fs-i"><use href="#i-user"/></svg>Perfil</div>
+      <div><svg class="fs-i" style="color:#C2410C"><use href="#i-help"/></svg>Ayuda</div>
+      <div><svg class="fs-i"><use href="#i-lock"/></svg>Privacidad</div>
+      <div><svg class="fs-i"><use href="#i-shield"/></svg>Respaldo</div>
+      <div><svg class="fs-i"><use href="#i-eye-off"/></svg>No visible</div>
+      <div><svg class="fs-i"><use href="#i-bookmark"/></svg>Guardar</div>
+      <div><svg class="fs-i"><use href="#i-play"/></svg>Reproducir</div>
+      <div><svg class="fs-i"><use href="#i-send"/></svg>Enviar</div>
+      <div><svg class="fs-i"><use href="#i-check"/></svg>Listo</div>
+      <div><svg class="fs-i"><use href="#i-download"/></svg>Descargar</div>
+      <div><svg class="fs-i"><use href="#i-clock"/></svg>Duración</div>
+      <div><svg class="fs-i"><use href="#i-users"/></svg>Jugadores</div>
+      <div><svg class="fs-i"><use href="#i-chart"/></svg>Inicio panel</div>
+      <div><svg class="fs-i"><use href="#i-trend"/></svg>Tendencias</div>
+      <div><svg class="fs-i"><use href="#i-file"/></svg>Reporte</div>
+      <div><svg class="fs-i"><use href="#i-key"/></svg>Códigos</div>
+      <div><svg class="fs-i"><use href="#i-card"/></svg>Suscripción</div>
+      <div><svg class="fs-i"><use href="#i-info"/></svg>Información</div>
+      <div><svg class="fs-i"><use href="#i-search"/></svg>Buscar</div>
+      <div><svg class="fs-i"><use href="#i-copy"/></svg>Copiar</div>
+    </div>
+    <p class="muted" style="margin-top:16px;font-size:.92rem">Tamaños: 24px por defecto, 18px dentro de botones chicos y 32px en estados vacíos. El ícono siempre va acompañado de texto, salvo los botones de solo ícono, que llevan etiqueta accesible.</p>
+  </div>
+</section>
+
+<!-- ============ COMPONENTES ============ -->
+<section id="componentes">
+  <div class="wrap">
+    <span class="eyebrow">5 · Componentes</span>
+    <h2>Biblioteca de componentes</h2>
+
+    <!-- Botones -->
+    <div class="comp">
+      <div>
+        <h3>Botones</h3>
+        <ul>
+          <li>Alto de 48px en mobile y 36px en la variante chica.</li>
+          <li>Verbo + objeto: “Enviar anónimo”, “Descargar reporte trimestral”.</li>
+          <li>Un solo botón dorado por pantalla.</li>
+          <li>El rojo solo aparece en la ayuda.</li>
+          <li>Foco visible: anillo dorado.</li>
+        </ul>
+      </div>
+      <div class="canvas fs">
+        <div><span class="lbl">Principal</span><button class="fs-btn">Continuar</button></div>
+        <div><span class="lbl">Acento · CTA clave</span><button class="fs-btn fs-btn--accent">Entendido</button></div>
+        <div><span class="lbl">Secundario</span><button class="fs-btn fs-btn--secondary"><svg class="fs-i sm"><use href="#i-bookmark"/></svg>Guardar</button></div>
+        <div><span class="lbl">Terciario</span><button class="fs-btn fs-btn--ghost">Ver todo</button></div>
+        <div><span class="lbl">Deshabilitado</span><button class="fs-btn" disabled>Continuar</button></div>
+        <div><span class="lbl">Ayuda</span><button class="fs-btn fs-btn--help"><svg class="fs-i sm"><use href="#i-help"/></svg>Necesito hablar con alguien</button></div>
+        <div><span class="lbl">Ayuda · encabezado</span><button class="fs-btn fs-btn--help-soft fs-btn--sm"><svg class="fs-i sm"><use href="#i-help"/></svg>Ayuda</button></div>
+        <div><span class="lbl">Solo ícono</span><button class="fs-iconbtn" aria-label="Guardar"><svg class="fs-i"><use href="#i-bookmark"/></svg></button> <button class="fs-iconbtn is-on" aria-label="Guardado"><svg class="fs-i"><use href="#i-bookmark"/></svg></button></div>
+      </div>
+    </div>
+
+    <!-- Badges -->
+    <div class="comp">
+      <div>
+        <h3>Badges y estados</h3>
+        <ul>
+          <li>“Nuevo este trimestre”: dorado con estrella. Se ve sobre la miniatura y en listas.</li>
+          <li>Los estados combinan punto, color y texto; nunca solo color.</li>
+          <li>“Derivada” usa verde noche, no rojo.</li>
+        </ul>
+      </div>
+      <div class="canvas fs">
+        <div><span class="lbl">Biblioteca</span><span class="fs-badge fs-badge--new"><svg class="fs-i"><use href="#i-star"/></svg>Nuevo este trimestre</span> <span class="fs-badge fs-badge--new"><svg class="fs-i"><use href="#i-star"/></svg>Nuevo</span> <span class="fs-badge fs-badge--module">Psicología</span></div>
+        <div><span class="lbl">Códigos de acceso</span><span class="fs-pill fs-pill--ok">Activo</span> <span class="fs-pill fs-pill--wait">Pendiente</span> <span class="fs-pill fs-pill--off">Inactivo</span></div>
+        <div><span class="lbl">Consultas (jugador y admin)</span><span class="fs-pill fs-pill--wait">Nueva</span> <span class="fs-pill fs-pill--plain">En revisión</span> <span class="fs-pill fs-pill--dark">Derivada</span> <span class="fs-pill fs-pill--ok">Resuelta</span></div>
+      </div>
+    </div>
+
+    <!-- Campos -->
+    <div class="comp">
+      <div>
+        <h3>Campos de formulario</h3>
+        <ul>
+          <li>Etiqueta siempre visible arriba, no solo como placeholder.</li>
+          <li>El código del club va en mayúsculas, monoespaciado y centrado.</li>
+          <li>Los errores dicen qué pasó y cómo seguir.</li>
+          <li>Texto de 16px para que el celular no haga zoom.</li>
+        </ul>
+      </div>
+      <div class="canvas fs" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+        <div class="fs-field"><label for="c1">Código de tu club</label><input id="c1" class="fs-input fs-input--code" value="7MA-4K2Q"><span class="fs-hint">Te lo da tu coordinador.</span></div>
+        <div class="fs-field"><label for="c2">Código de tu club</label><input id="c2" class="fs-input fs-input--code is-error" value="7MA-0000"><span class="fs-hint is-error"><svg class="fs-i"><use href="#i-info"/></svg>Ese código no existe o ya se usó. Pedile uno nuevo a tu coordinador.</span></div>
+        <div class="fs-field"><label for="c3">Apodo</label><input id="c3" class="fs-input is-focus" value="Tomi"><span class="fs-hint"><svg class="fs-i"><use href="#i-lock"/></svg>Es solo para vos. No hace falta tu nombre real.</span></div>
+        <div class="fs-field"><label for="c4">Buscar jugador</label><input id="c4" class="fs-input" placeholder="Nombre o código"></div>
+        <div class="fs-field" style="grid-column:1/-1"><label for="c5">Contanos qué te pasa</label><textarea id="c5" class="fs-input" placeholder="Escribí con tus palabras. No hace falta que esté perfecto."></textarea></div>
+      </div>
+    </div>
+
+    <!-- Chips -->
+    <div class="comp">
+      <div>
+        <h3>Chips de situación y filtros</h3>
+        <ul>
+          <li>Situación: tarjeta táctil de 56px con ícono. Seleccionada pasa a verde noche, con el ícono dorado.</li>
+          <li>Filtro: pill con scroll horizontal. Seleccionado, en verde.</li>
+          <li>Textos en primera persona, como los diría el jugador.</li>
+        </ul>
+      </div>
+      <div class="canvas fs col">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px">
+          <button class="fs-sit"><span class="ico"><svg class="fs-i"><use href="#s-lesion"/></svg></span>Estoy lesionado</button>
+          <button class="fs-sit is-on"><span class="ico"><svg class="fs-i"><use href="#s-familia"/></svg></span>Presión de mi familia</button>
+          <button class="fs-sit"><span class="ico"><svg class="fs-i"><use href="#s-comer"/></svg></span>Qué comer</button>
+          <button class="fs-sit"><span class="ico"><svg class="fs-i"><use href="#s-plata"/></svg></span>Manejo de la plata</button>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><span class="fs-filter">Todos</span><span class="fs-filter is-on">Lesión</span><span class="fs-filter">Presión familiar</span><span class="fs-filter">Cuerpo técnico</span></div>
+      </div>
+    </div>
+
+    <!-- Tarjetas de video -->
+    <div class="comp">
+      <div>
+        <h3>Tarjetas de video y receta</h3>
+        <ul>
+          <li>Siempre: título, duración, especialista y matrícula.</li>
+          <li>Versión grande para destacados y versión en fila para listas.</li>
+          <li>La foto es de juveniles entrenando; el profesional aparece en el avatar.</li>
+        </ul>
+      </div>
+      <div class="canvas fs" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+        <a class="fs-video" href="#componentes">
+          <div class="fs-thumb" style="background:linear-gradient(135deg,#1E3D31,#1B7A4A)"><span class="fs-badge fs-badge--new"><svg class="fs-i"><use href="#i-star"/></svg>Nuevo este trimestre</span><span class="play"><svg class="fs-i"><use href="#i-play"/></svg></span><span class="dur">7 min</span></div>
+          <span class="title">Volver después de una lesión</span>
+          <span class="fs-byline"><span class="fs-avatar">PF</span><span><span class="who">Lic. Paula Ferreyra</span> · Psicóloga · M.N. 45.218</span></span>
+        </a>
+        <div class="fs-col" style="display:flex;flex-direction:column;gap:12px">
+          <a class="fs-video fs-video--row" href="#componentes">
+            <div class="fs-thumb" style="background:linear-gradient(135deg,#1E3D31,#3E6FA8)"><span class="dur">6 min</span></div>
+            <div style="display:flex;flex-direction:column;gap:4px;min-width:0"><span class="title" style="font-size:15px">Tu primer sueldo: qué hacer con la plata</span><span class="fs-caption">Cdora. Julieta Ramos · CPCE T° 412 F° 88</span></div>
+          </a>
+          <a class="fs-video fs-video--row" href="#componentes">
+            <div class="fs-thumb" style="background:linear-gradient(135deg,#85641A,#E0A21A)"><span class="dur">Receta</span></div>
+            <div style="display:flex;flex-direction:column;gap:4px;min-width:0"><span class="title" style="font-size:15px">Tostadas de avena y banana</span><span class="fs-caption">10 min · Lic. Martín Sosa · M.N. 7.312</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Especialista -->
+    <div class="comp">
+      <div>
+        <h3>Tarjeta de especialista</h3>
+        <ul>
+          <li>Responde al principio de respaldo profesional.</li>
+          <li>La matrícula va en un sello propio, con ícono de escudo.</li>
+          <li>Bio de dos líneas, ampliable.</li>
+        </ul>
+      </div>
+      <div class="canvas fs">
+        <div class="fs-card fs-specialist" style="max-width:380px">
+          <div class="head"><span class="fs-avatar fs-avatar--lg">PF</span><div><div class="name">Lic. Paula Ferreyra</div><div class="role">Psicóloga deportiva</div></div></div>
+          <span class="fs-mat"><svg class="fs-i"><use href="#i-shield"/></svg>Matrícula Nacional 45.218</span>
+          <p class="fs-small fs-muted" style="margin:0">Trabaja hace 12 años con juveniles de clubes del ascenso. Especialista en lesiones y regreso a la competencia.</p>
+          <button class="fs-btn fs-btn--ghost" style="align-self:flex-start;padding:0">Ver sus 14 contenidos</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alertas -->
+    <div class="comp">
+      <div>
+        <h3>Alertas y avisos</h3>
+        <ul>
+          <li><b>Privacidad:</b> fondo verde noche con candado dorado; es la más reconocible.</li>
+          <li><b>IA:</b> borde punteado gris, para que no se confunda con un profesional.</li>
+          <li><b>Ayuda:</b> solo en la derivación.</li>
+        </ul>
+      </div>
+      <div class="canvas fs col">
+        <div class="fs-alert fs-alert--privacy"><svg class="fs-i"><use href="#i-lock"/></svg><span><strong>Nadie del club ve lo que escribís.</strong> Lo leen solo profesionales de FutStar.</span></div>
+        <div class="fs-alert fs-alert--ai"><svg class="fs-i"><use href="#i-assistant"/></svg><span>No soy un profesional de la salud. Puedo orientarte y derivarte, pero no reemplazo a un especialista.</span></div>
+        <div class="fs-alert fs-alert--info"><svg class="fs-i"><use href="#i-eye-off"/></svg><span><strong>Los datos son anónimos y agregados.</strong> El club no puede ver mensajes individuales ni identificar consultas.</span></div>
+        <div class="fs-alert fs-alert--success"><svg class="fs-i"><use href="#i-check"/></svg><span>Tu consulta fue enviada de forma anónima.</span></div>
+        <div class="fs-alert fs-alert--warning"><svg class="fs-i"><use href="#i-clock"/></svg><span>Tu suscripción se renueva el 1 de enero. Faltan 12 días.</span></div>
+        <div class="fs-alert fs-alert--help"><svg class="fs-i"><use href="#i-help"/></svg><span>Si estás en peligro ahora, llamá al <strong>911</strong>.</span></div>
+      </div>
+    </div>
+
+    <!-- Vacíos -->
+    <div class="comp">
+      <div>
+        <h3>Estados vacíos</h3>
+        <ul>
+          <li>Ícono en círculo verde claro, una frase que explica y una acción para seguir.</li>
+          <li>Nunca culpan al usuario ni muestran un error técnico.</li>
+        </ul>
+      </div>
+      <div class="canvas fs" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+        <div class="fs-card fs-card--flat fs-empty"><span class="ring"><svg class="fs-i lg"><use href="#i-bookmark"/></svg></span><span class="fs-h3">Todavía no guardaste nada</span><p>Guardá videos y recetas para tenerlos a mano.</p><button class="fs-btn fs-btn--secondary fs-btn--sm">Ir a la biblioteca</button></div>
+        <div class="fs-card fs-card--flat fs-empty"><span class="ring"><svg class="fs-i lg"><use href="#i-consult"/></svg></span><span class="fs-h3">No hiciste consultas</span><p>Si tenés una duda, escribila. Nadie del club la ve.</p><button class="fs-btn fs-btn--secondary fs-btn--sm">Consultar anónimo</button></div>
+        <div class="fs-card fs-card--flat fs-empty"><span class="ring"><svg class="fs-i lg"><use href="#i-trend"/></svg></span><span class="fs-h3">Sin datos suficientes</span><p>Esta categoría tiene menos de 5 consultas. No la mostramos para no identificar a nadie.</p></div>
+      </div>
+    </div>
+
+    <!-- Navegación -->
+    <div class="comp">
+      <div>
+        <h3>Navegación</h3>
+        <ul>
+          <li><b>Jugador:</b> barra inferior blanca con 5 pestañas; la activa en verde con trazo más grueso.</li>
+          <li><b>Encabezado:</b> título a la izquierda, Ayuda a la derecha.</li>
+          <li><b>Club:</b> menú lateral verde noche; el directivo ve bloqueadas las secciones a las que no accede.</li>
+        </ul>
+      </div>
+      <div class="canvas fs">
+        <div class="phone-mini">
+          <div class="fs-appbar"><span class="fs-h2">Biblioteca</span><button class="fs-btn fs-btn--help-soft fs-btn--sm"><svg class="fs-i sm"><use href="#i-help"/></svg>Ayuda</button></div>
+          <div style="height:60px"></div>
+          <nav class="fs-tabbar" aria-label="Pestañas">
+            <a class="fs-tab" href="#componentes"><svg class="fs-i"><use href="#i-home"/></svg>Inicio</a>
+            <a class="fs-tab is-on" href="#componentes"><svg class="fs-i"><use href="#i-library"/></svg>Biblioteca</a>
+            <a class="fs-tab" href="#componentes"><svg class="fs-i"><use href="#i-assistant"/></svg>Asistente</a>
+            <a class="fs-tab" href="#componentes"><svg class="fs-i"><use href="#i-consult"/></svg>Consultar</a>
+            <a class="fs-tab" href="#componentes"><svg class="fs-i"><use href="#i-user"/></svg>Perfil</a>
+          </nav>
+        </div>
+        <div style="width:240px;border-radius:16px;overflow:hidden">
+          <nav class="fs-side" aria-label="Menú del panel">
+            <span class="brand"><svg class="fs-i"><use href="#i-star"/></svg>FutStar</span>
+            <a class="is-locked" href="#componentes"><svg class="fs-i sm"><use href="#i-chart"/></svg>Inicio</a>
+            <a class="is-locked" href="#componentes"><svg class="fs-i sm"><use href="#i-trend"/></svg>Tendencias</a>
+            <a class="is-on" href="#componentes"><svg class="fs-i sm"><use href="#i-file"/></svg>Reporte trimestral</a>
+            <a class="is-locked" href="#componentes"><svg class="fs-i sm"><use href="#i-key"/></svg>Jugadores y códigos</a>
+            <a href="#componentes"><svg class="fs-i sm"><use href="#i-card"/></svg>Suscripción</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DATOS ============ -->
+<section id="datos">
+  <div class="wrap">
+    <span class="eyebrow">6 · Gráficos del panel</span>
+    <h2>Pocos números, grandes y con contexto</h2>
+    <p class="lead">Inspirado en Stripe: KPI arriba, un gráfico por pregunta y etiquetas directas. Un solo color para una sola serie; los tres colores de datos se usan solo para distinguir módulos.</p>
+
+    <div class="canvas fs fs--desk col" style="margin-top:24px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px">
+        <div class="fs-card fs-kpi"><span class="label"><svg class="fs-i sm"><use href="#i-users"/></svg>Jugadores activos</span><span class="value">128<small> / 150</small></span><span class="meter"><i style="width:85%"></i></span><span class="fs-caption">85% de las inferiores</span></div>
+        <div class="fs-card fs-kpi"><span class="label"><svg class="fs-i sm"><use href="#i-play"/></svg>Vistas en el trimestre</span><span class="value">2.940</span><span class="delta">↑ 18% vs. T3</span></div>
+        <div class="fs-card fs-kpi"><span class="label"><svg class="fs-i sm"><use href="#i-library"/></svg>Biblioteca</span><span class="value">96</span><span class="fs-caption">24 nuevos este trimestre</span></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px">
+        <div class="fs-card">
+          <div class="fs-h3" style="margin-bottom:4px">Temas consultados en octubre</div>
+          <div class="fs-caption" style="margin-bottom:16px">Jugadores distintos por tema</div>
+          <div class="fs-bars">
+            <div class="fs-bar" data-tip="6"><span>Presión familiar</span><span class="track"><i class="fill" style="width:100%"></i></span><span class="v">6</span></div>
+            <div class="fs-bar"><span>Miedo a quedar libre</span><span class="track"><i class="fill" style="width:83%"></i></span><span class="v">5</span></div>
+            <div class="fs-bar"><span>Qué comer</span><span class="track"><i class="fill" style="width:83%"></i></span><span class="v">5</span></div>
+            <div class="fs-bar is-low"><span>Presión por rendir</span><span class="track"><i class="fill" style="width:50%"></i></span><span class="v">menos de 5</span></div>
+            <div class="fs-bar is-low"><span>Lesión</span><span class="track"><i class="fill" style="width:50%"></i></span><span class="v">menos de 5</span></div>
+          </div>
+        </div>
+        <div class="fs-card">
+          <div class="fs-h3" style="margin-bottom:4px">Vistas por mes</div>
+          <div class="fs-caption" style="margin-bottom:16px">Pasá el cursor por cada columna para ver el valor</div>
+          <div class="fs-cols">
+            <div class="y"><span>1.200</span><span>900</span><span>600</span><span>300</span><span>0</span></div>
+            <div class="plot">
+              <span class="col" style="--h:46%"><span class="tip">May · 550</span></span>
+              <span class="col" style="--h:55%"><span class="tip">Jun · 660</span></span>
+              <span class="col" style="--h:58%"><span class="tip">Jul · 700</span></span>
+              <span class="col" style="--h:70%"><span class="tip">Ago · 840</span></span>
+              <span class="col" style="--h:79%"><span class="tip">Sep · 950</span></span>
+              <span class="col is-now" style="--h:88%"><span class="tip">Oct · 1.060</span></span>
+            </div>
+            <div class="x"><span>May</span><span>Jun</span><span>Jul</span><span>Ago</span><span>Sep</span><span>Oct</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fs-card">
+        <div class="fs-h3" style="margin-bottom:12px">Vistas por módulo</div>
+        <div class="fs-stack" role="img" aria-label="Psicología 52%, Nutrición 31%, Educación financiera 17%"><i style="flex:52;background:#1B7A4A"></i><i style="flex:31;background:#E0A21A"></i><i style="flex:17;background:#3E6FA8"></i></div>
+        <div class="fs-legend" style="margin-top:12px"><span style="--c:#1B7A4A">Psicología deportiva <b>52%</b></span><span style="--c:#E0A21A">Nutrición <b>31%</b></span><span style="--c:#3E6FA8">Educación financiera <b>17%</b></span></div>
+      </div>
+    </div>
+
+    <div class="dodont" style="margin-top:20px">
+      <div class="card do"><h4>✓ Reglas de datos</h4><ul>
+        <li>Cada KPI con unidad o comparación (“de 150”, “vs. T3”).</li>
+        <li>Barras horizontales para rankings de temas; columnas para meses.</li>
+        <li>Debajo del umbral de 5: barra rayada gris y el texto “menos de 5”.</li>
+        <li>Colores de datos validados para daltonismo; el dorado de datos (#E0A21A) siempre va con etiqueta directa.</li>
+      </ul></div>
+      <div class="card dont"><h4>✕ Evitar</h4><ul>
+        <li>Tortas, gráficos 3D o dos ejes.</li>
+        <li>Tablas con datos por jugador sobre uso o consultas.</li>
+        <li>Rojo para “bajas” o “alertas” de uso.</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOTOGRAFÍA ============ -->
+<section id="fotografia">
+  <div class="wrap">
+    <span class="eyebrow">7 · Fotografía e ilustración</span>
+    <h2>Canchas de barrio, gente real</h2>
+    <div class="dodont" style="margin-top:20px">
+      <div class="card do"><h4>✓ Fotografía</h4><ul>
+        <li>Juveniles de 12 a 20 años entrenando: potreros, canchas de tierra o sintéticas de barrio, alambrados y luz natural.</li>
+        <li>Momentos cotidianos: atarse los botines, la previa, la vuelta en colectivo con la mochila del colegio.</li>
+        <li>Encuadres de espalda, a contraluz o de detalle, que no muestren caras identificables en contextos sensibles (lesión, angustia).</li>
+        <li>Tratamiento: color natural, levemente desaturado, con sombras hacia el verde noche.</li>
+        <li>Especialistas: retrato de busto, fondo liso claro, mirada a cámara.</li>
+        <li>Búsqueda sugerida en Unsplash o Pexels: “youth football training grass”, “amateur soccer field fence”, “teen soccer cleats”.</li>
+      </ul></div>
+      <div class="card dont"><h4>✕ Evitar</h4><ul>
+        <li>Estadios, tribunas llenas, futbolistas famosos o camisetas reconocibles.</li>
+        <li>Escudos reales, logos de AFA o sponsors.</li>
+        <li>Poses de festejo épico, puños apretados o estética motivacional.</li>
+        <li>Imágenes de tristeza dramatizada (cabeza entre las manos) para hablar de salud mental.</li>
+        <li>Niños chicos: hay usuarios de hasta 20 años.</li>
+      </ul></div>
+      <div class="card"><h4>Ilustración</h4><ul>
+        <li>Solo para conceptos abstractos: privacidad, derivación y estados vacíos.</li>
+        <li>Mismo lenguaje que los íconos: línea de 1,75 a 2px, formas simples, verde noche con un acento dorado.</li>
+        <li>Sin personajes caricaturescos ni mascotas, para no infantilizar.</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VOZ ============ -->
+<section id="voz">
+  <div class="wrap">
+    <span class="eyebrow">8 · Voz y tono</span>
+    <h2>Cómo hablan los textos</h2>
+    <div class="table-scroll" style="margin-top:20px">
+      <table>
+        <thead><tr><th>Situación</th><th>Así sí</th><th>Así no</th></tr></thead>
+        <tbody>
+          <tr><td>Invitar a consultar</td><td>“¿Una duda que no está acá? Consultá anónimo.”</td><td>“¡No te guardes nada, campeón!”</td></tr>
+          <tr><td>Confirmar un envío</td><td>“Tu consulta fue enviada de forma anónima.”</td><td>“Solicitud procesada exitosamente.”</td></tr>
+          <tr><td>Error</td><td>“Ese código no existe o ya se usó. Pedile uno nuevo a tu coordinador.”</td><td>“Error 404: código inválido.”</td></tr>
+          <tr><td>Contener</td><td>“Pedir ayuda está bien.”</td><td>“¡Vos podés con todo!”</td></tr>
+          <tr><td>Asistente</td><td>“Hay un video sobre presión familiar que te puede servir.”</td><td>“Parece que tenés ansiedad.”</td></tr>
+          <tr><td>Panel del club</td><td>“128 de 150 jugadores activos (85%).”</td><td>“¡Tus chicos están re enganchados!”</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted" style="margin-top:14px;font-size:.92rem">Jugador: voseo, frases de menos de 15 palabras y sin signos de exclamación. Club: tercera persona o “tu club”, números concretos y verbos de resultado.</p>
+  </div>
+</section>
+
+<footer class="doc">
+  <div class="wrap">
+    <p><strong>Próximo paso:</strong> Etapa 4, la maqueta navegable de las 17 pantallas construida con este sistema, más el guion para la presentación de 12 minutos.</p>
+    <a class="next" href="../index.html">← Volver al índice del proyecto</a>
+  </div>
+</footer>
+
+<script src="../assets/js/icons.js"></script>
+</body>
+</html>
